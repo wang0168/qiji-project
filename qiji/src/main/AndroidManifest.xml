@@ -21,6 +21,10 @@
         <activity android:name=".activity.FeedBackActivity" />
         <activity android:name=".activity.CallServiceActivity" />
         <activity android:name=".activity.ServiceConfirmActivity"></activity>
+        <activity android:name=".login.FindPasswordActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.RegisterActivity" />
+        <activity android:name=".login.RegisterIdentityActivity" />
     </application>
 
 </manifest>
