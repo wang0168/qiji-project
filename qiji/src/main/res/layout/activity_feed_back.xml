@@ -18,7 +18,6 @@
             android:id="@+id/edit_feedback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_feedback_edittext"
             android:gravity="top"
             android:hint="您的建议对我们很重要..."
             android:minLines="10"
@@ -29,7 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/y80"
             android:layout_marginTop="@dimen/y60"
-            android:background="@drawable/shape_order_button"
             android:text="发送"
             android:textColor="@color/white"
             android:textSize="@dimen/y30" />

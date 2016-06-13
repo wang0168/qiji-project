@@ -29,10 +29,15 @@ public class CollectionAdapter extends TTSBaseAdapterRecyclerView<CollectionBean
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TTSBaseAdapterRecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new CollectionViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_collection, null, false));
     }
-//    @Override
+
+    @Override
+    public void onBindViewHolder(TTSBaseAdapterRecyclerView.ViewHolder holder, int position) {
+        super.onBindViewHolder(holder, position);
+    }
+    //    @Override
 //    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
 //        final CollectionViewHolder collectionViewHolder = (CollectionViewHolder) RecyclerViewDragHolder.getHolder(holder);
 //        collectionViewHolder.price.setText("￥" + mData.get(position).getGoodsBean().getGoods_price());

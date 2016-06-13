@@ -19,7 +19,8 @@
         <activity android:name=".activity.AddressManagerActivity" />
         <activity android:name=".activity.EditAddressActivity" />
         <activity android:name=".activity.FeedBackActivity" />
-        <activity android:name=".activity.CallServiceActivity"></activity>
+        <activity android:name=".activity.CallServiceActivity" />
+        <activity android:name=".activity.ServiceConfirmActivity"></activity>
     </application>
 
 </manifest>

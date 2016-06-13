@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:orientation="vertical">
+    <!--  修改title  我的订单  -->
+    <include layout="@layout/toolbar_item" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="订单金额" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="0元"
+            android:textColor="@color/colorPrimary" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y20" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="优惠券" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x30"
+            android:text="优惠0元" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/jiantou_2x" />
+    </RelativeLayout>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y30" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="支付方式" />
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@mipmap/xia" />-->
+    </RelativeLayout>
+
+    <View style="@style/view_width_style" />
+
+    <LinearLayout
+        android:id="@+id/pay_weixin_lay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y150"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_marginLeft="@dimen/x40"
+            android:src="@mipmap/pay_weixin" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/y20"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/y20"
+                android:layout_weight="2"
+                android:text="微信支付"
+                android:textColor="#000000"
+                android:textSize="@dimen/y35" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/y20"
+                android:layout_weight="1"
+                android:text="使用微信支付，安全便捷"
+                android:textColor="#7D7D7D"
+                android:textSize="@dimen/y25" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/pay_weixin"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y36"
+            android:layout_marginRight="@dimen/x37"
+            android:background="@drawable/btn_seclect_pay"
+            android:button="@null"
+            android:clickable="false"
+            android:focusable="false" />
+    </LinearLayout>
+
+    <View style="@style/view_width_style" />
+
+    <LinearLayout
+        android:id="@+id/pay_zhifubao_lay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y150"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_marginLeft="@dimen/x40"
+            android:src="@mipmap/pay_zhifubao" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/y20"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/y20"
+                android:layout_weight="2"
+                android:text="支付宝"
+                android:textColor="#000000"
+                android:textSize="@dimen/y35" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/y20"
+                android:layout_weight="1"
+                android:text="支持有支付宝，网银的用户使用"
+                android:textColor="#7D7D7D"
+                android:textSize="@dimen/y25" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/pay_zhifubao"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y36"
+            android:layout_marginRight="@dimen/x37"
+            android:background="@drawable/btn_seclect_pay"
+            android:button="@null"
+            android:clickable="false"
+            android:focusable="false" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y30" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y150"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/y20"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        android:paddingTop="@dimen/y20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发票抬头" />
+
+        <CheckBox
+            android:id="@+id/pay_fapiao"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y36"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x17"
+            android:background="@drawable/btn_seclect_pay"
+            android:button="@null"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y50"
+            android:layout_alignParentBottom="true"
+            android:hint="填写个人名称或公司名称" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y100"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"></RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
