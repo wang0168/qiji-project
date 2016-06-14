@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y14"
+        android:background="@color/divide_bg_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y200"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout_call"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_hj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x40"
+                android:src="@mipmap/hj" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_hj"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginTop="@dimen/y20"
+                android:layout_toRightOf="@+id/img_hj"
+                android:text="一键拨号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y28"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_hj"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginTop="@dimen/y65"
+                android:layout_toRightOf="@+id/img_hj"
+                android:text="一键呼叫客服"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/y24" />
+        </RelativeLayout>
+
+        <View
+            style="@style/view_height_style"
+            android:layout_marginBottom="@dimen/y50"
+            android:layout_marginTop="@dimen/y50" />
+
+        <RelativeLayout
+            android:id="@+id/layout_advisory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_zx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x40"
+                android:src="@mipmap/zx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_zx"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginTop="@dimen/y20"
+                android:layout_toRightOf="@+id/img_zx"
+                android:text="在线咨询"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y28"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_zx"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginTop="@dimen/y65"
+                android:layout_toRightOf="@+id/img_zx"
+                android:text="在线文字沟通"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/y24" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
