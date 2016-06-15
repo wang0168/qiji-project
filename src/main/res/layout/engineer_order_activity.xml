@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/RGB255_255_255">
+
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"></FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/containertabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/y120"></FrameLayout>
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:visibility="gone"></TabWidget>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y120"
+            android:background="@color/white">
+
+
+            <RadioGroup
+                android:id="@+id/RGRadio"
+                android:layout_width="@dimen/x330"
+                android:layout_height="@dimen/y120"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/takeBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/y60"
+                    android:layout_weight="1"
+                    android:background="@drawable/order_select"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:onClick="doClick"
+                    android:text="接单"
+                    android:textColor="@drawable/textcolor_wihte_blue"
+                    android:textSize="@dimen/y30" />
+
+                <RadioButton
+                    android:id="@+id/sendBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/y60"
+                    android:layout_weight="1"
+                    android:background="@drawable/order_select2"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:onClick="doClick"
+                    android:text="我的订单"
+                    android:textColor="@drawable/textcolor_wihte_blue"
+                    android:textSize="@dimen/y30" />
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/engineer_personal"
+                android:layout_width="@dimen/x52"
+                android:layout_height="@dimen/x52"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/x35"
+                android:layout_marginTop="@dimen/x38"
+                android:onClick="doClick"
+                android:src="@mipmap/grzx_eng" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y3"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/daohang_shape" />
+        </RelativeLayout>
+    </FrameLayout>
+
+
+</TabHost>

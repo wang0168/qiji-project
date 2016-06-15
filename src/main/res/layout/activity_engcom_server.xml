@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_item" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/server_sketch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y248"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginRight="@dimen/x20"
+                android:layout_marginTop="@dimen/y90"
+
+                android:gravity="top"
+                android:hint="服务简述"
+                android:padding="@dimen/y2"
+                android:paddingLeft="@dimen/x2" />
+            <!-- android:background="@drawable/edit_shape"-->
+            <tts.moudle.api.widget.GridViewInScrollView
+                android:id="@+id/gv_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginRight="@dimen/x20"
+                android:layout_marginTop="@dimen/y20"
+                android:numColumns="4" />
+
+            <ImageView
+                android:id="@+id/add_photo"
+                android:layout_width="@dimen/x128"
+                android:layout_height="@dimen/y128"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginTop="@dimen/y5" />
+            <!--android:src="@mipmap/sczp" -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x300"
+                android:layout_marginTop="@dimen/y100"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="@dimen/x300"
+                    android:layout_height="@dimen/y90"
+
+                    android:text="上传"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/y30" />
+                <!--android:background="@color/btm_cheng"-->
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

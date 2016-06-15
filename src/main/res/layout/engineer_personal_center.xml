@@ -1,0 +1,187 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/RGB238_238_238"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/title_lay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y195"
+            android:background="@color/white"
+            android:padding="@dimen/y16">
+
+
+            <ImageView
+                android:id="@+id/engineer_img"
+                android:layout_width="@dimen/x109"
+                android:layout_height="@dimen/y109"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/y28"
+                android:layout_marginLeft="@dimen/x28"
+                android:src="@drawable/ic_launcher" />
+
+            <LinearLayout
+                android:id="@+id/qqq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x34"
+                android:layout_marginTop="@dimen/y40"
+                android:layout_toRightOf="@+id/engineer_img">
+
+                <TextView
+                    android:id="@+id/engineer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="陈琳"
+                    android:textSize="@dimen/y30" />
+
+                <RatingBar
+                    android:id="@+id/engineer_evaluate"
+                    style="@android:style/Widget.Holo.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/engineer_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/qqq"
+                android:layout_marginLeft="@dimen/x34"
+                android:layout_marginTop="@dimen/y20"
+                android:layout_toRightOf="@+id/engineer_img"
+                android:text="13412345678"
+                android:textSize="@dimen/y30" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/y25"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/personal_lay"
+                style="@style/style_personal_center_item">
+
+                <ImageView
+                    style="@style/style_personal_center_left_icon"
+                    android:src="@mipmap/zl" />
+
+                <TextView
+                    style="@style/style_personal_center_textview"
+                    android:layout_marginLeft="@dimen/x65"
+                    android:text="我的认证" />
+
+                <ImageView style="@style/style_item_right_icon" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/x18"
+                android:background="@color/RGB198_198_198" />
+
+            <RelativeLayout
+                android:id="@+id/server_lay"
+                style="@style/style_personal_center_item">
+
+                <ImageView
+                    style="@style/style_personal_center_left_icon"
+                    android:src="@mipmap/tjj" />
+
+                <TextView
+                    style="@style/style_personal_center_textview"
+                    android:layout_marginLeft="@dimen/x65"
+                    android:text="服务统计" />
+
+                <ImageView style="@style/style_item_right_icon" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/x18"
+                android:background="@color/RGB198_198_198" />
+
+            <RelativeLayout
+                android:id="@+id/evaluate_lay"
+                style="@style/style_personal_center_item">
+
+                <ImageView
+                    style="@style/style_personal_center_left_icon"
+                    android:src="@mipmap/pl" />
+
+                <TextView
+                    style="@style/style_personal_center_textview"
+                    android:layout_marginLeft="@dimen/x65"
+                    android:text="我的评价" />
+
+                <ImageView style="@style/style_item_right_icon" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/engineer_notice"
+                style="@style/style_personal_center_item"
+                android:layout_marginTop="@dimen/y20">
+
+                <ImageView
+                    style="@style/style_personal_center_left_icon"
+                    android:src="@mipmap/tz" />
+
+                <TextView
+                    style="@style/style_personal_center_textview"
+                    android:layout_marginLeft="@dimen/x65"
+                    android:text="通知" />
+
+                <ImageView style="@style/style_item_right_icon" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/x18"
+                android:background="@color/RGB198_198_198" />
+
+            <RelativeLayout
+                android:id="@+id/evaluate_setting"
+                style="@style/style_personal_center_item">
+
+                <ImageView
+                    style="@style/style_personal_center_left_icon"
+                    android:src="@mipmap/fwsz_3x" />
+
+                <TextView
+                    style="@style/style_personal_center_textview"
+                    android:layout_marginLeft="@dimen/x65"
+                    android:text="系统设置" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/exit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y110"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="退出登录"
+        android:textColor="@color/themeFontsColor"
+        android:textSize="@dimen/y30" />
+</LinearLayout>
+

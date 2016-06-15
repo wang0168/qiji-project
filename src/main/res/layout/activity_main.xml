@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/RGB255_255_255">
+
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"></FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/containertabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/y120"></FrameLayout>
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:visibility="gone"></TabWidget>
+
+        <RadioGroup
+            android:id="@+id/home_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y120"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <tts.moudle.api.widget.TTSRadioButton
+                android:id="@+id/rb_home_bottombar_home"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/y90"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawablePadding="@dimen/y1"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="@drawable/textcolor_grey_yellow"
+                android:textSize="@dimen/y24"
+                app:heightSize="@dimen/y60"
+                app:ttsDrawableTop="@mipmap/sy"
+                app:ttsDrawableTop_check="@mipmap/sy_d"
+                app:widthSize="@dimen/x60" />
+
+            <tts.moudle.api.widget.TTSRadioButton
+                android:id="@+id/rb_home_bottombar_order"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/y90"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="@dimen/y1"
+                android:gravity="center"
+                android:text="我的订单"
+                android:textColor="@drawable/textcolor_grey_yellow"
+                android:textSize="@dimen/y24"
+                app:heightSize="@dimen/y60"
+                app:ttsDrawableTop="@mipmap/wddd"
+                app:ttsDrawableTop_check="@mipmap/wddd_d"
+                app:widthSize="@dimen/x60" />
+
+            <tts.moudle.api.widget.TTSRadioButton
+                android:id="@+id/rb_home_bottombar_my"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/y90"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="@dimen/y1"
+                android:gravity="center"
+                android:text="个人中心"
+                android:textColor="@drawable/textcolor_grey_yellow"
+                android:textSize="@dimen/y24"
+                app:heightSize="@dimen/y60"
+                app:ttsDrawableTop="@mipmap/grzx"
+                app:ttsDrawableTop_check="@mipmap/grzx_d"
+                app:widthSize="@dimen/x60" />
+
+        </RadioGroup>
+    </FrameLayout>
+
+</TabHost>

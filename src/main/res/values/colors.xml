@@ -8,4 +8,5 @@
     <color name="divide_bg_gray">#f5f4f9</color>
     <color name="text_gray">#7c7c7c</color>
     <color name="activity_background">#f4f3f8</color>
+    <color name="photo_bg">#dbdbdb</color>
 </resources>
