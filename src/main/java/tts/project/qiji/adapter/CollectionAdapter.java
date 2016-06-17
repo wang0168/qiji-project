@@ -66,7 +66,7 @@ public class CollectionAdapter extends TTSBaseAdapterRecyclerView<CollectionBean
 
     @Override
     public int getItemCount() {
-        return mData == null ? 0 : mData.size();
+        return 5;
     }
 
 //    @Override

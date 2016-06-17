@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/act_back"
+    android:background="@color/activity_background"
     android:orientation="vertical">
 
     <LinearLayout
@@ -22,9 +22,8 @@
                 android:layout_width="@dimen/y35"
                 android:layout_height="@dimen/y35"
                 android:layout_marginLeft="@dimen/x20"
-                android:layout_marginTop="@dimen/y20"
-                android:src="@mipmap/fwlx" />
-
+                android:layout_marginTop="@dimen/y20" />
+            <!-- android:src="@mipmap/fwlx"-->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -39,7 +38,7 @@
                 android:layout_marginRight="@dimen/fourteen_sp"
                 android:text="等待用户付款"
                 android:textSize="@dimen/y27"
-                android:visibility="gone"/>
+                android:visibility="gone" />
         </LinearLayout>
 
         <LinearLayout
@@ -58,7 +57,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/y80"
-            android:background="@color/act_back"
+            android:background="@color/activity_background"
             android:orientation="horizontal">
 
             <TextView
@@ -85,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/y80"
             android:layout_marginTop="@dimen/y10"
-            android:background="@color/act_back"
+            android:background="@color/activity_background"
             android:orientation="horizontal">
 
             <TextView
@@ -172,6 +171,7 @@
                 android:text="上门服务"
                 android:textSize="@dimen/y25"
                 android:visibility="gone" />
+
             <TextView
                 android:id="@+id/serivce_com"
                 android:layout_width="@dimen/x140"

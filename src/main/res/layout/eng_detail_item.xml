@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/act_back"
+    android:background="@color/activity_background"
     android:orientation="vertical">
 
     <LinearLayout
@@ -100,9 +100,8 @@
         <ImageView
             android:layout_width="@dimen/x50"
             android:layout_height="@dimen/y50"
-            android:layout_marginLeft="@dimen/x20"
-            android:background="@mipmap/pl" />
-
+            android:layout_marginLeft="@dimen/x20" />
+        <!--android:background="@mipmap/pl"-->
         <TextView
             android:id="@+id/evaluate_num"
             android:layout_width="wrap_content"

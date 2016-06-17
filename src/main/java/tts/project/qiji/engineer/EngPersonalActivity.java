@@ -3,30 +3,23 @@ package tts.project.qiji.engineer;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RatingBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import java.util.ArrayList;
+import java.util.List;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
+import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.bean.MenuItemBean;
-import tts.moudle.api.moudle.AccountMoudle;
-import tts.moudle.api.utils.CustomUtils;
-import tts.moudle.api.utils.TextUtils;
-import tts.project.qiji.AppManager;
+import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
-import tts.project.qiji.login.LoginActivity;
+import tts.project.qiji.activity.MyCollectionActivity;
+import tts.project.qiji.adapter.MeItemAdapter;
+import tts.project.qiji.bean.MeItemBean;
 
 
 /**
@@ -35,48 +28,8 @@ import tts.project.qiji.login.LoginActivity;
 public class EngPersonalActivity extends BaseActivity {
 
 
-    @Bind(R.id.left_title)
-    TextView leftTitle;
-    @Bind(R.id.iv)
-    ImageView iv;
-    @Bind(R.id.iconImg)
-    Button iconImg;
-    @Bind(R.id.subTitle)
-    TextView subTitle;
-    @Bind(R.id.RLBtn)
-    RelativeLayout RLBtn;
-    @Bind(R.id.titleTxt)
-    TextView titleTxt;
-    @Bind(R.id.rightTxt)
-    TextView rightTxt;
-    @Bind(R.id.menuList)
-    LinearLayout menuList;
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
-    @Bind(R.id.engineer_img)
-    ImageView engineerImg;
-    @Bind(R.id.engineer_name)
-    TextView engineerName;
-    @Bind(R.id.engineer_evaluate)
-    RatingBar engineerEvaluate;
-    @Bind(R.id.qqq)
-    LinearLayout qqq;
-    @Bind(R.id.engineer_phone)
-    TextView engineerPhone;
-    @Bind(R.id.title_lay)
-    RelativeLayout titleLay;
-    @Bind(R.id.personal_lay)
-    RelativeLayout personalLay;
-    @Bind(R.id.server_lay)
-    RelativeLayout serverLay;
-    @Bind(R.id.evaluate_lay)
-    RelativeLayout evaluateLay;
-    @Bind(R.id.engineer_notice)
-    RelativeLayout engineerNotice;
-    @Bind(R.id.evaluate_setting)
-    RelativeLayout evaluateSetting;
-    @Bind(R.id.exit_btn)
-    TextView exitBtn;
+    private View header;
+    private RecyclerViewAutoRefreshUpgraded mList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,59 +41,54 @@ public class EngPersonalActivity extends BaseActivity {
         bean.setTitle("我的订单");
         bean.setTextColor(Color.parseColor("#f9bf54"));
         addMenu(bean);
-        initData();
+        findAllView();
+        adapter();
     }
 
-    private void initData() {
-        engineerEvaluate.setRating(Float.parseFloat(AccountMoudle.getInstance().getUserInfo().getXing()));
-        Glide.with(this).load(AccountMoudle.getInstance().getUserInfo().getPhoto()).into(engineerImg);
-        engineerName.setText(TextUtils.isEmpty(AccountMoudle.getInstance().getUserInfo().getNickname()) ? "" : AccountMoudle.getInstance().getUserInfo().getNickname());
-        engineerPhone.setText(TextUtils.isEmpty(AccountMoudle.getInstance().getUserInfo().getMobile()) ? "" : AccountMoudle.getInstance().getUserInfo().getMobile());
+    private void adapter() {
+        mList.setLayoutManager(new LinearLayoutManager(this));
+//        mList.addItemDecoration(new RecyclerViewGridItemDecoration(getActivity()));
+        final List<MeItemBean> data = new ArrayList<>();
+        data.add(new MeItemBean(R.mipmap.hj_icon, "一键呼叫", true, true, false));
+        data.add(new MeItemBean(R.mipmap.zx_icon, "在线咨询", true, true, false));
+        data.add(new MeItemBean(R.mipmap.rz_icon, "我的认证", true, false, true));
+        data.add(new MeItemBean(R.mipmap.sc_icon, "我的收藏", true, true, false));
+        data.add(new MeItemBean(R.mipmap.pl_icon, "我的评论", true, false, true));
+        data.add(new MeItemBean(R.mipmap.sz_icon, "设置", true, false, false));
+        MeItemAdapter adapter = new MeItemAdapter(this, data);
+        adapter.setOnItemClickListener(new TTSBaseAdapterRecyclerView.OnItemClickListener() {
+            @Override
+            public void onClick(View itemView, int position) {
+                if ("我的认证".equals(data.get(position).getItem_name())) {
+                    startActivity(new Intent(EngPersonalActivity.this, EngPersonalDataActivity.class));
+                } else if ("我的收藏".equals(data.get(position).getItem_name())) {
+                    startActivity(new Intent(EngPersonalActivity.this, MyCollectionActivity.class));
+                } else if ("我的评论".equals(data.get(position).getItem_name())) {
+                    startActivity(new Intent(EngPersonalActivity.this, MyEvaluateActivity.class));
+                }
+            }
+
+            @Override
+            public void onLongClick(View itemView, int position) {
+
+            }
+        });
+        mList.setAdapter(adapter);
     }
 
-    @OnClick({R.id.exit_btn, R.id.engineer_img, R.id.personal_lay, R.id.server_lay, R.id.evaluate_lay, R.id.engineer_notice, R.id.evaluate_setting})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.engineer_img:
-                startActivity(new Intent(this, EngPersonalDataActivity.class));
-                break;
-            case R.id.personal_lay:
-                startActivity(new Intent(this, EngPersonalDataActivity.class));
-                break;
-            case R.id.server_lay:
-                break;
-            case R.id.evaluate_lay:
-                startActivity(new Intent(this, MyEvaluateActivity.class));
-                break;
-            case R.id.engineer_notice:
-                break;
-            case R.id.evaluate_setting:
-                break;
-            case R.id.exit_btn:
-                new AlertDialog(this).builder().setTitle("提示")
-                        .setMsg("是否确认退出")
-                        .setPositiveButton("确认", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                AppManager.getAppManager().finishAllActivity();
-                                startActivity(new Intent(EngPersonalActivity.this, LoginActivity.class).putExtra("login", "1"));
-                            }
-                        }).setNegativeButton("取消", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                    }
-                }).show();
-                break;
-        }
+    private void findAllView() {
+        header = LayoutInflater.from(this).inflate(R.layout.layout_header_personal, null, false);
+        mList = (RecyclerViewAutoRefreshUpgraded) findViewById(R.id.mlist);
+        mList.addHeader(header);
     }
 
     @Override
     protected void doMenu(MenuItemBean menuItemBean) {
         super.doMenu(menuItemBean);
-        if (!"1".equals(AccountMoudle.getInstance().getUserInfo().getIs_shenhe())) {
-            CustomUtils.showTipShort(this, "审核还未通过，无法接取订单");
-            return;
-        }
+//        if (!"1".equals(AccountMoudle.getInstance().getUserInfo().getIs_shenhe())) {
+//            CustomUtils.showTipShort(this, "审核还未通过，无法接取订单");
+//            return;
+//        }
         startActivity(new Intent(this, EngineerOrderActivity.class));
     }
 }

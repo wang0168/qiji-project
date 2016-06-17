@@ -12,6 +12,7 @@ import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
+import tts.project.qiji.adapter.EvaluateAdapter;
 
 
 public class MyEvaluateActivity extends BaseActivity {
@@ -29,13 +30,13 @@ public class MyEvaluateActivity extends BaseActivity {
 
 
     private void initData() {
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         list.add("1111");
         list.add("2222");
         list.add("3333");
         list.add("3333");
-//        EvaluateAdapter adapter = new EvaluateAdapter(this, list);
-//        list_view.setAdapter(adapter);
+        EvaluateAdapter adapter = new EvaluateAdapter(this, list);
+        list_view.setAdapter(adapter);
 
     }
 

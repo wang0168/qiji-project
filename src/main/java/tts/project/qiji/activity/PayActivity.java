@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
 import com.pingplusplus.android.Pingpp;
@@ -21,11 +21,13 @@ import tts.moudle.api.utils.TextUtils;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
 
-
+/**
+ * 支付界面
+ */
 public class PayActivity extends BaseActivity implements View.OnClickListener {
     private CheckBox mWeixin, mZhifubao;
     private LinearLayout pay_weixin_lay, pay_zhifubao_lay;
-    private TextView pay_affirm;
+    private Button action_pay;
     /**
      * 微信支付渠道
      */
@@ -68,8 +70,8 @@ public class PayActivity extends BaseActivity implements View.OnClickListener {
         pay_zhifubao_lay.setOnClickListener(this);
         mWeixin = (CheckBox) findViewById(R.id.pay_weixin);
         mZhifubao = (CheckBox) findViewById(R.id.pay_zhifubao);
-//        pay_affirm = (TextView) findViewById(R.id.pay_affirm);
-        pay_affirm.setOnClickListener(this);
+        action_pay = (Button) findViewById(R.id.action_pay);
+        action_pay.setOnClickListener(this);
     }
 
     @Override

@@ -1,8 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+
     tools:context="tts.project.qiji.HomeFragment">
 
     <include layout="@layout/toolbar_item" />
@@ -10,5 +11,6 @@
     <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
         android:id="@+id/mlist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded>
+        android:layout_height="match_parent"
+        android:background="@color/activity_background"></tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded>
 </LinearLayout>

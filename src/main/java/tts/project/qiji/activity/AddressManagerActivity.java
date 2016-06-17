@@ -23,6 +23,9 @@ import tts.project.qiji.R;
 import tts.project.qiji.adapter.AddressManagerAdapter;
 import tts.project.qiji.bean.AddressBean;
 
+/**
+ * 地址管理
+ */
 
 public class AddressManagerActivity extends BaseActivity implements View.OnClickListener {
     private RecyclerViewAutoRefreshUpgraded list;

@@ -14,6 +14,7 @@ import java.util.List;
 
 import tts.moudle.api.adapter.FragmentViewPagerAdapter;
 import tts.moudle.api.bean.BarBean;
+import tts.project.qiji.fragment.OrderListFragment;
 
 /**
  * Created by shanghang on 2016/6/7.
@@ -34,7 +35,7 @@ public class OrderFragment extends BaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        setTitle(new BarBean().setMsg("我的订单"));
+        setTitle(new BarBean().setMsg("我的订单").setIsRemoveBack(true));
         findAllView();
         initTab();
     }
@@ -46,6 +47,10 @@ public class OrderFragment extends BaseFragment {
         titlelist.add("待服务");
         titlelist.add("待确认");
         titlelist.add("待完成");
+        fragments.add(OrderListFragment.newInstance(null, null));
+        fragments.add(OrderListFragment.newInstance(null, null));
+        fragments.add(OrderListFragment.newInstance(null, null));
+        fragments.add(OrderListFragment.newInstance(null, null));
         adapter = new FragmentViewPagerAdapter(getChildFragmentManager(), fragments,
                 titlelist);
         viewpager.setAdapter(adapter);

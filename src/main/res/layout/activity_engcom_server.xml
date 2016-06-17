@@ -21,15 +21,16 @@
                 android:id="@+id/server_sketch"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/y248"
+
                 android:layout_marginLeft="@dimen/x20"
                 android:layout_marginRight="@dimen/x20"
                 android:layout_marginTop="@dimen/y90"
-
+                android:background="@drawable/edit_shape"
                 android:gravity="top"
                 android:hint="服务简述"
-                android:padding="@dimen/y2"
-                android:paddingLeft="@dimen/x2" />
-            <!-- android:background="@drawable/edit_shape"-->
+                android:padding="@dimen/y10"
+              />
+
             <tts.moudle.api.widget.GridViewInScrollView
                 android:id="@+id/gv_photo"
                 android:layout_width="wrap_content"
@@ -44,8 +45,8 @@
                 android:layout_width="@dimen/x128"
                 android:layout_height="@dimen/y128"
                 android:layout_marginLeft="@dimen/x20"
-                android:layout_marginTop="@dimen/y5" />
-            <!--android:src="@mipmap/sczp" -->
+                android:layout_marginTop="@dimen/y5"
+                android:src="@mipmap/scc" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,11 +59,11 @@
                     android:id="@+id/submit"
                     android:layout_width="@dimen/x300"
                     android:layout_height="@dimen/y90"
-
+                    android:background="@color/colorPrimary"
                     android:text="上传"
                     android:textColor="@color/white"
                     android:textSize="@dimen/y30" />
-                <!--android:background="@color/btm_cheng"-->
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -12,6 +12,8 @@ import tts.moudle.api.TTSBaseFragment;
 public class BaseFragment extends TTSBaseFragment {
     public final int getData = 1;
     public final int loadMore = 4;
+    public final int cancel = 5;
+
 
     @Override
     protected void doPendingFailed(int index, String error) {

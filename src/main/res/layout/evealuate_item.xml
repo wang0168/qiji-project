@@ -5,40 +5,40 @@
     android:gravity="center_vertical"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal">-->
 
-        <tts.moudle.api.widget.CircleImageView
-            android:id="@+id/video_icon"
-            android:layout_width="@dimen/x67"
-            android:layout_height="@dimen/y67"
-            android:layout_marginBottom="@dimen/y24"
-            android:layout_marginLeft="@dimen/x30"
-            android:layout_marginTop="@dimen/y24"
-            android:src="@mipmap/applogo" />
+        <!--<tts.moudle.api.widget.CircleImageView-->
+            <!--android:id="@+id/video_icon"-->
+            <!--android:layout_width="@dimen/x67"-->
+            <!--android:layout_height="@dimen/y67"-->
+            <!--android:layout_marginBottom="@dimen/y24"-->
+            <!--android:layout_marginLeft="@dimen/x30"-->
+            <!--android:layout_marginTop="@dimen/y24"-->
+            <!--android:src="@mipmap/applogo" />-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/x20"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="卢萨卡" />
+        <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="@dimen/x20"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="卢萨卡" />-->
 
-        <RatingBar
-            style="@android:style/Widget.Holo.Light.RatingBar.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/x30" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/x30"
-            android:text="1小时前"/>
-    </LinearLayout>
+        <!--<RatingBar-->
+            <!--style="@android:style/Widget.Holo.Light.RatingBar.Small"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/x30" />-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/x30"-->
+            <!--android:text="1小时前"/>-->
+    <!--</LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                 android:layout_alignParentLeft="true"
                 android:gravity="center_vertical"
                 android:text="查看服务"
-                android:textColor="@color/RGB255_59_48"
+                android:textColor="@color/text_gray"
                 android:textSize="@dimen/y30" />
 
             <TextView
@@ -85,7 +85,7 @@
                 android:layout_marginRight="@dimen/x30"
                 android:gravity="center_vertical"
                 android:text="回复"
-                android:textColor="@color/btm_cheng"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/y30" />
 
         </RelativeLayout>

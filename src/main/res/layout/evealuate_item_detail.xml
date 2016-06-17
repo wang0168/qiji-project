@@ -17,9 +17,8 @@
             android:layout_height="@dimen/y67"
             android:layout_marginBottom="@dimen/y24"
             android:layout_marginLeft="@dimen/x30"
-            android:layout_marginTop="@dimen/y24"
-            android:src="@mipmap/applogo" />
-
+            android:layout_marginTop="@dimen/y24" />
+        <!-- android:src="@mipmap/applogo"-->
         <TextView
             android:id="@+id/name"
             android:layout_width="0dp"

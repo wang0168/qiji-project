@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/act_back"
-    android:orientation="vertical"
-    tools:context=".activity.ProvinceChooseActivity">
+    android:background="@color/activity_background"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,11 +23,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
+                <!-- android:background="@mipmap/bj"-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/y200"
-                    android:background="@mipmap/bj"
+
                     android:orientation="vertical">
 
                     <TextView
@@ -146,9 +145,8 @@
                             android:layout_width="@dimen/x40"
                             android:layout_height="@dimen/y40"
                             android:layout_marginLeft="@dimen/x10"
-                            android:layout_marginTop="@dimen/y5"
-                            android:src="@mipmap/location" />
-
+                            android:layout_marginTop="@dimen/y5" />
+                        <!--android:src="@mipmap/location"-->
                         <TextView
                             android:id="@+id/aaaa"
                             style="@style/style_text"
@@ -240,9 +238,8 @@
                             android:layout_width="@dimen/y35"
                             android:layout_height="@dimen/y35"
                             android:layout_marginLeft="@dimen/x20"
-                            android:layout_marginTop="@dimen/y20"
-                            android:src="@mipmap/fwlx" />
-
+                            android:layout_marginTop="@dimen/y20" />
+                        <!--android:src="@mipmap/fwlx"-->
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"

@@ -11,12 +11,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@null">
 
         <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
             android:id="@+id/mlist"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
         <TextView
             android:id="@+id/tijiao"

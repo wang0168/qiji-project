@@ -20,7 +20,9 @@ import tts.project.qiji.R;
 import tts.project.qiji.adapter.CollectionAdapter;
 import tts.project.qiji.bean.CollectionBean;
 
-
+/**
+ * 我的收藏
+ */
 public class MyCollectionActivity extends BaseActivity {
     private RecyclerViewAutoRefreshUpgraded list;
     private CollectionAdapter adapter;

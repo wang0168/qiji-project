@@ -32,14 +32,23 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y120"
-            android:background="@color/white">
+            android:layout_height="@dimen/y110"
+            android:background="@color/colorPrimary">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/y60"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x20"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@mipmap/xia"
+                android:gravity="center"
+                android:text="上海" />
 
             <RadioGroup
                 android:id="@+id/RGRadio"
-                android:layout_width="@dimen/x330"
-                android:layout_height="@dimen/y120"
+                android:layout_width="@dimen/x400"
+                android:layout_height="@dimen/y90"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -54,8 +63,8 @@
                     android:checked="true"
                     android:gravity="center"
                     android:onClick="doClick"
-                    android:text="接单"
-                    android:textColor="@drawable/textcolor_wihte_blue"
+                    android:text="待接订单"
+                    android:textColor="@drawable/textcolor_wihte_black"
                     android:textSize="@dimen/y30" />
 
                 <RadioButton
@@ -67,26 +76,21 @@
                     android:button="@null"
                     android:gravity="center"
                     android:onClick="doClick"
-                    android:text="我的订单"
-                    android:textColor="@drawable/textcolor_wihte_blue"
+                    android:text="已接订单"
+                    android:textColor="@drawable/textcolor_wihte_black"
                     android:textSize="@dimen/y30" />
             </RadioGroup>
 
             <ImageView
                 android:id="@+id/engineer_personal"
-                android:layout_width="@dimen/x52"
-                android:layout_height="@dimen/x52"
+                android:layout_width="@dimen/x60"
+                android:layout_height="@dimen/x60"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/x35"
-                android:layout_marginTop="@dimen/x38"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/x20"
                 android:onClick="doClick"
                 android:src="@mipmap/grzx_eng" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/y3"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/daohang_shape" />
         </RelativeLayout>
     </FrameLayout>
 

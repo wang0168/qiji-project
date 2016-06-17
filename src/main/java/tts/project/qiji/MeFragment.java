@@ -16,8 +16,11 @@ import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.activity.AddressManagerActivity;
 import tts.project.qiji.activity.FeedBackActivity;
+import tts.project.qiji.activity.MyCollectionActivity;
+import tts.project.qiji.activity.PayActivity;
 import tts.project.qiji.adapter.MeItemAdapter;
 import tts.project.qiji.bean.MeItemBean;
+import tts.project.qiji.engineer.EngineerOrderActivity;
 
 /**
  * Created by shanghang on 2016/6/7.
@@ -37,7 +40,7 @@ public class MeFragment extends BaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        setTitle(new BarBean().setMsg("用户版").setSubTitle("上海"));
+        setTitle(new BarBean().setMsg("个人中心").setIsRemoveBack(true));
         findAllView();
         adapter();
     }
@@ -62,6 +65,12 @@ public class MeFragment extends BaseFragment {
                     startActivity(new Intent(getActivity(), AddressManagerActivity.class));
                 } else if ("意见反馈".equals(data.get(position).getItem_name())) {
                     startActivity(new Intent(getActivity(), FeedBackActivity.class));
+                } else if ("服务协议条款".equals(data.get(position).getItem_name())) {
+                    startActivity(new Intent(getActivity(), EngineerOrderActivity.class));
+                } else if ("清理缓存".equals(data.get(position).getItem_name())) {
+                    startActivity(new Intent(getActivity(), PayActivity.class));
+                } else if ("我的收藏".equals(data.get(position).getItem_name())) {
+                    startActivity(new Intent(getActivity(), MyCollectionActivity.class));
                 }
             }
 
@@ -74,8 +83,8 @@ public class MeFragment extends BaseFragment {
 
     private void findAllView() {
 
-//        header = LayoutInflater.from(getActivity()).inflate(R.layout.banner_slider_item, null, false);
+        header = LayoutInflater.from(getActivity()).inflate(R.layout.layout_header_personal, null, false);
         mList = (RecyclerViewAutoRefreshUpgraded) rootView.findViewById(R.id.mlist);
-//        mList.addHeader(header);
+        mList.addHeader(header);
     }
 }

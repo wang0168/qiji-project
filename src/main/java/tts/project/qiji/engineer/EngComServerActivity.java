@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.unionpay.tsmservice.data.Constant;
 import com.zhy.http.okhttp.builder.PostFormBuilder;
 
 import java.io.File;
@@ -24,13 +23,13 @@ import tts.moudle.api.Host;
 import tts.moudle.api.activity.CustomPictureSelectorView;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.bean.ImgBean;
-import tts.moudle.api.moudle.AccountMoudle;
 import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.utils.ImageFactory;
 import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.GridViewInScrollView;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
+import tts.project.qiji.adapter.EngImgAdapter;
 
 
 /**
@@ -75,7 +74,7 @@ public class EngComServerActivity extends BaseActivity {
                     CustomUtils.showTipShort(this, "请简要叙述服务内容");
                     return;
                 }
-                startRequestData(Constant.init_ok);
+                startRequestData(getData);
                 break;
         }
     }
@@ -86,14 +85,14 @@ public class EngComServerActivity extends BaseActivity {
         showTipMsg("上传中。。。");
         Map<String, String> params = new HashMap<>();
         List<PostFormBuilder.FileInput> files = new ArrayList<>();
-        params.put("member_id", AccountMoudle.getInstance().getUserInfo().getMember_id());
-        params.put("token", AccountMoudle.getInstance().getUserInfo().getMem_token());
+//        params.put("member_id", AccountMoudle.getInstance().getUserBean().getMember_id());
+//        params.put("token", AccountMoudle.getInstance().getUserBean().getMem_token());
         params.put("order_id", getIntent().getStringExtra("order_id"));
         params.put("jianshu", serverSketch.getText().toString().trim());
         for (int i = 0; i < imgs.size(); i++) {
             files.add(new PostFormBuilder.FileInput("ss[" + i + "]", "img.jpg", new File(imgs.get(i))));
         }
-        uploadFile(Constant.init_ok, Host.hostUrl + "api.php?m=Api&c=Engineer&a=fwtrue", params, files);
+        uploadFile(getData, Host.hostUrl + "api.php?m=Api&c=Engineer&a=fwtrue", params, files);
     }
 
     @Override

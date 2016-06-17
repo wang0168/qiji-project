@@ -16,6 +16,7 @@ public class MeItemBean {
         this.isRight = isRight;
         this.isline = isline;
         this.iswidth = iswidth;
+
     }
 
     public int getLeft_img() {

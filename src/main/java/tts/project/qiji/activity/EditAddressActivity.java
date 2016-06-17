@@ -23,6 +23,9 @@ import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.AddressBean;
 
+/**
+ * 编辑地址
+ */
 
 public class EditAddressActivity extends BaseActivity implements OnClickListener {
 
@@ -106,8 +109,8 @@ public class EditAddressActivity extends BaseActivity implements OnClickListener
         switch (index) {
             case submitData:
                 params = new ArrayMap<>();
-                params.put("member_id",   "");
-                params.put("user_token",  "");
+                params.put("member_id", "");
+                params.put("user_token", "");
                 if (TextUtils.isEmpty(editPhone.getText().toString())) {
                     CustomUtils.showTipShort(this, "电话号码不能为空");
                     return;

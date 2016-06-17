@@ -1,6 +1,7 @@
 package tts.project.qiji;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,9 +13,11 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.moudle.api.widget.RecyclerViewGridItemDecoration;
+import tts.project.qiji.activity.CallServiceActivity;
 import tts.project.qiji.adapter.HomeSortAdapter;
 import tts.project.qiji.bean.HomeSortBean;
 
@@ -92,6 +95,17 @@ public class HomeFragment extends BaseFragment {
             data.add(new HomeSortBean("网络设备" + i, null, R.mipmap.wlsb));
         }
         HomeSortAdapter homeSortAdapter = new HomeSortAdapter(getActivity(), data);
+        homeSortAdapter.setOnItemClickListener(new TTSBaseAdapterRecyclerView.OnItemClickListener() {
+            @Override
+            public void onClick(View itemView, int position) {
+                startActivity(new Intent(getActivity(), CallServiceActivity.class));
+            }
+
+            @Override
+            public void onLongClick(View itemView, int position) {
+
+            }
+        });
         mList.setAdapter(homeSortAdapter);
     }
 
