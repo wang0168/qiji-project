@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y80"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y97"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_marginRight="@dimen/x20"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="@dimen/y37"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x15"
+                android:text="手机号"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <EditText
+                android:id="@+id/ETMobile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:editable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="请输入您的手机号"
+                android:paddingLeft="@dimen/x15"
+                android:textColor="@color/RGB80_80_80"
+                android:textColorHint="@color/RGB136_136_136"
+                android:textSize="@dimen/y30" />
+        </LinearLayout>
+
+        <View
+            style="@style/view_width_style"
+            android:layout_marginLeft="@dimen/x30" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y97"
+            android:layout_marginLeft="@dimen/y20"
+            android:layout_marginRight="@dimen/y20"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="@dimen/y37"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x15"
+                android:text="验证码"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <EditText
+                android:id="@+id/verification"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:editable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="请输入您的验证码"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/x20"
+                android:textColor="@color/RGB80_80_80"
+                android:textColorHint="@color/RGB136_136_136"
+                android:textSize="@dimen/y30" />
+
+            <Button
+                android:id="@+id/register_obtain"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/y68"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:paddingLeft="@dimen/x6"
+                android:paddingRight="@dimen/x6"
+                android:text="获取验证码"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <View
+            style="@style/view_width_style"
+            android:layout_marginLeft="@dimen/x30" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y97"
+            android:layout_marginLeft="@dimen/y20"
+            android:layout_marginRight="@dimen/y20"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="@dimen/y37"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x15"
+                android:text="密码"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <EditText
+                android:id="@+id/ETPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:editable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="请输入您的密码"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/x20"
+                android:textColor="@color/RGB80_80_80"
+                android:textColorHint="@color/RGB136_136_136"
+                android:textSize="@dimen/y30" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y70"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:layout_marginTop="@dimen/y40"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/personal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_sign_state"
+            android:button="@null"
+            android:gravity="center"
+            android:text="个人" />
+
+        <RadioButton
+            android:id="@+id/enterprise"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_sign_state"
+            android:button="@null"
+            android:gravity="center"
+            android:text="企业" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y80"
+        android:layout_marginLeft="@dimen/x50"
+        android:layout_marginRight="@dimen/x50"
+        android:layout_marginTop="@dimen/y200"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/y40" />
+
+</LinearLayout>

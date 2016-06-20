@@ -10,21 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".activity.AddressManagerActivity" />
+        <activity android:name=".activity.EditAddressActivity" />
+        <activity android:name=".activity.FeedBackActivity" />
+        <activity android:name=".activity.CallServiceActivity" />
+        <activity android:name=".activity.ServiceConfirmActivity" />
+        <activity android:name=".login.FindPasswordActivity" />
+        <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AddressManagerActivity" />
-        <activity android:name=".activity.EditAddressActivity" />
-        <activity android:name=".activity.FeedBackActivity" />
-        <activity android:name=".activity.CallServiceActivity" />
-        <activity android:name=".activity.ServiceConfirmActivity"></activity>
-        <activity android:name=".login.FindPasswordActivity" />
-        <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.RegisterActivity" />
         <activity android:name=".login.RegisterIdentityActivity" />
+        <activity android:name=".engineer.EngineerOrderActivity" />
+        <activity android:name=".engineer.EngComServerActivity" />
+        <activity android:name=".engineer.EngPersonalActivity" />
+        <activity android:name=".activity.MyCollectionActivity" />
+        <activity android:name=".activity.PayActivity" />
+        <activity android:name=".engineer.EngPersonalDataActivity" />
+        <activity android:name=".engineer.MyEvaluateActivity" />
+        <activity android:name=".activity.ServiceTypeActivity"></activity>
     </application>
 
 </manifest>

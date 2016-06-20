@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <tts.moudle.api.widget.CircleImageView
+            android:id="@+id/video_icon"
+            android:layout_width="@dimen/x67"
+            android:layout_height="@dimen/y67"
+            android:layout_marginBottom="@dimen/y24"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/y24" />
+        <!-- android:src="@mipmap/applogo"-->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="卢萨卡" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x30"
+            android:text="1小时前"
+            android:textColor="@color/black"
+            android:textSize="@dimen/y30" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/evaluate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x117"
+            android:layout_marginRight="@dimen/x30"
+            android:layout_marginTop="@dimen/y10"
+            android:text="评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论"
+            android:textSize="@dimen/y30" />
+
+        <ListView
+            android:id="@+id/evealuate_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</LinearLayout>

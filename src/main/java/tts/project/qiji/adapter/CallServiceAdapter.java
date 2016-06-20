@@ -35,9 +35,9 @@ public class CallServiceAdapter extends TTSBaseAdapterRecyclerView<HomeSortBean>
     public void onBindViewHolder(TTSBaseAdapterRecyclerView.ViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
         ViewHolder viewHolder = (ViewHolder) holder;
-        viewHolder.iconImg.setBackgroundResource(mData.get(position).getImgId());
-        viewHolder.service_name.setText(mData.get(position).getName());
-        viewHolder.service_price.setText(mData.get(position).getName());
+//        viewHolder.iconImg.setBackgroundResource(mData.get(position).getImgId());
+//        viewHolder.service_name.setText(mData.get(position).getName());
+//        viewHolder.service_price.setText(mData.get(position).getName());
     }
 
     @Override

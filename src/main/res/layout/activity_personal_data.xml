@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/toolbar_item" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null">
+
+        <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
+            android:id="@+id/mlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tijiao"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y75"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/y60"
+            android:layout_marginLeft="@dimen/x75"
+            android:layout_marginRight="@dimen/x75"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="提交审核"
+            android:textColor="@color/white"
+            android:textSize="@dimen/y30"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+
+</LinearLayout>

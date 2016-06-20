@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/toolbar_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y201"
+        android:layout_marginLeft="@dimen/x24"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y39"
+            android:text="用户满意度"
+            android:textSize="@dimen/y30" />
+
+        <RatingBar
+            style="@android:style/Widget.Holo.Light.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y42" />
+    </LinearLayout>
+
+    <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
+        android:id="@+id/evealuate_recy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/divider_list"
+        android:dividerHeight="@dimen/y2" />
+</LinearLayout>

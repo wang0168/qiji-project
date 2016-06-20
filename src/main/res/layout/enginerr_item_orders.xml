@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y20"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y50"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/y35"
+                android:layout_height="@dimen/y35"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginTop="@dimen/y20" />
+            <!-- android:src="@mipmap/fwlx"-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="服务需求"
+                android:textSize="@dimen/y30" />
+
+            <TextView
+                android:id="@+id/order_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/fourteen_sp"
+                android:text="等待用户付款"
+                android:textSize="@dimen/y27"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y100"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <tts.moudle.api.widget.HorizontalListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y60"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y80"
+            android:background="@color/activity_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x20"
+                android:gravity="center_vertical"
+                android:text="服务时间："
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <TextView
+                android:id="@+id/serivce_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x20"
+                android:gravity="center_vertical"
+                android:text="2016/04/18 星期五 上午"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y80"
+            android:layout_marginTop="@dimen/y10"
+            android:background="@color/activity_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x20"
+                android:gravity="center_vertical"
+                android:text="服务地址："
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <TextView
+                android:id="@+id/serivce_address"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x20"
+                android:gravity="center_vertical"
+                android:text="上海市浦东新区长青路507号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y90"
+            android:layout_marginTop="@dimen/y10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x20"
+                android:gravity="center_vertical"
+                android:text="维修费："
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <TextView
+                android:id="@+id/server_cost"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="￥1000"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <TextView
+                android:id="@+id/orders"
+                android:layout_width="@dimen/x140"
+                android:layout_height="@dimen/y58"
+                android:layout_marginRight="@dimen/x25"
+                android:background="@drawable/opinion_feedback_select"
+                android:gravity="center"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x10"
+                android:text="接单"
+                android:textSize="@dimen/y25"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/navigation"
+                android:layout_width="@dimen/x140"
+                android:layout_height="@dimen/y58"
+                android:layout_marginRight="@dimen/x25"
+                android:background="@drawable/opinion_feedback_select"
+                android:gravity="center"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x10"
+                android:text="导航"
+                android:textSize="@dimen/y25"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/serivce_sh"
+                android:layout_width="@dimen/x140"
+                android:layout_height="@dimen/y58"
+                android:layout_marginRight="@dimen/x25"
+                android:background="@drawable/opinion_feedback_select"
+                android:gravity="center"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x10"
+                android:text="上门服务"
+                android:textSize="@dimen/y25"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/serivce_com"
+                android:layout_width="@dimen/x140"
+                android:layout_height="@dimen/y58"
+                android:layout_marginRight="@dimen/x25"
+                android:background="@drawable/opinion_feedback_select"
+                android:gravity="center"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x10"
+                android:text="确认服务"
+                android:textSize="@dimen/y25"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/serivce_over"
+                android:layout_width="@dimen/x140"
+                android:layout_height="@dimen/y58"
+                android:layout_marginRight="@dimen/x25"
+                android:background="@drawable/opinion_feedback_select"
+                android:gravity="center"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x10"
+                android:text="待确认"
+                android:textSize="@dimen/y25"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/serivce_off"
+                android:layout_width="@dimen/x140"
+                android:layout_height="@dimen/y58"
+                android:layout_marginRight="@dimen/x25"
+                android:background="@drawable/opinion_feedback_select"
+                android:gravity="center"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x10"
+                android:text="已完成"
+                android:textSize="@dimen/y25"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

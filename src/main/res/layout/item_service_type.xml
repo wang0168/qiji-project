@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/type_class"
+        android:layout_width="@dimen/x120"
+        android:layout_height="@dimen/y50"
+
+        android:background="@drawable/selector_service_type"
+        android:button="@null"
+        android:checked="true"
+        android:gravity="center"
+        android:textColor="@drawable/textcolor_grey_white"
+        android:text="防火墙" />
+
+</LinearLayout>

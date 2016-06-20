@@ -5,6 +5,10 @@ import android.os.Bundle;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
 
+/**
+ * 确认服务
+ *
+ */
 public class ServiceConfirmActivity extends BaseActivity {
 
     @Override
