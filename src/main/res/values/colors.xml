@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#fdb029</color>
-    <color name="colorPrimaryDark">#e29e27</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="home_botttom_bar_text_color">#fdb029</color>
+    <color name="colorPrimary">#405364</color>
+    <color name="colorPrimaryDark">#334250</color>
+    <color name="colorAccent">#1fcfcc</color>
     <color name="RGB180_180_180">#b4b4b4</color>
     <color name="divide_bg_gray">#f5f4f9</color>
     <color name="text_gray">#7c7c7c</color>
-    <color name="activity_background">#f4f3f8</color>
+    <color name="activity_background">#eceff2</color>
     <color name="photo_bg">#dbdbdb</color>
     <color name="RGB238_238_238">#eeeeee</color>
 </resources>

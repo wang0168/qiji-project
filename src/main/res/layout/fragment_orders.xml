@@ -5,7 +5,6 @@
     android:orientation="vertical"
     tools:context="tts.project.qiji.HomeFragment">
 
-    <include layout="@layout/toolbar_item" />
 
     <android.support.design.widget.TabLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/tablayout"

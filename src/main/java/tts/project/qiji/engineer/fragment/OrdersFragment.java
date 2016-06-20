@@ -33,7 +33,7 @@ public class OrdersFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return setContentView(R.layout.fragment_order, inflater, container, savedInstanceState);
+        return setContentView(R.layout.fragment_orders, inflater, container, savedInstanceState);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class OrdersFragment extends BaseFragment {
         fragmentList.add(OrderListFragment.newInstance(null, null));
         fragmentList.add(OrderListFragment.newInstance(null, null));
         tablayout = (TabLayout) rootView.findViewById(R.id.tablayout);
-        orderFragment = (ViewPager) rootView.findViewById(R.id.orderFragment);
+        orderFragment = (ViewPager) rootView.findViewById(R.id.viewpager);
         orderFragment.setAdapter(new FragmentViewPagerAdapter(getChildFragmentManager(), fragmentList,
                 list_title));
         tablayout.setTabMode(TabLayout.MODE_FIXED);

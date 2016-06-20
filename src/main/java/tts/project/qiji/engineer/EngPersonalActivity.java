@@ -1,7 +1,6 @@
 package tts.project.qiji.engineer;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -39,7 +38,7 @@ public class EngPersonalActivity extends BaseActivity {
         setTitle(new BarBean().setMsg("个人中心").setIsRemoveBack(true));
         MenuItemBean bean = new MenuItemBean();
         bean.setTitle("我的订单");
-        bean.setTextColor(Color.parseColor("#f9bf54"));
+        bean.setTextColor(getResources().getColor(R.color.colorAccent));
         addMenu(bean);
         findAllView();
         adapter();

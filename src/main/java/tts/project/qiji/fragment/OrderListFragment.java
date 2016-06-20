@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.orhanobut.logger.Logger;
+
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseFragment;
 import tts.project.qiji.R;
@@ -54,15 +56,24 @@ public class OrderListFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Logger.d("=====onCreate");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        Logger.d("=====setUserVisibleHint   " + isVisibleToUser);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Logger.d("=====onCreateView");
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_order_list, container, false);
     }
@@ -70,8 +81,11 @@ public class OrderListFragment extends BaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        findAllView();
-        adapter();
+        Logger.d("=====onActivityCreated");
+        if (rootView != null) {
+            findAllView();
+            adapter();
+        }
     }
 
     private void adapter() {

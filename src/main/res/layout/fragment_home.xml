@@ -12,5 +12,5 @@
         android:id="@+id/mlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/activity_background"></tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded>
+        android:background="@color/white"></tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded>
 </LinearLayout>
