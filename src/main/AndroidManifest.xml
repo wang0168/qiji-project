@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activity.AddressManagerActivity" />
         <activity android:name=".activity.EditAddressActivity" />
@@ -22,7 +18,13 @@
         <activity android:name=".activity.CallServiceActivity" />
         <activity android:name=".activity.ServiceConfirmActivity" />
         <activity android:name=".login.FindPasswordActivity" />
-        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".login.RegisterActivity" />
         <activity android:name=".login.RegisterIdentityActivity" />
         <activity android:name=".engineer.EngineerOrderActivity" />

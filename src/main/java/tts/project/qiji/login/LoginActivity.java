@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.util.ArrayMap;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.Bind;
@@ -19,15 +19,15 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import tts.moudle.api.Host;
 import tts.moudle.api.bean.BarBean;
-import tts.moudle.api.moudle.AccountMoudle;
 import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.utils.TextUtils;
 import tts.project.qiji.AppManager;
 import tts.project.qiji.BaseActivity;
-import tts.project.qiji.BaseApplication;
 import tts.project.qiji.MainActivity;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.UserInfoBean;
+import tts.project.qiji.common.MyAccountMoudle;
+import tts.project.qiji.engineer.EngPersonalActivity;
 
 /**
  * 登录
@@ -90,15 +90,15 @@ public class LoginActivity extends BaseActivity {
 
         switch (index) {
             case login_ok:
-                params = new HashMap<String, String>();
+                params = new ArrayMap<>();
                 params.put("phone", ETMobile.getText().toString().trim());
                 params.put("password", ETPassword.getText().toString().trim());
-                getDataWithPost(login_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=login", params);
+                getDataWithPost(login_ok, Host.hostUrl + "/api.php?m=Api&c=Login&a=login", params);
                 break;
             case submitData:
-                params = new HashMap<String, String>();
+                params = new ArrayMap<>();
                 params.put("phone", phone);
-                params.put("password",password);
+                params.put("password", password);
                 getDataWithPost(login_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=login", params);
                 break;
         }
@@ -113,19 +113,19 @@ public class LoginActivity extends BaseActivity {
                 editor.putString("info", response);
                 editor.commit();
                 UserInfoBean userInfo = new Gson().fromJson(sp.getString("info", ""), UserInfoBean.class);
-//                userInfo.setIsLogin(true);
-//                AccountMoudle.getInstance().setUserInfo(userInfo);
-//                if ("1".equals(AccountMoudle.getInstance().getUserInfo().getIs_type())) {
+                userInfo.setLogin(true);
+                MyAccountMoudle.getInstance().setUserInfo(userInfo);
+                if ("1".equals(MyAccountMoudle.getInstance().getUserInfo().getType())) {
 //                    if ("1".equals(getIntent().getStringExtra("login"))) {
-//                        startActivity(new Intent(this, MainActivity.class));
+                        startActivity(new Intent(this, MainActivity.class));
 //                    } else {
 //                        setResult(RESULT_OK);
 //                    }
-//                } else {
-//                    AppManager.getAppManager().finishAllActivity();
-//                    startActivity(new Intent(this, tts.project.hoop.engineer.EngPersonalActivity.class));
+                } else {
+                    AppManager.getAppManager().finishAllActivity();
+                    startActivity(new Intent(this, EngPersonalActivity.class));
 //                    BaseApplication.sendLocation();
-//                }
+                }
                 finish();
                 break;
         }

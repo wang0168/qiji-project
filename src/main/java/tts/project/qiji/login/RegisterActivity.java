@@ -1,7 +1,9 @@
 package tts.project.qiji.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.util.ArrayMap;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +13,7 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import tts.moudle.api.Host;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.utils.TextUtils;
@@ -19,7 +22,7 @@ import tts.project.qiji.R;
 
 
 /**
- * 一键预约
+ * 注册
  */
 public class RegisterActivity extends BaseActivity {
     @Bind(R.id.ETMobile)
@@ -34,6 +37,8 @@ public class RegisterActivity extends BaseActivity {
     Button loginBtn;
     private String type;
     private int count = 60;
+    private final int verification_ok = 101;
+    private final int register_ok = 102;
     CountDownTimer timer = new CountDownTimer(60000, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
@@ -100,17 +105,21 @@ public class RegisterActivity extends BaseActivity {
         super.startRequestData(index);
         Map<String, String> params;
         switch (index) {
-//            case Constant.register_ok:
-//                params = new HashMap<String, String>();
-//                params.put("phone", ETMobile.getText().toString().trim());
-//                params.put("yzm", verification.getText().toString().trim());
-//                params.put("password", ETPassword.getText().toString().trim());
-//                params.put("type", type);
-//                getDataWithPost(Constant.register_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=register", params);
-//                break;
-//            case Constant.verification_ok:
-//                getDataWithGet(Constant.verification_ok, Host.hostUrl + "api.php/Login/sendSMS" + "?mobile=" + ETMobile.getText().toString().trim() + "&type=1");
-//                break;
+            case register_ok:
+                params = new ArrayMap<>();
+                params.put("phone", ETMobile.getText().toString().trim());
+                params.put("yzm", verification.getText().toString().trim());
+                params.put("password", ETPassword.getText().toString().trim());
+                params.put("type", type);
+                params.put("state", type);
+                getDataWithPost(register_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=register", params);
+                break;
+            case verification_ok:
+                params = new ArrayMap<>();
+                params.put("phone", ETMobile.getText().toString().trim());
+                params.put("type", "1");
+                getDataWithPost(verification_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=sendSMS", params);
+                break;
         }
     }
 
@@ -118,17 +127,17 @@ public class RegisterActivity extends BaseActivity {
     protected void doSuccess(int index, String response) {
         super.doSuccess(index, response);
         switch (index) {
-//            case Constant.register_ok:
-//                CustomUtils.showTipShort(this, response);
-//                Intent intent = new Intent(this, LoginActivity.class);
-//                intent.putExtra("password", ETMobile.getText().toString().trim());
-//                intent.putExtra("phone", ETPassword.getText().toString().trim());
-//                setResult(RESULT_OK, intent);
-//                finish();
-//                break;
-//            case Constant.verification_ok:
-//                CustomUtils.showTipShort(this, "验证码发送成功");
-//                break;
+            case register_ok:
+                CustomUtils.showTipShort(this, response);
+                Intent intent = new Intent(this, LoginActivity.class);
+                intent.putExtra("password", ETMobile.getText().toString().trim());
+                intent.putExtra("phone", ETPassword.getText().toString().trim());
+                setResult(RESULT_OK, intent);
+                finish();
+                break;
+            case verification_ok:
+                CustomUtils.showTipLong(this, "验证码发送成功==" + response);
+                break;
         }
 
     }

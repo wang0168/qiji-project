@@ -30,7 +30,7 @@ public class BaseApplication extends TTSBaseApplication {
     public void onCreate() {
         super.onCreate();
 //        ShareSDK.initSDK(this);
-        initHost("http://wl.tstmobile.com/ShoppingMall/");
+        initHost("http://qj.tstmobile.com/");
         initUser();
 //        HXBaseApplication.getInstance().initHX(this,"tts.project.llg");
 //        initQQ("wxbf654da821c08af5");
