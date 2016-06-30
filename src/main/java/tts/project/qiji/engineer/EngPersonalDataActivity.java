@@ -18,7 +18,7 @@ import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.moudle.api.activity.CustomPictureSelectorView;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.bean.ImgBean;
-import tts.moudle.api.utils.ImageFactory;
+//import tts.moudle.api.utils.ImageFactory;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
@@ -399,18 +399,18 @@ public class EngPersonalDataActivity extends BaseActivity {
         switch (requestCode) {
             case 1000:
                 if (resultCode == RESULT_OK) {
-                    imgBean1 = ((List<ImgBean>) data.getSerializableExtra("imgBeans")).get(0).getPath();
-                    ImageFactory imageFactory = new ImageFactory();
-
-                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
-                    String facePath = file.getPath();
-                    try {
-                        imageFactory.storeImage(imageFactory.ratio(imgBean1, 400f, 400f), facePath);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    imgBean1 = facePath;
+//                    imgBean1 = ((List<ImgBean>) data.getSerializableExtra("imgBeans")).get(0).getPath();
+//                    ImageFactory imageFactory = new ImageFactory();
+//
+//                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
+//                    String facePath = file.getPath();
+//                    try {
+//                        imageFactory.storeImage(imageFactory.ratio(imgBean1, 400f, 400f), facePath);
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                    imgBean1 = facePath;
 //                    if (imgBean1 != null) {
 //                        Glide.with(this).load(imgBean1).into(headImg);
 //                    }
@@ -419,58 +419,58 @@ public class EngPersonalDataActivity extends BaseActivity {
             case 2000:
                 if (resultCode == RESULT_OK) {
                     imgBean2 = ((List<ImgBean>) data.getSerializableExtra("imgBeans")).get(0).getPath();
-                    ImageFactory imageFactory = new ImageFactory();
-
-                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
-                    String facePath = file.getPath();
-                    try {
-                        imageFactory.storeImage(imageFactory.ratio(imgBean2, 400f, 400f), facePath);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    imgBean2 = facePath;
-                    if (imgBean2 != null) {
-//                        Glide.with(this).load(imgBean2).into(idZheng);
-                    }
+//                    ImageFactory imageFactory = new ImageFactory();
+//
+//                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
+//                    String facePath = file.getPath();
+//                    try {
+//                        imageFactory.storeImage(imageFactory.ratio(imgBean2, 400f, 400f), facePath);
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                    imgBean2 = facePath;
+//                    if (imgBean2 != null) {
+////                        Glide.with(this).load(imgBean2).into(idZheng);
+//                    }
                 }
                 break;
             case 3000:
                 if (resultCode == RESULT_OK) {
                     imgBean3 = ((List<ImgBean>) data.getSerializableExtra("imgBeans")).get(0).getPath();
-                    ImageFactory imageFactory = new ImageFactory();
-
-                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
-                    String facePath = file.getPath();
-                    try {
-                        imageFactory.storeImage(imageFactory.ratio(imgBean3, 400f, 400f), facePath);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    imgBean3 = facePath;
-                    if (imgBean3 != null) {
-//                        Glide.with(this).load(imgBean3).into(idFan);
-                    }
+//                    ImageFactory imageFactory = new ImageFactory();
+//
+//                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
+//                    String facePath = file.getPath();
+//                    try {
+//                        imageFactory.storeImage(imageFactory.ratio(imgBean3, 400f, 400f), facePath);
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                    imgBean3 = facePath;
+//                    if (imgBean3 != null) {
+////                        Glide.with(this).load(imgBean3).into(idFan);
+//                    }
                 }
                 break;
             case 4000:
                 if (resultCode == RESULT_OK) {
-                    imgBean4 = ((List<ImgBean>) data.getSerializableExtra("imgBeans")).get(0).getPath();
-                    ImageFactory imageFactory = new ImageFactory();
-
-                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
-                    String facePath = file.getPath();
-                    try {
-                        imageFactory.storeImage(imageFactory.ratio(imgBean4, 400f, 400f), facePath);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    imgBean4 = facePath;
-                    if (imgBean4 != null) {
-//                        Glide.with(this).load(imgBean4).into(certificate);
-                    }
+//                    imgBean4 = ((List<ImgBean>) data.getSerializableExtra("imgBeans")).get(0).getPath();
+//                    ImageFactory imageFactory = new ImageFactory();
+//
+//                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
+//                    String facePath = file.getPath();
+//                    try {
+//                        imageFactory.storeImage(imageFactory.ratio(imgBean4, 400f, 400f), facePath);
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                    imgBean4 = facePath;
+//                    if (imgBean4 != null) {
+////                        Glide.with(this).load(imgBean4).into(certificate);
+//                    }
                 }
                 break;
 

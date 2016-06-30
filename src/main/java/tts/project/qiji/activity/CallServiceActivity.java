@@ -59,7 +59,7 @@ public class CallServiceActivity extends BaseActivity {
             public void onClick(View itemView, int position) {
                 if ("1".equals(data.getSort_types().get(position).getXiadan())) {
 //                    CustomUtils.showTipShort(CallServiceActivity.this,"已经是最后一级分类啦");
-                    startActivity(new Intent(CallServiceActivity.this, OrderActivity.class));
+                    startActivity(new Intent(CallServiceActivity.this, OrderActivity.class).putExtra("price", data.getPrice()));
                     return;
                 }
                 startActivity(new Intent(CallServiceActivity.this, CallServiceActivity.class).putExtra("data", data.getSort_types().get(position)));

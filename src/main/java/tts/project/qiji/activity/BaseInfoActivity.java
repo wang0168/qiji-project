@@ -22,7 +22,7 @@ import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.bean.ImgBean;
 import tts.moudle.api.moudle.AccountMoudle;
 import tts.moudle.api.moudle.SharedPreferencesMoudle;
-import tts.moudle.api.utils.ImageFactory;
+//import tts.moudle.api.utils.ImageFactory;
 import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseActivity;
@@ -196,18 +196,18 @@ public class BaseInfoActivity extends BaseActivity implements View.OnClickListen
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case 1000:
-                    bean = ((List<ImgBean>) data.getSerializableExtra("imgBeans")).get(0);
-                    ImageFactory imageFactory = new ImageFactory();
-
-                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
-                    facePath = file.getPath();
-                    try {
-                        imageFactory.storeImage(imageFactory.ratio(bean.getPath(), 400f, 400f), facePath);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    startRequestData(face);
+//                    bean = ((List<ImgBean>) data.getSerializableExtra("imgBeans")).get(0);
+//                    ImageFactory imageFactory = new ImageFactory();
+//
+//                    File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
+//                    facePath = file.getPath();
+//                    try {
+//                        imageFactory.storeImage(imageFactory.ratio(bean.getPath(), 400f, 400f), facePath);
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                    startRequestData(face);
                     break;
                 case 2000:
                     startRequestData(getData);

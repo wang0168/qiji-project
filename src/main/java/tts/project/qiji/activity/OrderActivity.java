@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
+import java.util.List;
 import java.util.Map;
 
 import butterknife.Bind;
@@ -20,10 +21,12 @@ import butterknife.ButterKnife;
 import tts.moudle.api.Host;
 import tts.moudle.api.activity.CustomPictureSelectorView;
 import tts.moudle.api.bean.BarBean;
+import tts.moudle.api.bean.ImgBean;
 import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
+import tts.project.qiji.adapter.PicShowAdapter;
 import tts.project.qiji.bean.AddressBean;
 import tts.project.qiji.common.MyAccountMoudle;
 
@@ -56,9 +59,10 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener 
     TextView tvTotalMoney;
     @Bind(R.id.action_submit)
     TextView actionSubmit;
-    @Bind(R.id.pictureList)
+
     RecyclerViewAutoRefreshUpgraded pictureList;
     private AddressBean addressBean;
+    private String price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +70,9 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener 
         setContentView(R.layout.activity_order);
         ButterKnife.bind(this);
         setTitle(new BarBean().setMsg("呼叫服务"));
+        price = getIntent().getStringExtra("price");
         startRequestData(getData);
+        pictureList= (RecyclerViewAutoRefreshUpgraded) findViewById(R.id.pictureList);
         layoutAddress.setOnClickListener(this);
         choosePic.setOnClickListener(this);
     }
@@ -132,10 +138,12 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener 
                     bindData(addressBean);
                     break;
                 case 10002:
+                    List<ImgBean> imgBeansTemp = (List<ImgBean>) data.getSerializableExtra("imgBeans");
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
                     linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
                     pictureList.setLayoutManager(linearLayoutManager);
-                    pictureList.setAdapter(null);
+                    PicShowAdapter adapter = new PicShowAdapter(this, imgBeansTemp);
+                    pictureList.setAdapter(adapter);
                     break;
             }
         }

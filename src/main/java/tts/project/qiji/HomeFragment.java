@@ -207,8 +207,8 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
                     @Override
                     public void doClick(int position) {
                         if (!TextUtils.isEmpty(bannerBeans.get(position).getUrl())) {
-                            startActivity(new Intent(getActivity(), AboutActivity.class).putExtra("title",
-                                    bannerBeans.get(position).getTitle()).putExtra("url", bannerBeans.get(position).getUrl()));
+//                            startActivity(new Intent(getActivity(), AboutActivity.class).putExtra("title",
+//                                    bannerBeans.get(position).getTitle()).putExtra("url", bannerBeans.get(position).getUrl()));
                         } else {
                             CustomUtils.showTipShort(getActivity(), "暂无链接地址");
                         }

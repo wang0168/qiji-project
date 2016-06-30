@@ -24,7 +24,7 @@ import tts.moudle.api.activity.CustomPictureSelectorView;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.bean.ImgBean;
 import tts.moudle.api.utils.CustomUtils;
-import tts.moudle.api.utils.ImageFactory;
+//import tts.moudle.api.utils.ImageFactory;
 import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.GridViewInScrollView;
 import tts.project.qiji.BaseActivity;
@@ -110,18 +110,18 @@ public class EngComServerActivity extends BaseActivity {
             case 1000:
                 if (resultCode == RESULT_OK) {
                     imgBeans = (List<ImgBean>) data.getSerializableExtra("imgBeans");
-                    ImageFactory imageFactory = new ImageFactory();
-                    for (int i = 0; i < imgBeans.size(); i++) {
-                        File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
-                        String facePath = file.getPath();
-                        try {
-                            imageFactory.storeImage(imageFactory.ratio(imgBeans.get(i).getPath(), 400f, 400f), facePath);
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        imgs.add(facePath);
-                    }
+//                    ImageFactory imageFactory = new ImageFactory();
+//                    for (int i = 0; i < imgBeans.size(); i++) {
+//                        File file = new File(this.getExternalCacheDir(), new Date().getTime() + "");
+//                        String facePath = file.getPath();
+//                        try {
+//                            imageFactory.storeImage(imageFactory.ratio(imgBeans.get(i).getPath(), 400f, 400f), facePath);
+//
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
+//                        imgs.add(facePath);
+//                    }
                     adapter.notifyDataSetChanged();
                 }
                 break;
