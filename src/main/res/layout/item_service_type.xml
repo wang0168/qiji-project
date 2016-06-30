@@ -8,7 +8,6 @@
         android:id="@+id/type_class"
         android:layout_width="@dimen/x120"
         android:layout_height="@dimen/y50"
-
         android:background="@drawable/selector_service_type"
         android:button="@null"
         android:checked="true"

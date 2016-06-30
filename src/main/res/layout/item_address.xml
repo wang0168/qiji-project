@@ -32,13 +32,12 @@
             android:text="联系人：" />
 
         <TextView
-
             android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/x55"
-            android:text="张签名" />
+            android:layout_marginRight="@dimen/x35"
+            />
 
         <TextView
             android:id="@+id/address"

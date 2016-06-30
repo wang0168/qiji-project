@@ -33,6 +33,17 @@ public class AddressBean implements Serializable {
     private String is_default;
     private String address_state;
     private String zip_code;
+    /**
+     * user_id : 2
+     * area : 浦东新区
+     * address : 长清路a155
+     * uptime : null
+     */
+
+    private String user_id;
+    private String area;
+    private String address;
+    private Object uptime;
 
     public int getAddress_id() {
         return address_id;
@@ -128,5 +139,37 @@ public class AddressBean implements Serializable {
 
     public void setZip_code(String zip_code) {
         this.zip_code = zip_code;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Object getUptime() {
+        return uptime;
+    }
+
+    public void setUptime(Object uptime) {
+        this.uptime = uptime;
     }
 }

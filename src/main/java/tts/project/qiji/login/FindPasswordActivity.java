@@ -1,7 +1,9 @@
 package tts.project.qiji.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.util.ArrayMap;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +13,7 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import tts.moudle.api.Host;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.utils.TextUtils;
@@ -19,7 +22,7 @@ import tts.project.qiji.R;
 
 
 /**
- * 一键预约
+ * 忘记密码
  */
 public class FindPasswordActivity extends BaseActivity {
     @Bind(R.id.ETMobile)
@@ -33,6 +36,7 @@ public class FindPasswordActivity extends BaseActivity {
     @Bind(R.id.trueBtn)
     Button trueBtn;
     private int count = 60;
+    private final int verification_ok = 101;
     CountDownTimer timer = new CountDownTimer(60000, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
@@ -73,7 +77,7 @@ public class FindPasswordActivity extends BaseActivity {
                     CustomUtils.showTipShort(this, "请输入密码");
                     return;
                 }
-//                startRequestData(Constant.findpsd_ok);
+                startRequestData(submitData);
                 break;
             case R.id.register_obtain:
                 if (!TextUtils.isMobileNO(ETMobile.getText().toString().trim())) {
@@ -81,7 +85,7 @@ public class FindPasswordActivity extends BaseActivity {
                     return;
                 }
                 timer.start();
-//                startRequestData(Constant.verification_ok);
+                startRequestData(verification_ok);
                 break;
         }
     }
@@ -91,16 +95,19 @@ public class FindPasswordActivity extends BaseActivity {
         super.startRequestData(index);
         Map<String, String> params;
         switch (index) {
-//            case Constant.findpsd_ok:
-//                params = new HashMap<String, String>();
-//                params.put("phone", ETMobile.getText().toString().trim());
-//                params.put("yzm", verification.getText().toString().trim());
-//                params.put("password", ETPassword.getText().toString().trim());
-//                getDataWithPost(Constant.findpsd_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=forgetpwd", params);
-//                break;
-//            case Constant.verification_ok:
-//                getDataWithGet(Constant.verification_ok, Host.hostUrl + "api.php/Login/sendSMS" + "?mobile=" + ETMobile.getText().toString().trim() + "&type=2");
-//                break;
+            case submitData:
+                params = new ArrayMap<>();
+                params.put("phone", ETMobile.getText().toString().trim());
+                params.put("yzm", verification.getText().toString().trim());
+                params.put("password", ETPassword.getText().toString().trim());
+                getDataWithPost(submitData, Host.hostUrl + "api.php?m=Api&c=Login&a=forgetpwd", params);
+                break;
+            case verification_ok:
+                params = new ArrayMap<>();
+                params.put("mobile", ETMobile.getText().toString().trim());
+                params.put("type", "2");
+                getDataWithPost(verification_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=sendSMS", params);
+                break;
         }
     }
 
@@ -108,13 +115,18 @@ public class FindPasswordActivity extends BaseActivity {
     protected void doSuccess(int index, String response) {
         super.doSuccess(index, response);
         switch (index) {
-//            case Constant.findpsd_ok:
-//                CustomUtils.showTipShort(this, response);
-//                finish();
-//                break;
-//            case Constant.verification_ok:
-//                CustomUtils.showTipShort(this, "验证码发送成功");
-//                break;
+            case submitData:
+                CustomUtils.showTipShort(this, response);
+                Intent intent=new Intent();
+                intent.putExtra("password", ETPassword.getText().toString().trim());
+                intent.putExtra("phone", ETMobile.getText().toString().trim());
+                setResult(RESULT_OK, intent);
+                finish();
+
+                break;
+            case verification_ok:
+                CustomUtils.showTipLong(this, "验证码发送成功===" + response);
+                break;
         }
     }
 

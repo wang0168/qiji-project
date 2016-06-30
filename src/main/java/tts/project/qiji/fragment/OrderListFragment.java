@@ -1,19 +1,23 @@
 package tts.project.qiji.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.orhanobut.logger.Logger;
 
+import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseFragment;
 import tts.project.qiji.R;
 import tts.project.qiji.adapter.OrderAdapter;
+import tts.project.qiji.engineer.EngOrderDetailsActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,6 +54,7 @@ public class OrderListFragment extends BaseFragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+        CustomUtils.showTipShort(fragment.getActivity(), param1);
         return fragment;
     }
 
@@ -67,21 +72,25 @@ public class OrderListFragment extends BaseFragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        Logger.d("=====setUserVisibleHint   " + isVisibleToUser);
+        if (rootView != null) {
+            adapter();
+        }
+//        Logger.d("=====setUserVisibleHint   " + isVisibleToUser);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Logger.d("=====onCreateView");
+//        Logger.d("=====onCreateView");
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order_list, container, false);
+        //inflater.inflate(R.layout.fragment_order_list, container, false)
+        return setContentView(R.layout.fragment_order_list, inflater, container, savedInstanceState);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Logger.d("=====onActivityCreated");
+//        Logger.d("=====onActivityCreated");
         if (rootView != null) {
             findAllView();
             adapter();
@@ -89,12 +98,52 @@ public class OrderListFragment extends BaseFragment {
     }
 
     private void adapter() {
+        list.setLayoutManager(new LinearLayoutManager(getActivity()));
         OrderAdapter orderAdapter = new OrderAdapter(getActivity(), null);
+
         list.setAdapter(orderAdapter);
+        orderAdapter.setOnItemClickListener(new OrderAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(View itemView, int position) {
+                Logger.d("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+                startActivity(new Intent(getActivity(), EngOrderDetailsActivity.class));
+            }
+
+            @Override
+            public void onLongClick(View itemView, int position) {
+
+            }
+
+            @Override
+            public void OrderCancel(int position) {
+
+            }
+
+            @Override
+            public void OrderPayment(int position) {
+
+            }
+
+            @Override
+            public void OrderCom(int position) {
+
+            }
+
+            @Override
+            public void OrderEvaluate(int position) {
+
+            }
+
+            @Override
+            public void lookPosition(int position) {
+
+            }
+        });
     }
 
     private void findAllView() {
         list = (RecyclerViewAutoRefreshUpgraded) rootView.findViewById(R.id.mlist);
+
     }
 
     @Override

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="tts.project.qiji">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -10,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".activity.AddressManagerActivity" />
         <activity android:name=".activity.EditAddressActivity" />
@@ -18,23 +24,33 @@
         <activity android:name=".activity.CallServiceActivity" />
         <activity android:name=".activity.ServiceConfirmActivity" />
         <activity android:name=".login.FindPasswordActivity" />
-        <activity android:name=".login.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.RegisterActivity" />
         <activity android:name=".login.RegisterIdentityActivity" />
-        <activity android:name=".engineer.EngineerOrderActivity" />
+        <activity
+            android:name=".engineer.EngineerOrderActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".engineer.EngComServerActivity" />
         <activity android:name=".engineer.EngPersonalActivity" />
+        <activity android:name=".engineer.EngOrderDetailsActivity" />
         <activity android:name=".activity.MyCollectionActivity" />
         <activity android:name=".activity.PayActivity" />
         <activity android:name=".engineer.EngPersonalDataActivity" />
         <activity android:name=".engineer.MyEvaluateActivity" />
-        <activity android:name=".activity.ServiceTypeActivity"></activity>
+        <activity android:name=".activity.ServiceTypeActivity" />
+        <activity android:name=".login.EnterPriseActivity" />
+        <activity android:name=".activity.BaseInfoActivity" />
+        <activity android:name=".activity.OrderActivity" />
+        <activity android:name=".engineer_manager.EngineerManagerActivity" />
+        <activity
+            android:name=".engineer_manager.EngineerManagerPersonalActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".engineer_manager.EngineerDetailActivity" />
+        <activity android:name=".user_manager.UserManagerActivity" />
+        <activity
+            android:name=".user_manager.UserManagerPersonalActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".user_manager.UserDetailActivity"></activity>
     </application>
 
 </manifest>

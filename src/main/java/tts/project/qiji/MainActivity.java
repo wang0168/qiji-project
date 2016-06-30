@@ -1,6 +1,7 @@
 package tts.project.qiji;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -8,8 +9,11 @@ import android.widget.RadioGroup;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.TTSRadioButton;
 import tts.moudle.api.widget.TabManager;
+import tts.project.qiji.common.MyAccountMoudle;
+import tts.project.qiji.login.LoginActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     public static TabHost mTabHost;
@@ -22,6 +26,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mTabHost = (TabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup();
         mTabManager = new TabManager(this, mTabHost, R.id.containertabcontent);
@@ -47,23 +52,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 mTabHost.setCurrentTabByTag("tab0");
                 break;
             case R.id.rb_home_bottombar_order:
-//                if (!TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getUser_token())) {
-                    mTabHost.setCurrentTabByTag("tab1");
-//                } else {
-//                    homeBtn.setChecked(true);
-//                    mTabHost.setCurrentTabByTag("tab0");
-//                    startActivity(new Intent(this, LoginActivity.class));
-//                }
+                if (!TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getToken())) {
+                mTabHost.setCurrentTabByTag("tab1");
+                } else {
+                    homeBtn.setChecked(true);
+                    mTabHost.setCurrentTabByTag("tab0");
+                    startActivity(new Intent(this, LoginActivity.class));
+                }
                 break;
 
             case R.id.rb_home_bottombar_my:
-//                if (!TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getUser_token())) {
-                    mTabHost.setCurrentTabByTag("tab2");
-//                } else {
-//                    homeBtn.setChecked(true);
-//                    mTabHost.setCurrentTabByTag("tab0");
-//                    startActivity(new Intent(this, LoginActivity.class));
-//                }
+                if (!TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getToken())) {
+                mTabHost.setCurrentTabByTag("tab2");
+                } else {
+                    homeBtn.setChecked(true);
+                    mTabHost.setCurrentTabByTag("tab0");
+                    startActivity(new Intent(this, LoginActivity.class));
+                }
                 break;
         }
     }
@@ -110,5 +115,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         } else {
             AppManager.getAppManager().AppExit(this);
         }
+    }
+    @Override
+    protected void startApplyPermissions(int index) {
+        super.startApplyPermissions(index);
+        String string = "111111";
+        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "15179165382")));
     }
 }

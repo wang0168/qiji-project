@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="tts.project.qiji.activity.OrderActivity">
+
+    <include layout="@layout/toolbar_item" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/activity_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/layout_address"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y150"
+                android:layout_marginTop="@dimen/y20"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/y30"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/y30">
+
+                <ImageView
+                    android:id="@+id/left_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/wz" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:layout_toRightOf="@+id/left_icon"
+                    android:text="联系人：" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/x55" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:layout_toRightOf="@+id/left_icon"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="服务地址：" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x10"
+                    android:src="@mipmap/jiantou_2x" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y180"
+                android:layout_marginTop="@dimen/y20"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/y25"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/y25">
+
+                <RelativeLayout
+                    android:id="@+id/layout_choose_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/y15"
+                    android:paddingTop="@dimen/y15">
+
+                    <TextView
+                        android:id="@+id/txt_service_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="服务时间" />
+
+                    <TextView
+                        android:id="@+id/tv_service_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x60"
+                        android:layout_toRightOf="@+id/txt_service_time"
+                        android:text="2016-02-28  sdadf" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/x10"
+                        android:src="@mipmap/jiantou_2x" />
+                </RelativeLayout>
+
+                <CheckBox
+                    android:id="@+id/is_urgent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="急需服务"
+                    android:textColor="@color/colorAccent" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y300"
+                android:layout_marginTop="@dimen/y20"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/y20"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:paddingTop="@dimen/y20">
+
+                <EditText
+                    android:id="@+id/edit_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y160"
+                    android:gravity="top|left"
+                    android:hint="请详细描述服务内容"
+                    android:padding="@dimen/y20" />
+
+                <ImageView
+                    android:id="@+id/choose_pic"
+                    android:layout_width="@dimen/x77"
+                    android:layout_height="@dimen/y77"
+                    android:layout_alignParentBottom="true"
+                    android:src="@mipmap/sc" />
+
+                <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
+
+                    android:id="@+id/pictureList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/y80"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_toRightOf="@+id/choose_pic" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y110"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txt_total_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x265"
+            android:text="总金额："
+            android:textColor="@color/orange"
+            android:textSize="@dimen/y24" />
+
+        <TextView
+
+            android:id="@+id/tv_total_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x15"
+            android:layout_toRightOf="@+id/txt_total_money"
+            android:text="￥0.00元"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/y30" />
+
+        <TextView
+            android:id="@+id/action_submit"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/orange"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</LinearLayout>

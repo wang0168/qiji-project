@@ -1,16 +1,19 @@
 package tts.project.qiji.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.List;
 
 import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.project.qiji.R;
+import tts.project.qiji.activity.EditAddressActivity;
 import tts.project.qiji.bean.AddressBean;
 
 /**
@@ -35,15 +38,15 @@ public class AddressManagerAdapter extends TTSBaseAdapterRecyclerView<AddressBea
     public void onBindViewHolder(TTSBaseAdapterRecyclerView.ViewHolder holder, final int position) {
         super.onBindViewHolder(holder, position);
         AddressManagerViewHolder addressManagerViewHolder = (AddressManagerViewHolder) holder;
-        addressManagerViewHolder.name.setText(mData.get(position).getName());
+        addressManagerViewHolder.name.setText("联系人："+mData.get(position).getName());
         addressManagerViewHolder.phone.setText(mData.get(position).getMobile());
-        addressManagerViewHolder.address.setText(mData.get(position).getProvince() + mData.get(position).getCity()
-                + mData.get(position).getCountry() + mData.get(position).getDetailed_address());
+        addressManagerViewHolder.address.setText("服务地址："+mData.get(position).getProvince() + mData.get(position).getCity()
+                + mData.get(position).getArea() + mData.get(position).getAddress());
         if ("1".equals(mData.get(position).getIs_default())) {
-            addressManagerViewHolder.tv_default.setVisibility(View.VISIBLE);
+//            addressManagerViewHolder.tv_default.setVisibility(View.VISIBLE);
             addressManagerViewHolder.set_default.setVisibility(View.GONE);
         } else {
-            addressManagerViewHolder.tv_default.setVisibility(View.GONE);
+//            addressManagerViewHolder.tv_default.setVisibility(View.GONE);
             addressManagerViewHolder.set_default.setVisibility(View.VISIBLE);
             addressManagerViewHolder.set_default.setChecked(false);
             addressManagerViewHolder.set_default.setOnClickListener(new View.OnClickListener() {
@@ -66,8 +69,8 @@ public class AddressManagerAdapter extends TTSBaseAdapterRecyclerView<AddressBea
         addressManagerViewHolder.action_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ((Activity) mContext).startActivityForResult(new Intent(mContext, EditAddressActivity.class).putExtra("from", 1).putExtra("data", mData.get(position)), 1000);
-//                mContext.startActivity(new Intent(mContext, EditAddressActivity.class).putExtra("from", 1).putExtra("data",mData.get(position)));
+                ((Activity) mContext).startActivityForResult(new Intent(mContext, EditAddressActivity.class).putExtra("from", 1).putExtra("data", mData.get(position)), 1000);
+                mContext.startActivity(new Intent(mContext, EditAddressActivity.class).putExtra("from", 1).putExtra("data",mData.get(position)));
             }
         });
     }
@@ -76,10 +79,10 @@ public class AddressManagerAdapter extends TTSBaseAdapterRecyclerView<AddressBea
         private TextView name;
         private TextView address;
         private TextView phone;
-        private TextView tv_default;
+//        private TextView tv_default;
         private TextView action_edit;
         private TextView action_delete;
-        private RadioButton set_default;
+        private CheckBox set_default;
 
         public AddressManagerViewHolder(View itemView) {
             super(itemView);
@@ -89,7 +92,7 @@ public class AddressManagerAdapter extends TTSBaseAdapterRecyclerView<AddressBea
 //            tv_default = (TextView) itemView.findViewById(R.id.tv_default);
             action_edit = (TextView) itemView.findViewById(R.id.action_edit);
             action_delete = (TextView) itemView.findViewById(R.id.action_delete);
-//            set_default = (RadioButton) itemView.findViewById(R.id.set_default);
+            set_default = (CheckBox) itemView.findViewById(R.id.set_default);
         }
     }
 

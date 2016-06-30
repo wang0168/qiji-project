@@ -9,7 +9,6 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.bean.MenuItemBean;
@@ -34,7 +33,6 @@ public class EngPersonalActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.engineer_personal_center);
-        ButterKnife.bind(this);
         setTitle(new BarBean().setMsg("个人中心").setIsRemoveBack(true));
         MenuItemBean bean = new MenuItemBean();
         bean.setTitle("我的订单");

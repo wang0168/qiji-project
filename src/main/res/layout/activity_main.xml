@@ -61,7 +61,7 @@
                     android:text="首页"
                     android:textColor="@drawable/textcolor_grey_blue"
                     android:textSize="@dimen/y30"
-                    app:heightSize="@dimen/y60"
+                    app:heightSize="@dimen/y55"
                     app:ttsDrawableTop="@mipmap/sy"
                     app:ttsDrawableTop_check="@mipmap/syd"
                     app:widthSize="@dimen/x60" />
@@ -77,7 +77,7 @@
                     android:text="我的订单"
                     android:textColor="@drawable/textcolor_grey_blue"
                     android:textSize="@dimen/y30"
-                    app:heightSize="@dimen/y60"
+                    app:heightSize="@dimen/y55"
                     app:ttsDrawableTop="@mipmap/wddd"
                     app:ttsDrawableTop_check="@mipmap/wdddd"
                     app:widthSize="@dimen/x60" />
@@ -93,7 +93,7 @@
                     android:text="个人中心"
                     android:textColor="@drawable/textcolor_grey_blue"
                     android:textSize="@dimen/y30"
-                    app:heightSize="@dimen/y60"
+                    app:heightSize="@dimen/y55"
                     app:ttsDrawableTop="@mipmap/grzx"
                     app:ttsDrawableTop_check="@mipmap/grzxd"
                     app:widthSize="@dimen/x60" />

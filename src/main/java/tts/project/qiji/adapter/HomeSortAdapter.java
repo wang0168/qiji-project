@@ -12,6 +12,7 @@ import java.util.List;
 import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.HomeSortBean;
+import tts.project.qiji.utils.ImageLoader;
 
 /**
  * Created by shanghang on 2016/6/7.
@@ -35,14 +36,11 @@ public class HomeSortAdapter extends TTSBaseAdapterRecyclerView<HomeSortBean> {
     public void onBindViewHolder(TTSBaseAdapterRecyclerView.ViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
         ViewHolder viewHolder = (ViewHolder) holder;
-        viewHolder.sort_icon.setBackgroundResource(mData.get(position).getImgId());
+//        viewHolder.sort_icon.setBackgroundResource(mData.get(position).getImgId());
         viewHolder.sort_name.setText(mData.get(position).getName());
+        ImageLoader.load(mContext, mData.get(position).getImg(), viewHolder.sort_icon);
     }
 
-    @Override
-    public int getItemCount() {
-        return 9;
-    }
 
     public class ViewHolder extends TTSBaseAdapterRecyclerView.ViewHolder {
         private ImageView sort_icon;

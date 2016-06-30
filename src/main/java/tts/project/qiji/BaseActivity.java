@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import tts.moudle.api.TTSBaseActivity;
+import tts.project.qiji.login.LoginActivity;
 
 /**
  * Created by lenove on 2016/4/29.
@@ -28,8 +29,8 @@ public class BaseActivity extends TTSBaseActivity {
         if (error.equals("token failed")) {
             Log.i("", "<<<<<<<<<<<<<<<<22222222222222");
 //            isTokenFailed = true;
-//            Intent intent = new Intent(this, LoginActivity.class);
-//            startActivityForResult(intent, 3001);
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivityForResult(intent, 3001);
         }
     }
 

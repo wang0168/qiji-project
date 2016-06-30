@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="tts.project.qiji.login.EnterPriseActivity">
+
+    <include layout="@layout/toolbar_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y80"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y97"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_marginRight="@dimen/x20"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/x150"
+                android:layout_height="@dimen/y37"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x15"
+                android:text="姓名"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <EditText
+                android:id="@+id/true_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:editable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="请输入您的真实姓名"
+                android:paddingLeft="@dimen/x15"
+                android:textColor="@color/RGB80_80_80"
+                android:textColorHint="@color/RGB136_136_136"
+                android:textSize="@dimen/y30" />
+        </LinearLayout>
+
+        <View
+            style="@style/view_width_style"
+            android:layout_marginLeft="@dimen/x30" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y97"
+            android:layout_marginLeft="@dimen/y20"
+            android:layout_marginRight="@dimen/y20"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/x150"
+                android:layout_height="@dimen/y37"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x15"
+                android:text="所属企业"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <EditText
+                android:id="@+id/belong_enterprise"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:editable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="请输入您所属企业"
+                android:paddingLeft="@dimen/x20"
+                android:textColor="@color/RGB80_80_80"
+                android:textColorHint="@color/RGB136_136_136"
+                android:textSize="@dimen/y30" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y80"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/x50"
+            android:layout_marginRight="@dimen/x50"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/y40" />
+    </RelativeLayout>
+</LinearLayout>

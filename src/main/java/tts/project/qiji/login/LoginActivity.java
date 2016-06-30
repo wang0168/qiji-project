@@ -21,13 +21,15 @@ import tts.moudle.api.Host;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.utils.TextUtils;
-import tts.project.qiji.AppManager;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.MainActivity;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.UserInfoBean;
 import tts.project.qiji.common.MyAccountMoudle;
 import tts.project.qiji.engineer.EngPersonalActivity;
+import tts.project.qiji.engineer_manager.EngineerManagerPersonalActivity;
+import tts.project.qiji.user_manager.UserManagerPersonalActivity;
+import tts.project.qiji.utils.LoginInfoSave;
 
 /**
  * 登录
@@ -57,11 +59,7 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         setTitle(new BarBean().setMsg("登录"));
-        password = getIntent().getStringExtra("password");
-        phone = getIntent().getStringExtra("phone");
-        if (!TextUtils.isEmpty(password) && !TextUtils.isEmpty(phone)) {
-            startRequestData(submitData);
-        }
+
         sp = getSharedPreferences("user", Context.MODE_PRIVATE);
         editor = sp.edit();
         editor.putBoolean("IsLogin", false);
@@ -109,22 +107,29 @@ public class LoginActivity extends BaseActivity {
         super.doSuccess(index, response);
         switch (index) {
             case login_ok:
-                editor.putBoolean("IsLogin", true);
-                editor.putString("info", response);
-                editor.commit();
-                UserInfoBean userInfo = new Gson().fromJson(sp.getString("info", ""), UserInfoBean.class);
+                LoginInfoSave.loginOk(this, response);
+//                editor.putBoolean("IsLogin", true);
+//                editor.putString("info", response);
+//                editor.commit();
+                UserInfoBean userInfo = new Gson().fromJson(response, UserInfoBean.class);
                 userInfo.setLogin(true);
                 MyAccountMoudle.getInstance().setUserInfo(userInfo);
-                if ("1".equals(MyAccountMoudle.getInstance().getUserInfo().getType())) {
-//                    if ("1".equals(getIntent().getStringExtra("login"))) {
-                        startActivity(new Intent(this, MainActivity.class));
-//                    } else {
+                if ("1".equals(userInfo.getType())) {//用户端
+                    if ("1".equals(userInfo.getState())) {//个人
+                        startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                    } else {//企业
+                        startActivity(new Intent(this, UserManagerPersonalActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 //                        setResult(RESULT_OK);
-//                    }
-                } else {
-                    AppManager.getAppManager().finishAllActivity();
-                    startActivity(new Intent(this, EngPersonalActivity.class));
-//                    BaseApplication.sendLocation();
+                    }
+                } else if ("2".equals(MyAccountMoudle.getInstance().getUserInfo().getType())) {//工程师端
+
+                    if ("1".equals(userInfo.getState())) {//个人
+                        startActivity(new Intent(this, EngPersonalActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+//                        startActivity(new Intent(this, MainActivity.class));
+                    } else {//企业
+                        startActivity(new Intent(this, EngineerManagerPersonalActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+//     setResult(RESULT_OK);
+                    }
                 }
                 finish();
                 break;
@@ -140,10 +145,10 @@ public class LoginActivity extends BaseActivity {
                 initData();
                 break;
             case R.id.login_register_user:
-                startActivity(new Intent(this, RegisterIdentityActivity.class));
+                startActivityForResult(new Intent(this, RegisterIdentityActivity.class), 1002);
                 break;
             case R.id.tv_forget:
-                startActivity(new Intent(this, FindPasswordActivity.class));
+                startActivityForResult(new Intent(this, FindPasswordActivity.class), 1003);
                 break;
         }
     }
@@ -151,6 +156,24 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case 1002:
+//                    password = data.getStringExtra("password");
+//                    phone = data.getStringExtra("phone");
+//                    if (!TextUtils.isEmpty(password) && !TextUtils.isEmpty(phone)) {
+//                        startRequestData(submitData);
+//                    }
+//                    break;
+                case 1003:
+                    password = data.getStringExtra("password");
+                    phone = data.getStringExtra("phone");
+                    if (!TextUtils.isEmpty(password) && !TextUtils.isEmpty(phone)) {
+                        startRequestData(submitData);
+                    }
+                    break;
+            }
+        }
     }
 
 }

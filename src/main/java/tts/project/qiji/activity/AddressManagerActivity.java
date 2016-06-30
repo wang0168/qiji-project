@@ -22,6 +22,7 @@ import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
 import tts.project.qiji.adapter.AddressManagerAdapter;
 import tts.project.qiji.bean.AddressBean;
+import tts.project.qiji.common.MyAccountMoudle;
 
 /**
  * 地址管理
@@ -94,23 +95,23 @@ public class AddressManagerActivity extends BaseActivity implements View.OnClick
         switch (index) {
             case getData:
                 params = new ArrayMap<>();
-//                params.put("member_id", MyAccountMoudle.getInstance().getUserInfo().getMember_id() + "");
-//                params.put("user_token", MyAccountMoudle.getInstance().getUserInfo().getUser_token());
-                getDataWithPost(getData, Host.hostUrl + "addressInterface.api?getOwnerAddress", params);
+                params.put("uid", MyAccountMoudle.getInstance().getUserInfo().getUser_id());
+                params.put("token", MyAccountMoudle.getInstance().getUserInfo().getToken());
+                getDataWithPost(getData, Host.hostUrl + "api.php?m=Api&c=User&a=address", params);
                 break;
             case delete:
                 params = new ArrayMap<>();
-//                params.put("member_id", MyAccountMoudle.getInstance().getUserInfo().getMember_id() + "");
-//                params.put("user_token", MyAccountMoudle.getInstance().getUserInfo().getUser_token());
+                params.put("uid", MyAccountMoudle.getInstance().getUserInfo().getUser_id());
+                params.put("token", MyAccountMoudle.getInstance().getUserInfo().getToken());
                 params.put("address_id", data.get(deletePos).getAddress_id() + "");
-                getDataWithPost(delete, Host.hostUrl + "addressInterface.api?deleteAddress", params);
+                getDataWithPost(delete, Host.hostUrl + "api.php?m=Api&c=User&a=deleteaddress", params);
                 break;
             case setDefault:
                 params = new ArrayMap<>();
-//                params.put("member_id", MyAccountMoudle.getInstance().getUserInfo().getMember_id() + "");
-//                params.put("user_token", MyAccountMoudle.getInstance().getUserInfo().getUser_token());
+                params.put("uid", MyAccountMoudle.getInstance().getUserInfo().getUser_id() + "");
+                params.put("token", MyAccountMoudle.getInstance().getUserInfo().getToken());
                 params.put("address_id", data.get(setDefaultPos).getAddress_id() + "");
-                getDataWithPost(setDefault, Host.hostUrl + "addressInterface.api?setDefaultAddress", params);
+                getDataWithPost(setDefault, Host.hostUrl + "api.php?m=Api&c=User&a=setdefaultaddress", params);
                 break;
         }
     }

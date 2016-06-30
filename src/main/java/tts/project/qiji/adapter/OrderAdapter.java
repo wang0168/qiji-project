@@ -1,14 +1,15 @@
 package tts.project.qiji.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.moudle.api.widget.HorizontalListView;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.OrderBean;
@@ -19,9 +20,9 @@ import tts.project.qiji.bean.OrderBean;
  * <p/>
  * 订单列表适配器（可添加头部）
  */
-public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
+public class OrderAdapter extends TTSBaseAdapterRecyclerView<OrderBean> {
     private Context mContext;
-    private ArrayList<OrderBean> mData;
+    private List<OrderBean> mData;
     private OnItemClickListener listener;
 
     public interface OnItemClickListener {
@@ -45,36 +46,30 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     }
 
     public OrderAdapter(Context context, ArrayList<OrderBean> data) {
+        super(context, data);
         mContext = context;
         mData = data;
     }
 
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TTSBaseAdapterRecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_orders, null, false));
     }
 
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(final TTSBaseAdapterRecyclerView.ViewHolder holder, final int position) {
+        ViewHolder viewHolder = (ViewHolder) holder;
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (listener != null) {
-                    listener.onClick(holder.itemView, position);
+                    listener.onClick(v, position);
                 }
             }
         });
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if (listener != null) {
-                    listener.onLongClick(holder.itemView, position);
-                }
-                return true;
-            }
-        });
+
 //        ServerNeedAdapter adapter = new ServerNeedAdapter(mContext, mData.get(position).getFuwu());
 //        holder.list_view.setAdapter(adapter);
 //        switch (mData.get(position).getState()) {
@@ -102,31 +97,31 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
 //        holder.serivce_time.setText(mData.get(position).getFuwu_time());
 //        holder.serivce_address.setText(mData.get(position).getAddress());
 //        holder.server_cost.setText("￥" + mData.get(position).getPrice());
-        holder.order_cancel.setOnClickListener(new View.OnClickListener() {
+        viewHolder.order_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.OrderCancel(position);
             }
         });
-        holder.serivce_fu.setOnClickListener(new View.OnClickListener() {
+        viewHolder.serivce_fu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.OrderPayment(position);
             }
         });
-        holder.serivce_com.setOnClickListener(new View.OnClickListener() {
+        viewHolder.serivce_com.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.OrderCom(position);
             }
         });
-        holder.serivce_evaluate.setOnClickListener(new View.OnClickListener() {
+        viewHolder.serivce_evaluate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.OrderEvaluate(position);
             }
         });
-        holder.serivce_gps.setOnClickListener(new View.OnClickListener() {
+        viewHolder.serivce_gps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.lookPosition(position);
@@ -136,26 +131,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return mData == null ? 0 : mData.size();
+        return 20;
     }
 
-
-    /**
-     * 获取除头部外真正的下标
-     *
-     * @param holder
-     * @return real position
-     */
-    public int getRealPosition(RecyclerView.ViewHolder holder) {
-        int position = holder.getLayoutPosition();
-        return position - 1;
-
-    }
 
     /**
      * 订单列表Item 的ViewHolder
      */
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends TTSBaseAdapterRecyclerView.ViewHolder {
         private TextView order_state;
         private HorizontalListView list_view;
         private TextView serivce_gps, serivce_time, serivce_address, server_cost, order_cancel, serivce_fu, serivce_com, serivce_evaluate;

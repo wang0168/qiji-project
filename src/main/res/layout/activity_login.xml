@@ -21,7 +21,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/x15"
             android:text="账号："
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/y30" />
 
         <EditText
             android:id="@+id/ETMobile"
@@ -33,6 +34,7 @@
             android:focusable="true"
             android:gravity="center_vertical"
             android:hint="请输入您的手机号"
+            android:inputType="phone"
             android:paddingLeft="@dimen/x15"
             android:textColor="@color/RGB80_80_80"
             android:textColorHint="@color/RGB136_136_136"
@@ -61,7 +63,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/x15"
             android:text="密码："
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/y30" />
 
         <EditText
             android:id="@+id/ETPassword"
@@ -91,6 +94,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y30"
         android:orientation="horizontal">
 
         <TextView
@@ -99,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/y15"
-            android:layout_marginTop="@dimen/eight_sp"
+
             android:text="忘记密码" />
 
     </RelativeLayout>

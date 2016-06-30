@@ -15,7 +15,6 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import tts.moudle.api.Host;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.widget.HorizontalListView;
@@ -87,15 +86,15 @@ public class EngOrderDetailsActivity extends BaseActivity {
                 params = new HashMap<>();
 //                params.put("member_id", AccountMoudle.getInstance().getUserInfo().getMember_id());
 //                params.put("token", AccountMoudle.getInstance().getUserInfo().getMem_token());
-                params.put("order_id", getIntent().getStringExtra("order_id"));
-                getDataWithPost(getData, Host.hostUrl + "api.php?m=Api&c=Order&a=orderdetails", params);
+//                params.put("order_id", getIntent().getStringExtra("order_id"));
+//                getDataWithPost(getData, Host.hostUrl + "api.php?m=Api&c=Order&a=orderdetails", params);
                 break;
             case submitData:
-                params = new HashMap<>();
+//                params = new HashMap<>();
 //                params.put("member_id", AccountMoudle.getInstance().getUserInfo().getMember_id());
 //                params.put("token", AccountMoudle.getInstance().getUserInfo().getMem_token());
-                params.put("order_id", getIntent().getStringExtra("order_id"));
-                getDataWithPost(submitData, Host.hostUrl + "api.php?m=Api&c=Engineer&a=ordertrue", params);
+//                params.put("order_id", getIntent().getStringExtra("order_id"));
+//                getDataWithPost(submitData, Host.hostUrl + "api.php?m=Api&c=Engineer&a=ordertrue", params);
                 break;
         }
     }

@@ -12,7 +12,7 @@
 
 
         <ImageView
-            android:id="@+id/engineer_img"
+            android:id="@+id/face_img"
             android:layout_width="@dimen/x109"
             android:layout_height="@dimen/y109"
             android:layout_centerVertical="true"
@@ -23,33 +23,33 @@
             android:id="@+id/qqq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/engineer_img"
+            android:layout_alignTop="@+id/face_img"
             android:layout_marginLeft="@dimen/x34"
-            android:layout_toRightOf="@+id/engineer_img">
+            android:layout_toRightOf="@+id/face_img">
 
             <TextView
-                android:id="@+id/engineer_name"
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="陈琳"
                 android:textSize="@dimen/y30" />
 
             <RatingBar
-                android:id="@+id/engineer_evaluate"
+                android:id="@+id/evaluate"
                 style="@android:style/Widget.Holo.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/x30" />
+                android:layout_marginLeft="@dimen/x30"
+                android:isIndicator="true" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/engineer_phone"
+            android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/engineer_img"
-
+            android:layout_alignBottom="@+id/face_img"
             android:layout_marginLeft="@dimen/x34"
-            android:layout_toRightOf="@+id/engineer_img"
+            android:layout_toRightOf="@+id/face_img"
             android:text="13412345678"
             android:textSize="@dimen/y30" />
 

@@ -9,4 +9,6 @@
     <color name="activity_background">#eceff2</color>
     <color name="photo_bg">#dbdbdb</color>
     <color name="RGB238_238_238">#eeeeee</color>
+    <color name="orange">#fdb029</color>
+    <color name="background_white">#fdfdfe</color>
 </resources>

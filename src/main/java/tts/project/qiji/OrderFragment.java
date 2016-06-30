@@ -46,11 +46,11 @@ public class OrderFragment extends BaseFragment {
         titlelist.add("待指派");
         titlelist.add("待服务");
         titlelist.add("待确认");
-        titlelist.add("待完成");
-        fragments.add(OrderListFragment.newInstance(null, null));
-        fragments.add(OrderListFragment.newInstance(null, null));
-        fragments.add(OrderListFragment.newInstance(null, null));
-        fragments.add(OrderListFragment.newInstance(null, null));
+        titlelist.add("已完成");
+        fragments.add(OrderListFragment.newInstance("待指派", null));
+        fragments.add(OrderListFragment.newInstance("待服务", null));
+        fragments.add(OrderListFragment.newInstance("daiqueren ", null));
+        fragments.add(OrderListFragment.newInstance("已完成", null));
         adapter = new FragmentViewPagerAdapter(getChildFragmentManager(), fragments,
                 titlelist);
         viewpager.setAdapter(adapter);

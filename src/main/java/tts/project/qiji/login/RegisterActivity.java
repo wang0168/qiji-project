@@ -7,6 +7,9 @@ import android.support.v4.util.ArrayMap;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+
+import com.orhanobut.logger.Logger;
 
 import java.util.Map;
 
@@ -35,10 +38,16 @@ public class RegisterActivity extends BaseActivity {
     Button register_obtain;
     @Bind(R.id.loginBtn)
     Button loginBtn;
-    private String type;
+    @Bind(R.id.personal)
+    RadioButton personal;
+    @Bind(R.id.enterprise)
+    RadioButton enterprise;
+    private String type = "";
+    private String state = "";
     private int count = 60;
     private final int verification_ok = 101;
     private final int register_ok = 102;
+
     CountDownTimer timer = new CountDownTimer(60000, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
@@ -68,10 +77,12 @@ public class RegisterActivity extends BaseActivity {
     private void initData() {
         if (!TextUtils.isEmpty(getIntent().getStringExtra("type"))) {
             type = getIntent().getStringExtra("type");
+        } else {
+            CustomUtils.showTipShort(this, "type==null");
         }
     }
 
-    @OnClick({R.id.loginBtn, R.id.register_obtain})
+    @OnClick({R.id.loginBtn, R.id.register_obtain, R.id.personal, R.id.enterprise})
     public void doClick(View v) {
         switch (v.getId()) {
             case R.id.loginBtn:
@@ -87,7 +98,22 @@ public class RegisterActivity extends BaseActivity {
                     CustomUtils.showTipShort(this, "请输入密码");
                     return;
                 }
-//                startRequestData(Constant.register_ok);
+                if (TextUtils.isEmpty(state)) {
+                    CustomUtils.showTipShort(this, "请选择账户类型");
+                    return;
+                }
+                if ("1".equals(state)) {
+                    startRequestData(register_ok);
+                } else if ("2".equals(state)) {
+                    Intent intent = new Intent(this, EnterPriseActivity.class);
+                    intent.putExtra("phone", ETMobile.getText().toString().trim());
+                    intent.putExtra("yzm", verification.getText().toString().trim());
+                    intent.putExtra("password", ETPassword.getText().toString().trim());
+                    intent.putExtra("type", type);
+                    intent.putExtra("state", "2");
+                    startActivityForResult(intent, 1002);
+                }
+
                 break;
             case R.id.register_obtain:
                 if (!TextUtils.isMobileNO(ETMobile.getText().toString().trim())) {
@@ -95,7 +121,20 @@ public class RegisterActivity extends BaseActivity {
                     return;
                 }
                 timer.start();
-//                startRequestData(Constant.verification_ok);
+                startRequestData(verification_ok);
+                break;
+            case R.id.personal:
+                if (personal.isChecked()) {
+                    state = "1";
+                }
+//                else {
+//                    state="";
+//                }
+                break;
+            case R.id.enterprise:
+                if (enterprise.isChecked()) {
+                    state = "2";
+                }
                 break;
         }
     }
@@ -111,12 +150,12 @@ public class RegisterActivity extends BaseActivity {
                 params.put("yzm", verification.getText().toString().trim());
                 params.put("password", ETPassword.getText().toString().trim());
                 params.put("type", type);
-                params.put("state", type);
+                params.put("state", state);
                 getDataWithPost(register_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=register", params);
                 break;
             case verification_ok:
                 params = new ArrayMap<>();
-                params.put("phone", ETMobile.getText().toString().trim());
+                params.put("mobile", ETMobile.getText().toString().trim());
                 params.put("type", "1");
                 getDataWithPost(verification_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=sendSMS", params);
                 break;
@@ -129,9 +168,9 @@ public class RegisterActivity extends BaseActivity {
         switch (index) {
             case register_ok:
                 CustomUtils.showTipShort(this, response);
-                Intent intent = new Intent(this, LoginActivity.class);
-                intent.putExtra("password", ETMobile.getText().toString().trim());
-                intent.putExtra("phone", ETPassword.getText().toString().trim());
+                Intent intent = new Intent();
+                intent.putExtra("password", ETPassword.getText().toString().trim());
+                intent.putExtra("phone", ETMobile.getText().toString().trim());
                 setResult(RESULT_OK, intent);
                 finish();
                 break;
@@ -142,4 +181,25 @@ public class RegisterActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void doFailed(int what, int index, String response) {
+        super.doFailed(what, index, response);
+        Logger.json(response);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case 1002:
+                    Intent intent = new Intent(this, LoginActivity.class);
+                    intent.putExtra("password", ETPassword.getText().toString().trim());
+                    intent.putExtra("phone", ETMobile.getText().toString().trim());
+                    setResult(RESULT_OK, intent);
+                    finish();
+                    break;
+            }
+        }
+    }
 }

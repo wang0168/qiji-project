@@ -22,6 +22,7 @@ import tts.moudle.api.utils.TextUtils;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.AddressBean;
+import tts.project.qiji.common.MyAccountMoudle;
 
 /**
  * 编辑地址
@@ -76,8 +77,8 @@ public class EditAddressActivity extends BaseActivity implements OnClickListener
     private void bindData() {
         editName.setText(addressBean.getName());
         editPhone.setText(addressBean.getMobile());
-        editArea.setText(addressBean.getProvince() + addressBean.getCity() + addressBean.getCountry());
-        editAddress.setText(addressBean.getDetailed_address());
+        editArea.setText(addressBean.getProvince() + addressBean.getCity() + addressBean.getArea());
+        editAddress.setText(addressBean.getAddress());
         edit_zip_code.setText(addressBean.getZip_code());
     }
 
@@ -109,8 +110,8 @@ public class EditAddressActivity extends BaseActivity implements OnClickListener
         switch (index) {
             case submitData:
                 params = new ArrayMap<>();
-                params.put("member_id", "");
-                params.put("user_token", "");
+                params.put("uid", MyAccountMoudle.getInstance().getUserInfo().getUser_id());
+                params.put("token", MyAccountMoudle.getInstance().getUserInfo().getToken());
                 if (TextUtils.isEmpty(editPhone.getText().toString())) {
                     CustomUtils.showTipShort(this, "电话号码不能为空");
                     return;
@@ -127,21 +128,21 @@ public class EditAddressActivity extends BaseActivity implements OnClickListener
                     CustomUtils.showTipShort(this, "地区不能为空");
                     return;
                 }
-                if (TextUtils.isEmpty(edit_zip_code.getText().toString())) {
-                    CustomUtils.showTipShort(this, "邮编不能为空");
-                    return;
-                }
+//                if (TextUtils.isEmpty(edit_zip_code.getText().toString())) {
+//                    CustomUtils.showTipShort(this, "邮编不能为空");
+//                    return;
+//                }
                 params.put("mobile", editPhone.getText().toString());
                 params.put("name", editName.getText().toString());
-                params.put("detailed_address", editAddress.getText().toString());
+                params.put("address", editAddress.getText().toString());
                 params.put("province", provinceStr);
                 params.put("city", cityStr);
-                params.put("country", countryStr);
-                params.put("zip_code", edit_zip_code.getText().toString());
+                params.put("area", countryStr);
+//                params.put("zip_code", edit_zip_code.getText().toString());
                 if (from == 1) {
                     params.put("address_id", addressBean.getAddress_id() + "");
                 }
-                getDataWithPost(submitData, Host.hostUrl + "addressInterface.api?addAddress", params);
+                getDataWithPost(submitData, Host.hostUrl + "api.php?m=Api&c=User&a=addaddress", params);
                 break;
         }
     }

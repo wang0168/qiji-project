@@ -56,8 +56,7 @@ public class RegisterIdentityActivity extends BaseActivity implements OnClickLis
                 }
                 Intent intent = new Intent(this, RegisterActivity.class);
                 intent.putExtra("type", type);
-                startActivity(intent);
-                finish();
+                startActivityForResult(intent, 1001);
                 break;
         }
     }
@@ -70,18 +69,27 @@ public class RegisterIdentityActivity extends BaseActivity implements OnClickLis
                 if (user.isChecked()) {
                     type = "1";
                     engineer.setChecked(false);
-                }else {
-                    type="";
+                } else {
+                    type = "";
                 }
                 break;
             case R.id.engineer:
                 if (engineer.isChecked()) {
                     type = "2";
                     user.setChecked(false);
-                }else {
-                    type="";
+                } else {
+                    type = "";
                 }
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            setResult(RESULT_OK, data);
+            finish();
         }
     }
 }
