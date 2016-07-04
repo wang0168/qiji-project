@@ -23,7 +23,7 @@
 
             <CheckBox
                 android:id="@+id/user"
-                android:layout_width="@dimen/x200"
+                android:layout_width="@dimen/y200"
                 android:layout_height="@dimen/y200"
                 android:background="@drawable/register_btn_select"
                 android:button="@null"
@@ -42,7 +42,7 @@
 
             <CheckBox
                 android:id="@+id/engineer"
-                android:layout_width="@dimen/x200"
+                android:layout_width="@dimen/y200"
                 android:layout_height="@dimen/y200"
                 android:background="@drawable/register_btn_select"
                 android:button="@null"
@@ -68,7 +68,7 @@
         android:layout_marginLeft="@dimen/x100"
         android:layout_marginRight="@dimen/x100"
         android:layout_marginTop="@dimen/y50"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/shape_button_corner5_coloraccent"
         android:gravity="center"
         android:onClick="doClick"
         android:text="下一步"

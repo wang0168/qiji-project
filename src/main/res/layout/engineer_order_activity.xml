@@ -90,7 +90,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/x20"
                 android:onClick="doClick"
-                android:src="@mipmap/grzx" />
+                android:src="@mipmap/grzx_eng" />
 
         </RelativeLayout>
     </FrameLayout>

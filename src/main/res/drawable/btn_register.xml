@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <stroke android:color="@color/btn_logout_normal" />
-    <solid android:color="@color/colorPrimary" />
+    <stroke android:color="@color/colorPrimary" />
+    <solid android:color="@color/RGB221_221_221" />
     <corners android:radius="@dimen/y100" />
 </shape>

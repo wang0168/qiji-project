@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
+            android:background="@drawable/shape_kuang_corner5_color_gray"
             android:hint="您的建议对我们很重要..."
             android:minLines="10"
             android:padding="8dp" />

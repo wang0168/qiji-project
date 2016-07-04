@@ -13,6 +13,11 @@ public class BaseFragment extends TTSBaseFragment {
     public final int getData = 1;
     public final int loadMore = 4;
     public final int cancel = 5;
+    public final int modify = 6;
+    public final int submit = 7;
+    public final int confirm = 8;
+    public final int hurryOrder = 9;
+
 
 
     @Override

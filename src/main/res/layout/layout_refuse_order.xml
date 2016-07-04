@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y30"
+    android:paddingLeft="@dimen/x20"
+    android:paddingRight="@dimen/x20"
+    android:paddingTop="@dimen/y20"
+    tools:showIn="@layout/activity_details_order_eng">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拒单理由" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/y60"
+        android:layout_marginTop="@dimen/y30"
+        android:gravity="center_vertical"
+        android:text="拒单理由拒单理由  \n拒单理由拒单理由" />
+
+</LinearLayout>

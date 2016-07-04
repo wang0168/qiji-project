@@ -21,6 +21,7 @@ import tts.moudle.api.Host;
 import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.utils.CustomUtils;
+import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.activity.AddressManagerActivity;
 import tts.project.qiji.activity.BaseInfoActivity;
@@ -32,7 +33,9 @@ import tts.project.qiji.bean.MeItemBean;
 import tts.project.qiji.bean.UserInfoBean;
 import tts.project.qiji.common.MyAccountMoudle;
 import tts.project.qiji.engineer.EngineerOrderActivity;
+import tts.project.qiji.engineer_manager.EngineerManagerActivity;
 import tts.project.qiji.login.LoginActivity;
+import tts.project.qiji.user_manager.UserManagerActivity;
 import tts.project.qiji.utils.ImageLoader;
 import tts.project.qiji.utils.LoginInfoSave;
 
@@ -67,13 +70,13 @@ public class MeFragment extends BaseFragment {
         mList.setLayoutManager(new LinearLayoutManager(getActivity()));
 //        mList.addItemDecoration(new RecyclerViewGridItemDecoration(getActivity()));
         final List<MeItemBean> data = new ArrayList<>();
-        data.add(new MeItemBean(R.mipmap.scxh, "我的收藏", true, false, true));
-        data.add(new MeItemBean(0, "地址管理", true, true, false));
-        data.add(new MeItemBean(0, "意见反馈", true, true, false));
-        data.add(new MeItemBean(0, "关于我们", true, true, false));
-        data.add(new MeItemBean(0, "推荐给朋友", true, false, true));
-        data.add(new MeItemBean(0, "清理缓存", true, true, false));
-        data.add(new MeItemBean(0, "服务协议条款", true, false, false));
+        data.add(new MeItemBean(R.mipmap.scxh, "我的收藏", "", true, false, true));
+        data.add(new MeItemBean(0, "地址管理", "", true, true, false));
+        data.add(new MeItemBean(0, "意见反馈", "", true, true, false));
+        data.add(new MeItemBean(0, "关于我们", "", true, true, false));
+        data.add(new MeItemBean(0, "推荐给朋友", "", true, false, true));
+        data.add(new MeItemBean(0, "清理缓存", "", true, true, false));
+        data.add(new MeItemBean(0, "服务条款协议", "", true, false, false));
         MeItemAdapter adapter = new MeItemAdapter(getActivity(), data);
         mList.setAdapter(adapter);
         adapter.setOnItemClickListener(new TTSBaseAdapterRecyclerView.OnItemClickListener() {
@@ -83,12 +86,16 @@ public class MeFragment extends BaseFragment {
                     startActivity(new Intent(getActivity(), AddressManagerActivity.class));
                 } else if ("意见反馈".equals(data.get(position).getItem_name())) {
                     startActivity(new Intent(getActivity(), FeedBackActivity.class));
-                } else if ("服务协议条款".equals(data.get(position).getItem_name())) {
+                } else if ("关于我们".equals(data.get(position).getItem_name())) {
                     startActivity(new Intent(getActivity(), EngineerOrderActivity.class));
-                } else if ("清理缓存".equals(data.get(position).getItem_name())) {
+                } else if ("推荐给朋友".equals(data.get(position).getItem_name())) {
                     startActivity(new Intent(getActivity(), PayActivity.class));
                 } else if ("我的收藏".equals(data.get(position).getItem_name())) {
                     startActivity(new Intent(getActivity(), MyCollectionActivity.class));
+                } else if ("清理缓存".equals(data.get(position).getItem_name())) {
+                    startActivity(new Intent(getActivity(), EngineerManagerActivity.class));
+                } else if ("服务条款协议".equals(data.get(position).getItem_name())) {
+                    startActivity(new Intent(getActivity(), UserManagerActivity.class));
                 }
             }
 
@@ -120,9 +127,11 @@ public class MeFragment extends BaseFragment {
 
     private void bindData() {
         UserInfoBean userInfoBean = MyAccountMoudle.getInstance().getUserInfo();
-        name.setText(userInfoBean.getUsername()+"");
-        ImageLoader.load(getActivity(), userInfoBean.getImg().toString()+"", face_img);
-        phone.setText(userInfoBean.getPhone().toString()+"");
+        if (!TextUtils.isEmpty(userInfoBean.getUsername()+"")){
+            name.setText(userInfoBean.getUsername() + "");
+        }
+        ImageLoader.load(getActivity(), userInfoBean.getImg().toString() + "", face_img);
+        phone.setText(userInfoBean.getPhone().toString() + "");
 //        evaluate.setRating(Float.parseFloat(userInfoBean.get));
     }
 

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/y100"
             android:layout_alignParentBottom="true"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/shape_button_corner5_coloraccent"
             android:gravity="center"
             android:text="退出登录"
             android:textColor="@color/white"

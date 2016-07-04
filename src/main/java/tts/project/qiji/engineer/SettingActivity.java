@@ -44,11 +44,11 @@ public class SettingActivity extends BaseActivity {
         mList.setLayoutManager(new LinearLayoutManager(this));
 //        mList.addItemDecoration(new RecyclerViewGridItemDecoration(getActivity()));
         final List<MeItemBean> data = new ArrayList<>();
-        data.add(new MeItemBean(R.mipmap.hj_icon, "意见反馈", true, true, false));
-        data.add(new MeItemBean(R.mipmap.zx_icon, "关于我们", true, true, false));
-        data.add(new MeItemBean(R.mipmap.rz_icon, "推荐给朋友", true, false, true));
-        data.add(new MeItemBean(R.mipmap.sc_icon, "清理缓存", true, true, false));
-        data.add(new MeItemBean(R.mipmap.pl_icon, "服务协议条款", true, false, false));
+        data.add(new MeItemBean(R.mipmap.hj_icon, "意见反馈","", true, true, false));
+        data.add(new MeItemBean(R.mipmap.zx_icon, "关于我们","", true, true, false));
+        data.add(new MeItemBean(R.mipmap.rz_icon, "推荐给朋友", "",true, false, true));
+        data.add(new MeItemBean(R.mipmap.sc_icon, "清理缓存", "",true, true, false));
+        data.add(new MeItemBean(R.mipmap.pl_icon, "服务协议条款","", true, false, false));
         MeItemAdapter adapter = new MeItemAdapter(this, data);
         adapter.setOnItemClickListener(new TTSBaseAdapterRecyclerView.OnItemClickListener() {
             @Override

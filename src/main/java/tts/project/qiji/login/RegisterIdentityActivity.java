@@ -68,20 +68,25 @@ public class RegisterIdentityActivity extends BaseActivity implements OnClickLis
             case R.id.user:
                 if (user.isChecked()) {
                     type = "1";
+                    user.setChecked(true);
                     engineer.setChecked(false);
                 } else {
                     type = "";
+//                    user.setChecked(false);
                 }
                 break;
             case R.id.engineer:
                 if (engineer.isChecked()) {
                     type = "2";
                     user.setChecked(false);
+                    engineer.setChecked(true);
                 } else {
+//                    engineer.setChecked(false);
                     type = "";
                 }
                 break;
         }
+//        CustomUtils.showTipShort(this, "type==" + type);
     }
 
     @Override

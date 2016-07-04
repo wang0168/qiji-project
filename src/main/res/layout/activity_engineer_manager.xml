@@ -7,4 +7,9 @@
     tools:context="tts.project.qiji.user_manager.UserManagerActivity">
 
     <include layout="@layout/toolbar_item" />
+
+    <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
+        android:id="@+id/mlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

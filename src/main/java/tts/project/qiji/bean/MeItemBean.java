@@ -6,17 +6,26 @@ package tts.project.qiji.bean;
 public class MeItemBean {
     private int left_img;
     private String item_name;
+    private String context;
     private boolean isRight;
     private boolean isline;
     private boolean iswidth;
 
-    public MeItemBean(int left_img, String item_name, boolean isRight, boolean isline, boolean iswidth) {
+    public MeItemBean(int left_img, String item_name,String context, boolean isRight, boolean isline, boolean iswidth) {
         this.left_img = left_img;
         this.item_name = item_name;
         this.isRight = isRight;
         this.isline = isline;
         this.iswidth = iswidth;
 
+    }
+
+    public String getContext() {
+        return context;
+    }
+
+    public void setContext(String context) {
+        this.context = context;
     }
 
     public int getLeft_img() {

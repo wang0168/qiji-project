@@ -12,7 +12,9 @@ import android.widget.Toast;
 import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.TTSRadioButton;
 import tts.moudle.api.widget.TabManager;
+import tts.project.qiji.bean.UserInfoBean;
 import tts.project.qiji.common.MyAccountMoudle;
+import tts.project.qiji.engineer.EngPersonalActivity;
 import tts.project.qiji.login.LoginActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -26,7 +28,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        UserInfoBean userInfoBean = MyAccountMoudle.getInstance().getUserInfo();
+        if ("2".equals(userInfoBean.getType()) && "1".equals(userInfoBean.getState())) {
+            startActivity(new Intent(this, EngPersonalActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            finish();
+            return;
+        }
         mTabHost = (TabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup();
         mTabManager = new TabManager(this, mTabHost, R.id.containertabcontent);
@@ -53,7 +60,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.rb_home_bottombar_order:
                 if (!TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getToken())) {
-                mTabHost.setCurrentTabByTag("tab1");
+                    mTabHost.setCurrentTabByTag("tab1");
                 } else {
                     homeBtn.setChecked(true);
                     mTabHost.setCurrentTabByTag("tab0");
@@ -63,7 +70,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
             case R.id.rb_home_bottombar_my:
                 if (!TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getToken())) {
-                mTabHost.setCurrentTabByTag("tab2");
+                    mTabHost.setCurrentTabByTag("tab2");
                 } else {
                     homeBtn.setChecked(true);
                     mTabHost.setCurrentTabByTag("tab0");
@@ -116,6 +123,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             AppManager.getAppManager().AppExit(this);
         }
     }
+
     @Override
     protected void startApplyPermissions(int index) {
         super.startApplyPermissions(index);

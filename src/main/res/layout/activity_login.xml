@@ -115,7 +115,7 @@
         android:layout_marginLeft="@dimen/x150"
         android:layout_marginRight="@dimen/x150"
         android:layout_marginTop="@dimen/y200"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/shape_button_corner5_coloraccent"
         android:gravity="center"
         android:onClick="doClick"
         android:text="登录"

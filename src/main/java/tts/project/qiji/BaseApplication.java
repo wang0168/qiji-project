@@ -3,6 +3,7 @@ package tts.project.qiji;
 import android.content.Context;
 import android.util.Log;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.google.gson.Gson;
 
 import tts.moudle.api.TTSBaseApplication;
@@ -32,6 +33,7 @@ public class BaseApplication extends TTSBaseApplication {
 //        ShareSDK.initSDK(this);
         initHost("http://qj.tstmobile.com/");
         initUser();
+        SDKInitializer.initialize(getApplicationContext());
 //        HXBaseApplication.getInstance().initHX(this,"tts.project.llg");
 //        initQQ("wxbf654da821c08af5");
 //        initWb("3112442065");

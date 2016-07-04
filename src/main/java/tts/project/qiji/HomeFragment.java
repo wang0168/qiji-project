@@ -26,7 +26,6 @@ import java.util.Map;
 
 import tts.moudle.api.Host;
 import tts.moudle.api.TTSBaseAdapterRecyclerView;
-import tts.moudle.api.activity.AboutActivity;
 import tts.moudle.api.adapter.BannerAdapter;
 import tts.moudle.api.bean.BannerBean;
 import tts.moudle.api.bean.BarBean;
@@ -36,12 +35,10 @@ import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.BannerView;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
-import tts.moudle.api.widget.RecyclerViewGridItemDecoration;
 import tts.project.qiji.activity.CallServiceActivity;
+import tts.project.qiji.activity.OrderActivity;
 import tts.project.qiji.adapter.HomeSortAdapter;
 import tts.project.qiji.bean.HomeSortBean;
-import tts.project.qiji.common.MyAccountMoudle;
-import tts.project.qiji.login.LoginActivity;
 import tts.project.qiji.utils.Util;
 
 
@@ -128,19 +125,24 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
         startActivityForResult(new Intent(getActivity(), ProvinceSelectActivity.class), 3000);
     }
 
-    RecyclerViewGridItemDecoration recyclerViewGridItemDecoration;
+//    RecyclerViewGridItemDecoration recyclerViewGridItemDecoration;
 
     private void adapter() {
         mList.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-        recyclerViewGridItemDecoration = new RecyclerViewGridItemDecoration(getActivity());
-        mList.addItemDecoration(recyclerViewGridItemDecoration);
+//        recyclerViewGridItemDecoration = new RecyclerViewGridItemDecoration(getActivity());
+//        mList.addItemDecoration(recyclerViewGridItemDecoration);
         data = new ArrayList<>();
 
         HomeSortAdapter homeSortAdapter = new HomeSortAdapter(getActivity(), data);
         homeSortAdapter.setOnItemClickListener(new TTSBaseAdapterRecyclerView.OnItemClickListener() {
             @Override
             public void onClick(View itemView, int position) {
-                startActivity(new Intent(getActivity(), CallServiceActivity.class).putExtra("data", data.get(position)));
+                if ("1".equals(data.get(position).getXiadan())) {
+                    startActivity(new Intent(getActivity(), OrderActivity.class).putExtra("price", data
+                            .get(position).getPrice()).putExtra("service_id", data.get(position).getFuwu_id()));
+                } else {
+                    startActivity(new Intent(getActivity(), CallServiceActivity.class).putExtra("data", data.get(position)));
+                }
             }
 
             @Override
@@ -171,13 +173,13 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
         Map<String, String> params;
         switch (index) {
             case getData:
-                if (TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getUser_id())) {
-                    startActivity(new Intent(getActivity(), LoginActivity.class));
-                    return;
-                }
+//                if (TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getUser_id())) {
+//                    startActivity(new Intent(getActivity(), LoginActivity.class));
+//                    return;
+//                }
                 params = new ArrayMap<>();
-                params.put("uid", MyAccountMoudle.getInstance().getUserInfo().getUser_id());
-                params.put("token", MyAccountMoudle.getInstance().getUserInfo().getToken());
+//                params.put("uid", MyAccountMoudle.getInstance().getUserInfo().getUser_id());
+//                params.put("token", MyAccountMoudle.getInstance().getUserInfo().getToken());
                 getDataWithPost(getData, Host.hostUrl + "api.php?m=Api&c=Order&a=getfuwulist", params);
                 break;
             case get_banner:

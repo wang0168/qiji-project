@@ -17,12 +17,15 @@ import java.util.Map;
 import tts.moudle.api.Host;
 import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.moudle.api.bean.BarBean;
+import tts.moudle.api.utils.CustomUtils;
+import tts.moudle.api.utils.TextUtils;
 import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
 import tts.project.qiji.adapter.AddressManagerAdapter;
 import tts.project.qiji.bean.AddressBean;
 import tts.project.qiji.common.MyAccountMoudle;
+import tts.project.qiji.login.LoginActivity;
 
 /**
  * 地址管理
@@ -94,6 +97,11 @@ public class AddressManagerActivity extends BaseActivity implements View.OnClick
         Map<String, String> params;
         switch (index) {
             case getData:
+                if (TextUtils.isEmpty(MyAccountMoudle.getInstance().getUserInfo().getUser_id())) {
+                    CustomUtils.showTipShort(this,"请先登录！");
+                    startActivity(new Intent(this, LoginActivity.class));
+                    return;
+                }
                 params = new ArrayMap<>();
                 params.put("uid", MyAccountMoudle.getInstance().getUserInfo().getUser_id());
                 params.put("token", MyAccountMoudle.getInstance().getUserInfo().getToken());

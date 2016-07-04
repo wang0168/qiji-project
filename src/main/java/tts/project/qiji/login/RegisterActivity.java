@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.util.ArrayMap;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
+import android.widget.TextView;
 
+import com.bigkoo.pickerview.OptionsPickerView;
 import com.orhanobut.logger.Logger;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import butterknife.Bind;
@@ -38,16 +42,18 @@ public class RegisterActivity extends BaseActivity {
     Button register_obtain;
     @Bind(R.id.loginBtn)
     Button loginBtn;
-    @Bind(R.id.personal)
-    RadioButton personal;
-    @Bind(R.id.enterprise)
-    RadioButton enterprise;
+
+    @Bind(R.id.nickname)
+    EditText nickname;
+    @Bind(R.id.sign_type)
+    TextView signType;
     private String type = "";
     private String state = "";
     private int count = 60;
     private final int verification_ok = 101;
     private final int register_ok = 102;
-
+    //    private String nicknameStr = "";
+    private OptionsPickerView pvOptions;
     CountDownTimer timer = new CountDownTimer(60000, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
@@ -71,6 +77,54 @@ public class RegisterActivity extends BaseActivity {
         ButterKnife.bind(this);
         setTitle(new BarBean().setMsg("注册"));
         initData();
+        ETMobile.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (ETMobile.getText().length() == 11) {
+                    register_obtain.setClickable(true);
+                    register_obtain.setBackgroundResource(R.drawable.shape_button_corner5_coloraccent);
+                } else {
+                    register_obtain.setBackgroundResource(R.drawable.shape_button_corner5_color_gray);
+                }
+            }
+        });
+        signType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pvOptions = new OptionsPickerView(RegisterActivity.this);
+                pvOptions.setTitle("选择类型");
+                final ArrayList<String> arrayList = new ArrayList<>();
+                arrayList.add("企业");
+                arrayList.add("个人");
+                pvOptions.setPicker(arrayList);
+                pvOptions.setCyclic(false);
+                pvOptions.setOnoptionsSelectListener(new OptionsPickerView.OnOptionsSelectListener() {
+                    @Override
+                    public void onOptionsSelect(int options1, int option2, int options3) {
+                        signType.setText(arrayList.get(options1));
+                        if ("企业".equals(signType)) {
+                            state = "2";
+                        } else {
+                            state = "1";
+                        }
+                        startRequestData(submitData);
+//                            baseInfoItemBeans.get(position).setContext(arrayList.get(options1));
+//                            edit_picker.setText(arrayList.get(options1));
+                    }
+                });
+                pvOptions.show();
+            }
+        });
     }
 
 
@@ -82,7 +136,7 @@ public class RegisterActivity extends BaseActivity {
         }
     }
 
-    @OnClick({R.id.loginBtn, R.id.register_obtain, R.id.personal, R.id.enterprise})
+    @OnClick({R.id.loginBtn, R.id.register_obtain})
     public void doClick(View v) {
         switch (v.getId()) {
             case R.id.loginBtn:
@@ -102,6 +156,10 @@ public class RegisterActivity extends BaseActivity {
                     CustomUtils.showTipShort(this, "请选择账户类型");
                     return;
                 }
+//                if (!TextUtils.isEmpty(nickname.getText().toString().trim())) {
+//                    nicknameStr = nickname.getText().toString().trim();
+//
+//                }
                 if ("1".equals(state)) {
                     startRequestData(register_ok);
                 } else if ("2".equals(state)) {
@@ -110,6 +168,7 @@ public class RegisterActivity extends BaseActivity {
                     intent.putExtra("yzm", verification.getText().toString().trim());
                     intent.putExtra("password", ETPassword.getText().toString().trim());
                     intent.putExtra("type", type);
+//                    intent.putExtra("nickname", nicknameStr);
                     intent.putExtra("state", "2");
                     startActivityForResult(intent, 1002);
                 }
@@ -123,19 +182,7 @@ public class RegisterActivity extends BaseActivity {
                 timer.start();
                 startRequestData(verification_ok);
                 break;
-            case R.id.personal:
-                if (personal.isChecked()) {
-                    state = "1";
-                }
-//                else {
-//                    state="";
-//                }
-                break;
-            case R.id.enterprise:
-                if (enterprise.isChecked()) {
-                    state = "2";
-                }
-                break;
+
         }
     }
 
@@ -150,7 +197,8 @@ public class RegisterActivity extends BaseActivity {
                 params.put("yzm", verification.getText().toString().trim());
                 params.put("password", ETPassword.getText().toString().trim());
                 params.put("type", type);
-                params.put("state", state);
+//                params.put("nickname", nicknameStr);
+                params.put("state", "1");
                 getDataWithPost(register_ok, Host.hostUrl + "api.php?m=Api&c=Login&a=register", params);
                 break;
             case verification_ok:

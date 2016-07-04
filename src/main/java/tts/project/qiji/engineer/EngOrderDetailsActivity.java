@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -17,7 +18,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.utils.CustomUtils;
-import tts.moudle.api.widget.HorizontalListView;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.OrderBean;
@@ -27,40 +27,55 @@ import tts.project.qiji.bean.OrderBean;
  * 订单详情
  */
 public class EngOrderDetailsActivity extends BaseActivity {
+
     @Bind(R.id.state)
     TextView state;
     @Bind(R.id.order_num)
-    TextView order_num;
+    TextView orderNum;
     @Bind(R.id.order_time)
-    TextView order_time;
-    @Bind(R.id.name)
-    TextView name;
-    @Bind(R.id.order_phone)
-    TextView order_phone;
-    @Bind(R.id.address)
-    TextView address;
-    @Bind(R.id.company)
-    TextView company;
-    @Bind(R.id.order_stime)
-    TextView order_stime;
-    @Bind(R.id.order_detail)
-    TextView order_detail;
-    @Bind(R.id.order_cost)
-    TextView order_cost;
-    @Bind(R.id.list_view)
-    HorizontalListView list_view;
-
+    TextView orderTime;
+    @Bind(R.id.layout_type)
+    LinearLayout layoutType;
+    @Bind(R.id.order_state)
+    TextView orderState;
+//    @Bind(R.id.list_view)
+//    RecyclerView listView;
+    @Bind(R.id.serivce_time)
+    TextView serivceTime;
+    @Bind(R.id.serivce_address)
+    TextView serivceAddress;
+    @Bind(R.id.server_cost)
+    TextView serverCost;
+    @Bind(R.id.order_cancel)
+    TextView orderCancel;
+    @Bind(R.id.serivce_fu)
+    TextView serivceFu;
+    @Bind(R.id.serivce_gps)
+    TextView serivceGps;
+    @Bind(R.id.serivce_com)
+    TextView serivceCom;
+    @Bind(R.id.serivce_evaluate)
+    TextView serivceEvaluate;
+    @Bind(R.id.tv_name)
+    TextView tvName;
+    @Bind(R.id.tv_phone)
+    TextView tvPhone;
+    @Bind(R.id.upload_time)
+    TextView uploadTime;
+    @Bind(R.id.service_context)
+    LinearLayout serviceContext;
+//    @Bind(R.id.layout_assess)
+//    LinearLayout layoutAssess;
+    @Bind(R.id.order_server)
+    TextView orderServer;
     @Bind(R.id.orders)
     TextView orders;
-    @Bind(R.id.order_server)
-    TextView order_server;
     @Bind(R.id.navigation)
     TextView navigation;
-    @Bind(R.id.server_com)
-    TextView server_com;
     @Bind(R.id.server_shang)
-    TextView server_shang;
-
+    TextView serverShang;
+    @Bind(R.id.server_com)
+    TextView serverCom;
     private OrderBean orderBean;
 
     @Override

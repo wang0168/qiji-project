@@ -6,9 +6,10 @@
     <color name="RGB180_180_180">#b4b4b4</color>
     <color name="divide_bg_gray">#f5f4f9</color>
     <color name="text_gray">#7c7c7c</color>
-    <color name="activity_background">#eceff2</color>
+    <color name="activity_background">#f8f8f8</color>
     <color name="photo_bg">#dbdbdb</color>
     <color name="RGB238_238_238">#eeeeee</color>
     <color name="orange">#fdb029</color>
     <color name="background_white">#fdfdfe</color>
+    <color name="RGB221_221_221">#dddddd</color>
 </resources>

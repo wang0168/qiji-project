@@ -5,6 +5,9 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.support.v7.app.AlertDialog;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by lenove on 2016/5/6.
  */
@@ -31,5 +34,9 @@ public class Util {
         builder.show();
     }
 
+    public static String getTime(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日 hh时mm分");
+        return format.format(date);
+    }
 
 }

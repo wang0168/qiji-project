@@ -59,10 +59,11 @@ public class CallServiceActivity extends BaseActivity {
             public void onClick(View itemView, int position) {
                 if ("1".equals(data.getSort_types().get(position).getXiadan())) {
 //                    CustomUtils.showTipShort(CallServiceActivity.this,"已经是最后一级分类啦");
-                    startActivity(new Intent(CallServiceActivity.this, OrderActivity.class).putExtra("price", data.getPrice()));
+                    startActivityForResult(new Intent(CallServiceActivity.this, OrderActivity.class).
+                            putExtra("price", data.getPrice()).putExtra("service_id", data.getFuwu_id()), 10001);
                     return;
                 }
-                startActivity(new Intent(CallServiceActivity.this, CallServiceActivity.class).putExtra("data", data.getSort_types().get(position)));
+                startActivityForResult(new Intent(CallServiceActivity.this, CallServiceActivity.class).putExtra("data", data.getSort_types().get(position)), 10001);
             }
 
             @Override
@@ -78,5 +79,18 @@ public class CallServiceActivity extends BaseActivity {
         service_name = (TextView) header.findViewById(R.id.service_name);
         mlist = (RecyclerViewAutoRefreshUpgraded) findViewById(R.id.mlist);
         mlist.addHeader(header);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case 10001:
+                    setResult(RESULT_OK);
+                    finish();
+                    break;
+            }
+        }
     }
 }

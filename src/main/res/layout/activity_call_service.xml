@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/activity_background"
     android:orientation="vertical"
     tools:context="tts.project.qiji.activity.CallServiceActivity">
 
@@ -11,5 +12,5 @@
     <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
         android:id="@+id/mlist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded>
+        android:layout_height="match_parent"/>
 </LinearLayout>

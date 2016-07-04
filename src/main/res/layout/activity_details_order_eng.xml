@@ -23,11 +23,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <!-- android:background="@mipmap/bj"-->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/y200"
-
+                    android:background="#6a6a6a"
                     android:orientation="vertical">
 
                     <TextView
@@ -93,219 +93,99 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
+                <include layout="@layout/item_orders" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/y200"
+                    android:layout_height="@dimen/y160"
                     android:layout_marginTop="@dimen/y10"
-                    android:background="#fefbef"
-                    android:orientation="vertical">
+                    android:background="@color/white"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingLeft="@dimen/x20"
+                    android:paddingRight="@dimen/x20"
+                    android:paddingTop="@dimen/y20">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/txt_name"
+                        style="@style/style_text"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/y20">
+                        android:gravity="center"
+                        android:text="联系人:" />
 
-                        <TextView
-                            android:id="@+id/aaa"
-                            style="@style/style_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/x60"
-                            android:gravity="center"
-                            android:text="联系人:" />
-
-                        <TextView
-                            android:id="@+id/name"
-                            style="@style/style_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@id/aaa"
-                            android:gravity="center"
-                            android:paddingLeft="@dimen/x10"
-                            android:text="陈琳" />
-
-                        <TextView
-                            android:id="@+id/order_phone"
-                            style="@style/style_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="@dimen/x58"
-                            android:gravity="center"
-                            android:text="13323450987" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tv_name"
+                        style="@style/style_text"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/y20"
-                        android:gravity="center_vertical">
+                        android:layout_toRightOf="@id/txt_name"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/x10"
+                        android:text="陈琳" />
 
-                        <ImageView
-                            android:layout_width="@dimen/x40"
-                            android:layout_height="@dimen/y40"
-                            android:layout_marginLeft="@dimen/x10"
-                            android:layout_marginTop="@dimen/y5" />
-                        <!--android:src="@mipmap/location"-->
-                        <TextView
-                            android:id="@+id/aaaa"
-                            style="@style/style_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/x60"
-                            android:gravity="center"
-                            android:text="服务地址:" />
+                    <View
+                        style="@style/view_width_style"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/x20" />
 
-                        <TextView
-                            android:id="@+id/address"
-                            style="@style/style_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@id/aaaa"
-                            android:gravity="center"
-                            android:paddingLeft="@dimen/x10"
-                            android:text="陈琳" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/txt_phone"
+                        style="@style/style_text"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/y10"
-                        android:layout_marginTop="@dimen/y20">
+                        android:layout_alignParentBottom="true"
 
-                        <TextView
-                            android:id="@+id/aaaaa"
-                            style="@style/style_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/x60"
-                            android:gravity="center"
-                            android:text="公司:" />
+                        android:gravity="center"
+                        android:text="联系方式:" />
 
-                        <TextView
-                            android:id="@+id/company"
-                            style="@style/style_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@id/aaaaa"
-                            android:gravity="center"
-                            android:paddingLeft="@dimen/x10"
-                            android:text="陈琳" />
-                    </RelativeLayout>
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        style="@style/style_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@id/txt_phone"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/x10"
+                        android:text="13412341234" />
+
+                </RelativeLayout>
+
+                <View style="@style/view_width_style" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/y90"
-                    android:layout_marginTop="@dimen/y15"
-                    android:background="#fefbef"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_height="@dimen/y60"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white">
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/y60"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="服务时间"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/y30" />
+                        android:gravity="center"
+                        android:text="在线沟通"
+                        android:textColor="@color/colorAccent" />
 
-                    <TextView
-                        android:id="@+id/order_stime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/y60"
-                        android:text="2016/02/23 星期五 上午"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/y30" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/y20"
-                    android:background="@color/white"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/y50"
-                        android:gravity="bottom"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="@dimen/y35"
-                            android:layout_height="@dimen/y35"
-                            android:layout_marginLeft="@dimen/x20"
-                            android:layout_marginTop="@dimen/y20" />
-                        <!--android:src="@mipmap/fwlx"-->
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="服务需求" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="@dimen/fourteen_sp"
-                            android:text="等待用户付款"
-                            android:visibility="gone" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/y100"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <tts.moudle.api.widget.HorizontalListView
-                            android:id="@+id/list_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/y60"
-                            android:gravity="center_vertical" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/order_detail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/x10"
-                        android:paddingLeft="@dimen/eight_sp"
-                        android:paddingRight="@dimen/eight_sp"
-                        android:text="电脑频繁死机，在进行CMOS设置时也会出现死机现象，启动windows和关闭windows时鼠标不可用"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/y30" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/y81"
-                    android:layout_marginTop="@dimen/eight_sp"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    <View
+                        style="@style/view_height_style"
+                        android:layout_marginBottom="@dimen/y15"
+                        android:layout_marginTop="@dimen/y15" />
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/x30"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center_vertical|right"
-                        android:text="维修费:"
-                        android:textSize="@dimen/y30" />
-
-                    <TextView
-                        android:id="@+id/order_cost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/x20"
-                        android:layout_marginRight="@dimen/x20"
-                        android:text="￥1000"
-                        android:textSize="@dimen/y30" />
+                        android:gravity="center"
+                        android:text="拨打电话"
+                        android:textColor="@color/colorAccent" />
                 </LinearLayout>
+
+                <include layout="@layout/layout_service_context" />
+
+                <!--<include layout="@layout/layout_assess" />-->
+
+                <!--<include layout="@layout/layout_refuse_order" />-->
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -313,10 +193,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/y97"
-        android:layout_marginRight="@dimen/x25"
         android:background="@color/white"
         android:gravity="center_vertical|right"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/x20">
 
 
         <TextView
@@ -326,10 +206,9 @@
             android:layout_marginLeft="@dimen/x25"
             android:background="@drawable/opinion_feedback_select"
             android:gravity="center"
-            android:text="联系客户"
+            android:text="呼叫客服"
             android:textColor="@color/black"
-            android:textSize="@dimen/y30"
-            android:visibility="gone" />
+            android:textSize="@dimen/y30" />
 
 
         <TextView
@@ -363,10 +242,9 @@
             android:layout_marginLeft="@dimen/x25"
             android:background="@drawable/opinion_feedback_select"
             android:gravity="center"
-            android:text="上门服务"
+            android:text="取消订单"
             android:textColor="@color/black"
-            android:textSize="@dimen/y30"
-            android:visibility="gone" />
+            android:textSize="@dimen/y30" />
 
         <TextView
             android:id="@+id/server_com"
@@ -377,8 +255,7 @@
             android:gravity="center"
             android:text="确认服务"
             android:textColor="@color/black"
-            android:textSize="@dimen/y30"
-            android:visibility="gone" />
+            android:textSize="@dimen/y30" />
 
 
     </LinearLayout>

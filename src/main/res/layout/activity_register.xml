@@ -93,11 +93,86 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/y68"
                 android:layout_gravity="center_vertical"
+                android:background="@drawable/shape_button_corner5_color_gray"
+                android:clickable="false"
                 android:gravity="center"
                 android:paddingLeft="@dimen/x6"
                 android:paddingRight="@dimen/x6"
                 android:text="获取验证码"
                 android:textColor="#000000" />
+        </LinearLayout>
+
+        <View
+            style="@style/view_width_style"
+            android:layout_marginLeft="@dimen/x30"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y97"
+            android:layout_marginLeft="@dimen/y20"
+            android:layout_marginRight="@dimen/y20"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="@dimen/y37"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x15"
+                android:text="昵称"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <EditText
+                android:id="@+id/nickname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:editable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="请输入您的昵称"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/x20"
+                android:textColor="@color/RGB80_80_80"
+                android:textColorHint="@color/RGB136_136_136"
+                android:textSize="@dimen/y30" />
+        </LinearLayout>
+
+        <View
+            style="@style/view_width_style"
+            android:layout_marginLeft="@dimen/x30" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y97"
+            android:layout_marginLeft="@dimen/y20"
+            android:layout_marginRight="@dimen/y20"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="@dimen/y37"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x15"
+                android:text="类型"
+                android:textColor="@color/black"
+                android:textSize="@dimen/y30" />
+
+            <TextView
+                android:id="@+id/sign_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请选择类型"
+                android:paddingLeft="@dimen/x20"
+                android:textColor="@color/RGB80_80_80"
+                android:textColorHint="@color/RGB136_136_136"
+                android:textSize="@dimen/y30" />
         </LinearLayout>
 
         <View
@@ -136,37 +211,38 @@
                 android:textColorHint="@color/RGB136_136_136"
                 android:textSize="@dimen/y30" />
         </LinearLayout>
+
     </LinearLayout>
 
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y70"
-        android:layout_marginLeft="@dimen/x40"
-        android:layout_marginRight="@dimen/x40"
-        android:layout_marginTop="@dimen/y40"
-        android:orientation="horizontal">
+    <!--<RadioGroup-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/y70"-->
+    <!--android:layout_marginLeft="@dimen/x40"-->
+    <!--android:layout_marginRight="@dimen/x40"-->
+    <!--android:layout_marginTop="@dimen/y40"-->
+    <!--android:orientation="horizontal">-->
 
-        <RadioButton
-            android:id="@+id/personal"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/selector_sign_state"
-            android:button="@null"
-            android:gravity="center"
-            android:text="个人" />
+    <!--<RadioButton-->
+    <!--android:id="@+id/personal"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/selector_sign_state"-->
+    <!--android:button="@null"-->
+    <!--android:gravity="center"-->
+    <!--android:text="个人" />-->
 
-        <RadioButton
-            android:id="@+id/enterprise"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/selector_sign_state"
-            android:button="@null"
-            android:gravity="center"
-            android:text="企业" />
-    </RadioGroup>
+    <!--<RadioButton-->
+    <!--android:id="@+id/enterprise"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/selector_sign_state"-->
+    <!--android:button="@null"-->
+    <!--android:gravity="center"-->
+    <!--android:text="企业" />-->
+    <!--</RadioGroup>-->
 
     <Button
         android:id="@+id/loginBtn"
@@ -175,7 +251,7 @@
         android:layout_marginLeft="@dimen/x50"
         android:layout_marginRight="@dimen/x50"
         android:layout_marginTop="@dimen/y200"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/shape_button_corner5_coloraccent"
         android:gravity="center"
         android:text="确定"
         android:textColor="#FFFFFF"

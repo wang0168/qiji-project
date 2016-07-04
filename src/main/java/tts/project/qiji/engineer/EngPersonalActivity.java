@@ -46,12 +46,12 @@ public class EngPersonalActivity extends BaseActivity {
         mList.setLayoutManager(new LinearLayoutManager(this));
 //        mList.addItemDecoration(new RecyclerViewGridItemDecoration(getActivity()));
         final List<MeItemBean> data = new ArrayList<>();
-        data.add(new MeItemBean(R.mipmap.hj_icon, "一键呼叫", true, true, false));
-        data.add(new MeItemBean(R.mipmap.zx_icon, "在线咨询", true, true, false));
-        data.add(new MeItemBean(R.mipmap.rz_icon, "我的认证", true, false, true));
-        data.add(new MeItemBean(R.mipmap.sc_icon, "我的收藏", true, true, false));
-        data.add(new MeItemBean(R.mipmap.pl_icon, "我的评论", true, false, true));
-        data.add(new MeItemBean(R.mipmap.sz_icon, "设置", true, false, false));
+        data.add(new MeItemBean(R.mipmap.hj_icon, "一键呼叫","", true, true, false));
+        data.add(new MeItemBean(R.mipmap.zx_icon, "在线咨询","", true, true, false));
+        data.add(new MeItemBean(R.mipmap.rz_icon, "我的认证","", true, false, true));
+        data.add(new MeItemBean(R.mipmap.sc_icon, "我的收藏","", true, true, false));
+        data.add(new MeItemBean(R.mipmap.pl_icon, "我的评论","", true, false, true));
+        data.add(new MeItemBean(R.mipmap.sz_icon, "设置","", true, false, false));
         MeItemAdapter adapter = new MeItemAdapter(this, data);
         adapter.setOnItemClickListener(new TTSBaseAdapterRecyclerView.OnItemClickListener() {
             @Override

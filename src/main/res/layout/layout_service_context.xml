@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/service_context"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/y20"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y30">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y60"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="服务内容"
+            android:textColor="@color/black"
+            android:textSize="@dimen/y26" />
+
+        <TextView
+            android:id="@+id/upload_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="2016-06-30"
+            android:textSize="@dimen/y26" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x15"
+            android:layout_toLeftOf="@+id/upload_time"
+            android:text="上传时间:"
+            android:textSize="@dimen/y26" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y120"
+        android:layout_marginLeft="@dimen/x20"
+        android:layout_marginRight="@dimen/x20"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y120"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@mipmap/u1"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y120"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@mipmap/u2"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y120"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@mipmap/u3"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y120"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_marginTop="@dimen/y20"
+        android:text="服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/y60"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20" />
+</LinearLayout>

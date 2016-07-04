@@ -198,7 +198,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y150"
+        android:layout_height="@dimen/y200"
         android:background="@color/white"
         android:paddingBottom="@dimen/y20"
         android:paddingLeft="@dimen/x20"
@@ -223,9 +223,11 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y50"
+            android:layout_height="@dimen/y100"
             android:layout_alignParentBottom="true"
-            android:hint="填写个人名称或公司名称" />
+            android:background="@drawable/shape_kuang_corner5_color_gray"
+            android:hint="填写个人名称或公司名称"
+            android:paddingLeft="@dimen/x20" />
     </RelativeLayout>
 
     <RelativeLayout
