@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/service_context"
+    android:id="@+id/layout_service_context"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/y20"
     android:background="@color/white"
     android:orientation="vertical"
     android:paddingBottom="@dimen/y30">
-
+    <!--android:visibility="gone"-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/y60"
@@ -16,12 +16,11 @@
         android:paddingRight="@dimen/x20">
 
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="服务内容"
-            android:textColor="@color/black"
+            android:textColor="@color/text_gray"
             android:textSize="@dimen/y26" />
 
         <TextView
@@ -44,48 +43,50 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y120"
-        android:layout_marginLeft="@dimen/x20"
-        android:layout_marginRight="@dimen/x20"
-        android:orientation="horizontal">
+    <!--<LinearLayout-->
+    <!--android:visibility="gone"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/y120"-->
+    <!--android:layout_marginLeft="@dimen/x20"-->
+    <!--android:layout_marginRight="@dimen/x20"-->
+    <!--android:orientation="horizontal">-->
 
-        <ImageView
-            android:layout_width="@dimen/x120"
-            android:layout_height="@dimen/y120"
-            android:layout_marginLeft="@dimen/x20"
-            android:background="@mipmap/u1"
-            android:scaleType="fitCenter" />
+    <!--<ImageView-->
+    <!--android:layout_width="@dimen/x120"-->
+    <!--android:layout_height="@dimen/y120"-->
+    <!--android:layout_marginLeft="@dimen/x20"-->
+    <!--android:background="@mipmap/u1"-->
+    <!--android:scaleType="fitCenter" />-->
 
-        <ImageView
-            android:layout_width="@dimen/x120"
-            android:layout_height="@dimen/y120"
-            android:layout_marginLeft="@dimen/x20"
-            android:background="@mipmap/u2"
-            android:scaleType="fitCenter" />
+    <!--<ImageView-->
+    <!--android:layout_width="@dimen/x120"-->
+    <!--android:layout_height="@dimen/y120"-->
+    <!--android:layout_marginLeft="@dimen/x20"-->
+    <!--android:background="@mipmap/u2"-->
+    <!--android:scaleType="fitCenter" />-->
 
-        <ImageView
-            android:layout_width="@dimen/x120"
-            android:layout_height="@dimen/y120"
-            android:layout_marginLeft="@dimen/x20"
-            android:background="@mipmap/u3"
-            android:scaleType="fitCenter" />
-    </LinearLayout>
+    <!--<ImageView-->
+    <!--android:layout_width="@dimen/x120"-->
+    <!--android:layout_height="@dimen/y120"-->
+    <!--android:layout_marginLeft="@dimen/x20"-->
+    <!--android:background="@mipmap/u3"-->
+    <!--android:scaleType="fitCenter" />-->
+    <!--</LinearLayout>-->
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/context_pic_list"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y120"
         android:paddingLeft="@dimen/x20"
-        android:paddingRight="@dimen/x20"
-        android:visibility="gone" />
-
+        android:paddingRight="@dimen/x20" />
+    <!-- android:visibility="gone"-->
     <TextView
-        android:layout_marginTop="@dimen/y20"
-        android:text="服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容"
+        android:id="@+id/tv_service_context"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y20"
         android:minHeight="@dimen/y60"
         android:paddingLeft="@dimen/x20"
-        android:paddingRight="@dimen/x20" />
+        android:paddingRight="@dimen/x20"
+        android:text="服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容" />
 </LinearLayout>

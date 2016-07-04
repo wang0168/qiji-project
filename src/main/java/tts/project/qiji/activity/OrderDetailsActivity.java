@@ -87,6 +87,20 @@ public class OrderDetailsActivity extends BaseActivity {
     TextView confirmServiceOuter;
     @Bind(R.id.layout_order_action)
     LinearLayout layoutOrderAction;
+    @Bind(R.id.upload_time)
+    TextView uploadTime;
+    @Bind(R.id.context_pic_list)
+    RecyclerView contextPicList;
+    @Bind(R.id.tv_service_context)
+    TextView tvServiceContext;
+    @Bind(R.id.layout_service_context)
+    LinearLayout layoutServiceContext;
+    @Bind(R.id.assess_grade)
+    RatingBar assessGrade;
+    @Bind(R.id.assess_context)
+    TextView assessContext;
+    @Bind(R.id.layout_assess)
+    LinearLayout layoutAssess;
     private OrderBean orderBean;
 
 
@@ -168,10 +182,26 @@ public class OrderDetailsActivity extends BaseActivity {
                     orderStatusStr = "待确认服务";
                     callCustomerService.setVisibility(View.VISIBLE);
                     confirmServiceOuter.setVisibility(View.VISIBLE);
+                    layoutServiceContext.setVisibility(View.VISIBLE);
+                    if (!TextUtils.isEmpty(orderBean.getService_true_time().toString())) {
+                        uploadTime.setText(orderBean.getService_true_time() + "");
+                    }
+                    if (!TextUtils.isEmpty(orderBean.getDis())) {
+                        tvServiceContext.setText(orderBean.getDis());
+                    }
                     break;
                 case "4":
                     orderStatusStr = "订单已完成";
                     callCustomerService.setVisibility(View.VISIBLE);
+                    layoutServiceContext.setVisibility(View.VISIBLE);
+                    layoutAssess.setVisibility(View.VISIBLE);
+                    if (!TextUtils.isEmpty(orderBean.getService_true_time().toString())) {
+                        uploadTime.setText(orderBean.getService_true_time() + "");
+                    }
+                    if (!TextUtils.isEmpty(orderBean.getDis())) {
+                        tvServiceContext.setText(orderBean.getDis());
+                    }
+//                    if (!TextUtils.isEmpty(orderBean.gea))
                     break;
             }
         }

@@ -26,14 +26,17 @@
 
         <RatingBar
             android:id="@+id/rating"
+            style="@style/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_pingjia"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/y80"
-            android:isIndicator="false" />
+            android:isIndicator="false"
+            android:stepSize="1.0" />
 
         <EditText
+            android:id="@+id/edit_assess"
             android:layout_width="match_parent"
             android:layout_height="@dimen/y250"
             android:layout_below="@+id/rating"
@@ -72,6 +75,7 @@
                     android:text="维修费：" />
 
                 <TextView
+                    android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -82,10 +86,11 @@
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/action"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:gravity="center"
                 android:text="服务确认"
                 android:textColor="@color/white"

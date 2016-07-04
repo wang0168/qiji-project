@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +9,7 @@
     android:paddingLeft="@dimen/x20"
     android:paddingRight="@dimen/x20"
     android:paddingTop="@dimen/y20"
-    tools:showIn="@layout/activity_details_order_eng">
+    android:visibility="gone">
 
     <TextView
         android:layout_width="wrap_content"

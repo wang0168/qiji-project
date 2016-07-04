@@ -185,6 +185,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case submitData:
                 CustomUtils.showTipShort(this, response);
+                startActivity(new Intent(this,MapActivity.class));
                 setResult(RESULT_OK);
                 finish();
                 break;
@@ -274,7 +275,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener 
                 startRequestData(submitData);
                 break;
             case R.id.choose_pic:
-                startActivityForResult(new Intent(this, CustomPictureSelectorView.class), 10002);
+                startActivityForResult(new Intent(this, CustomPictureSelectorView.class).putExtra("maxCount",5), 10002);
                 break;
             case R.id.layout_choose_date:
                 pvTime = new TimePickerView(this, TimePickerView.Type.ALL);

@@ -1,12 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="tts.project.qiji.activity.MapActivity">
 
-</RelativeLayout>
+    <include layout="@layout/toolbar_item" />
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/home_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y120"
+        android:layout_alignParentBottom="true"
+        android:background="@color/activity_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/rb_home_bottombar_home"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/y90"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/y5"
+            android:drawableTop="@mipmap/sy"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="@drawable/textcolor_grey_blue"
+            android:textSize="@dimen/y30" />
+
+        <TextView
+            android:id="@+id/rb_home_bottombar_order"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/y90"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/y5"
+            android:drawableTop="@mipmap/wddd"
+            android:gravity="center"
+            android:text="我的订单"
+            android:textColor="@drawable/textcolor_grey_blue"
+            android:textSize="@dimen/y30" />
+
+        <TextView
+            android:id="@+id/rb_home_bottombar_my"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/y90"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/y5"
+            android:drawableTop="@mipmap/grzx"
+            android:gravity="center"
+            android:text="个人中心"
+            android:textColor="@drawable/textcolor_grey_blue"
+            android:textSize="@dimen/y30" />
+
+    </LinearLayout>
+</LinearLayout>

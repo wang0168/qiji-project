@@ -225,6 +225,10 @@
                             android:text="查看位置"
                             android:textColor="@color/colorAccent" />
                     </LinearLayout>
+
+                    <include layout="@layout/layout_service_context" />
+
+                    <include layout="@layout/layout_assess" />
                 </RelativeLayout>
             </LinearLayout>
         </ScrollView>

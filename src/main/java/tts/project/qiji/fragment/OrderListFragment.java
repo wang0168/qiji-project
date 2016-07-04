@@ -26,6 +26,7 @@ import tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded;
 import tts.project.qiji.BaseFragment;
 import tts.project.qiji.R;
 import tts.project.qiji.activity.OrderDetailsActivity;
+import tts.project.qiji.activity.ServiceConfirmActivity;
 import tts.project.qiji.adapter.OrderAdapter;
 import tts.project.qiji.bean.OrderBean;
 import tts.project.qiji.common.MyAccountMoudle;
@@ -220,11 +221,7 @@ public class OrderListFragment extends BaseFragment {
                 getDataWithPost(cancel, Host.hostUrl + "/api.php?m=Api&c=Order&a=cancel_order", params);
                 break;
             case confirm:
-                params = new ArrayMap<>();
-                params.put("uid", MyAccountMoudle.getInstance().getUserInfo().getUser_id());
-                params.put("token", MyAccountMoudle.getInstance().getUserInfo().getToken());
-                params.put("order_id", order_id);
-                getDataWithPost(confirm, Host.hostUrl + "api.php?m=Api&c=Order&a=affirmorder", params);
+                startActivityForResult(new Intent(getActivity(), ServiceConfirmActivity.class), 10001);
                 break;
             case hurryOrder:
                 params = new ArrayMap<>();
