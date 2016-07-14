@@ -25,6 +25,14 @@
             android:layout_marginLeft="@dimen/x20"
             android:layout_toRightOf="@+id/left_img" />
 
+        <TextView
+            android:id="@+id/context"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x20"
+            android:layout_toLeftOf="@+id/right_jt" />
+
         <ImageView
             android:id="@+id/right_jt"
             android:layout_width="wrap_content"

@@ -188,7 +188,7 @@
         android:layout_marginLeft="@dimen/x30"
         android:layout_marginRight="@dimen/x30"
         android:layout_marginTop="@dimen/y40"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:text="保存"
         android:textColor="@color/white" />
 </LinearLayout>

@@ -22,13 +22,14 @@ import tts.moudle.api.bean.BarBean;
 import tts.moudle.api.utils.CustomUtils;
 import tts.moudle.api.utils.TextUtils;
 import tts.project.qiji.BaseActivity;
-import tts.project.qiji.MainActivity;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.UserInfoBean;
 import tts.project.qiji.common.MyAccountMoudle;
 import tts.project.qiji.engineer.EngPersonalActivity;
-import tts.project.qiji.engineer_manager.EngineerManagerPersonalActivity;
-import tts.project.qiji.user_manager.UserManagerPersonalActivity;
+import tts.project.qiji.engineer.EngineerOrderActivity;
+import tts.project.qiji.engineer_manager.EngineerManagerActivity;
+import tts.project.qiji.user.MainActivity;
+import tts.project.qiji.user_manager.UserManagerActivity;
 import tts.project.qiji.utils.LoginInfoSave;
 
 /**
@@ -115,23 +116,35 @@ public class LoginActivity extends BaseActivity {
                 userInfo.setLogin(true);
                 MyAccountMoudle.getInstance().setUserInfo(userInfo);
                 if ("1".equals(userInfo.getType())) {//用户端
-                    if ("1".equals(userInfo.getState())) {//个人
-                        startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                    } else {//企业
-                        startActivity(new Intent(this, UserManagerPersonalActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-//                        setResult(RESULT_OK);
-                    }
+                    startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                    finish();
                 } else if ("2".equals(MyAccountMoudle.getInstance().getUserInfo().getType())) {//工程师端
-
-                    if ("1".equals(userInfo.getState())) {//个人
-                        startActivity(new Intent(this, EngPersonalActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-//                        startActivity(new Intent(this, MainActivity.class));
-                    } else {//企业
-                        startActivity(new Intent(this, EngineerManagerPersonalActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-//     setResult(RESULT_OK);
+                    Intent intent;
+                    if ("1".equals(MyAccountMoudle.getInstance().getUserInfo().getShenhe())) {
+                        intent = new Intent(this, EngineerOrderActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    } else {
+                        intent = new Intent(this, EngPersonalActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     }
+//                    AppManager.getAppManager().finishActivity(MainActivity.class);
+//                    ActivityManager activityManager = (ActivityManager)this.getSystemService(ACTIVITY_SERVICE);
+//                    List<ActivityManager.RunningTaskInfo> runningTaskInfos = activityManager.getRunningTasks(100);
+                    startActivity(intent);
+
+                    finish();
+                } else if ("3".equals(MyAccountMoudle.getInstance().getUserInfo().getType())) {//用户管理
+                    Intent intent = new Intent(this, UserManagerActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+//                    finish();
+                } else if ("4".equals(MyAccountMoudle.getInstance().getUserInfo().getType())) {//工程师管理
+                    Intent intent = new Intent(this, EngineerManagerActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
                 }
-                finish();
+
                 break;
         }
 

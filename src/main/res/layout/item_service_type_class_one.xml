@@ -2,19 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/type_class"
+        android:id="@+id/type_class_one"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y70"
         android:layout_marginLeft="@dimen/x20"
         android:layout_marginTop="@dimen/y20"
         android:gravity="center_vertical"
-        android:text="网络设备" />
+        android:text="网络设备"
+        android:textColor="@color/black"
+        android:textSize="@dimen/y30" />
 
     <tts.moudle.api.widget.GridViewInScrollView
         android:id="@+id/service_types"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:numColumns="3"
+        android:paddingLeft="@dimen/x20"
+        android:verticalSpacing="@dimen/y30" />
 </LinearLayout>

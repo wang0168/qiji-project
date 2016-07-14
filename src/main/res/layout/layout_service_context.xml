@@ -7,8 +7,9 @@
     android:layout_marginTop="@dimen/y20"
     android:background="@color/white"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/y30">
-    <!--android:visibility="gone"-->
+    android:paddingBottom="@dimen/y30"
+    android:visibility="gone">
+    <!---->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/y60"
@@ -29,7 +30,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="2016-06-30"
             android:textSize="@dimen/y26" />
 
         <TextView
@@ -87,6 +87,5 @@
         android:layout_marginTop="@dimen/y20"
         android:minHeight="@dimen/y60"
         android:paddingLeft="@dimen/x20"
-        android:paddingRight="@dimen/x20"
-        android:text="服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容" />
+        android:paddingRight="@dimen/x20" />
 </LinearLayout>

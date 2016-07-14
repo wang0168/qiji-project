@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tts.project.qiji.fragment.OrderListFragment">
+    tools:context=".user.fragment.OrderListFragment">
 
     <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
         android:id="@+id/mlist"

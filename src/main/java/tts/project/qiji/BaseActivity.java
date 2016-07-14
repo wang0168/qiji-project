@@ -6,6 +6,7 @@ import android.util.Log;
 
 import tts.moudle.api.TTSBaseActivity;
 import tts.project.qiji.login.LoginActivity;
+import tts.project.qiji.user.MainActivity;
 
 /**
  * Created by lenove on 2016/4/29.
@@ -15,6 +16,12 @@ public class BaseActivity extends TTSBaseActivity {
     public final int submitData = 2;
     public final int delete = 3;
     public final int loadMore = 4;
+    public final int cancel = 5;
+    public final int modify = 6;
+    public final int submit = 7;
+    public final int confirm = 8;
+    public final int hurryOrder = 9;
+
 //    public boolean isTokenFailed;
 
     @Override

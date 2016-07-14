@@ -34,11 +34,20 @@ public class HomeSortBean implements Serializable {
     private String intime;
     private String uptime;
     private List<HomeSortBean> sort_types;
+    private boolean isChecked;
 
     public HomeSortBean(String name, String imgPath, int imgId) {
         this.name = name;
         this.imgPath = imgPath;
         this.imgId = imgId;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
     }
 
     public String getName() {

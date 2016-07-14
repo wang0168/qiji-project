@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_item" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y200"
+                    android:background="#6a6a6a"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_state_outer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x45"
+                        android:layout_marginTop="@dimen/y20"
+                        android:text="等待确认服务"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/y36" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y10"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/x45"
+                            android:gravity="center_vertical"
+                            android:text="订单编号："
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/y30" />
+
+                        <TextView
+                            android:id="@+id/order_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/x10"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/y30" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y10"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/x45"
+                            android:gravity="center_vertical"
+                            android:text="创建时间："
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/y30" />
+
+                        <TextView
+                            android:id="@+id/create_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/x10"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/y30" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include layout="@layout/item_orders" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y160"
+                    android:layout_marginTop="@dimen/y10"
+                    android:background="@color/white"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingLeft="@dimen/x20"
+                    android:paddingRight="@dimen/x20"
+                    android:paddingTop="@dimen/y20">
+
+                    <TextView
+                        android:id="@+id/txt_name"
+                        style="@style/style_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="联系人:" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        style="@style/style_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/txt_name"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/x10" />
+
+                    <View
+                        style="@style/view_width_style"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/x20" />
+
+                    <TextView
+                        android:id="@+id/txt_phone"
+                        style="@style/style_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+
+                        android:gravity="center"
+                        android:text="联系方式:" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        style="@style/style_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@id/txt_phone"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/x10" />
+
+                </RelativeLayout>
+
+                <View style="@style/view_width_style" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y60"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/communicate_online"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="在线沟通"
+                        android:textColor="@color/colorAccent" />
+
+                    <View
+                        style="@style/view_height_style"
+                        android:layout_marginBottom="@dimen/y15"
+                        android:layout_marginTop="@dimen/y15" />
+
+                    <TextView
+                        android:id="@+id/do_call"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="拨打电话"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <!--<include layout="@layout/layout_service_context" />-->
+
+                <!--<include layout="@layout/layout_assess" />-->
+
+                <!--<include layout="@layout/layout_refuse_order" />-->
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y97"
+        android:background="@color/white"
+        android:gravity="center_vertical|right"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/x20">
+
+        <TextView
+            android:id="@+id/communicate_online_outer"
+            android:layout_width="@dimen/x140"
+            android:layout_height="@dimen/y60"
+            android:layout_marginLeft="@dimen/x15"
+            android:background="@drawable/opinion_feedback_select"
+            android:gravity="center"
+            android:text="在线咨询"
+            android:textColor="@color/black"
+            android:textSize="@dimen/y30" />
+
+        <TextView
+            android:id="@+id/call_customer_service"
+            android:layout_width="@dimen/x140"
+            android:layout_height="@dimen/y60"
+            android:layout_marginLeft="@dimen/x15"
+            android:background="@drawable/opinion_feedback_select"
+            android:gravity="center"
+            android:text="呼叫客服"
+            android:textColor="@color/black"
+            android:textSize="@dimen/y30" />
+
+        <TextView
+            android:id="@+id/refuse_order"
+            android:layout_width="@dimen/x140"
+            android:layout_height="@dimen/y60"
+            android:layout_marginLeft="@dimen/x15"
+            android:background="@drawable/opinion_feedback_select"
+            android:gravity="center"
+            android:text="拒单"
+            android:textColor="@color/black"
+            android:textSize="@dimen/y30" />
+
+        <TextView
+            android:id="@+id/take_order"
+            android:layout_width="@dimen/x140"
+            android:layout_height="@dimen/y60"
+            android:layout_marginLeft="@dimen/x15"
+            android:background="@drawable/opinion_feedback_select_accent"
+            android:gravity="center"
+            android:text="接单"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/y30" />
+
+    </LinearLayout>
+</LinearLayout>
+

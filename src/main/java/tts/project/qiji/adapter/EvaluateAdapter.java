@@ -1,93 +1,75 @@
 package tts.project.qiji.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
+import tts.moudle.api.TTSBaseAdapterRecyclerView;
+import tts.moudle.api.utils.TextUtils;
+import tts.moudle.api.widget.CircleImageView;
 import tts.project.qiji.R;
+import tts.project.qiji.bean.EvaluateBean;
+import tts.project.qiji.utils.ImageLoader;
 
 /**
- * Created by chen on 2016/3/1.
- * <p/>
- * 订单列表适配器（可添加头部）
+ *
  */
-public class EvaluateAdapter extends RecyclerView.Adapter<EvaluateAdapter.ViewHolder> {
+public class EvaluateAdapter extends TTSBaseAdapterRecyclerView<EvaluateBean> {
     private Context mContext;
-    private ArrayList<String> mData;
-    private OnItemClickListener listener;
+    private List<EvaluateBean> mData;
 
-    public interface OnItemClickListener {
-        void onClick(View itemView, int position);
 
-        void onLongClick(View itemView, int position);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        this.listener = listener;
-    }
-
-    public EvaluateAdapter(Context context, ArrayList<String> data) {
+    public EvaluateAdapter(Context context, List<EvaluateBean> data) {
+        super(context, data);
         mContext = context;
         mData = data;
     }
 
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TTSBaseAdapterRecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.evealuate_item, null, false));
     }
 
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (listener != null) {
-                    listener.onClick(holder.itemView, position);
-                }
-            }
-        });
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if (listener != null) {
-                    listener.onLongClick(holder.itemView, position);
-                }
-                return true;
-            }
-        });
-    }
-
-    @Override
-    public int getItemCount() {
-        return mData == null ? 0 : mData.size();
-    }
-
-
-    /**
-     * 获取除头部外真正的下标
-     *
-     * @param holder
-     * @return real position
-     */
-    public int getRealPosition(RecyclerView.ViewHolder holder) {
-        int position = holder.getLayoutPosition();
-        return position - 1;
-
+    public void onBindViewHolder(TTSBaseAdapterRecyclerView.ViewHolder holder, int position) {
+        super.onBindViewHolder(holder, position);
+        ViewHolder viewHolder = (ViewHolder) holder;
+        if (!TextUtils.isEmpty(mData.get(position).getName())) {
+            viewHolder.name.setText(mData.get(position).getName());
+        }
+        if (!TextUtils.isEmpty(mData.get(position).getContent())) {
+            viewHolder.evaluate_content.setText(mData.get(position).getContent());
+        }
+        if (!TextUtils.isEmpty(mData.get(position).getXing())) {
+            viewHolder.ratingbar.setRating(Float.parseFloat(mData.get(position).getXing()));
+        }
+        if (!TextUtils.isEmpty(mData.get(position).getImg())) {
+            ImageLoader.load(mContext, mData.get(position).getImg(), viewHolder.face_img);
+        }
     }
 
     /**
      * 订单列表Item 的ViewHolder
      */
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends TTSBaseAdapterRecyclerView.ViewHolder {
+        private CircleImageView face_img;
+        private TextView name;
+        private TextView evaluate_content;
+        private RatingBar ratingbar;
 
         public ViewHolder(View itemView) {
             super(itemView);
+            face_img = (CircleImageView) itemView.findViewById(R.id.face_img);
+            name = (TextView) itemView.findViewById(R.id.name);
+            evaluate_content = (TextView) itemView.findViewById(R.id.evaluate_content);
+            ratingbar = (RatingBar) itemView.findViewById(R.id.ratingbar);
         }
     }
 

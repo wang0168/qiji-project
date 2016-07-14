@@ -17,7 +17,7 @@ public class MeItemBean {
         this.isRight = isRight;
         this.isline = isline;
         this.iswidth = iswidth;
-
+        this.context=context;
     }
 
     public String getContext() {

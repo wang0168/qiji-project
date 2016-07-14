@@ -10,22 +10,22 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import tts.moudle.api.bean.ImgBean;
+import tts.project.qiji.R;
 
 
 /**
  * Created by sjb on 2016/1/20.
  */
 public class EngImgAdapter extends BaseAdapter {
-    private LayoutInflater layoutInflater;
-    private Context context;
-    private List<String> data;
+    private Context mContext;
+    private List<ImgBean> data;
 
-    public EngImgAdapter(Context context, ArrayList<String> data) {
-        this.context = context;
+    public EngImgAdapter(Context context, List<ImgBean> data) {
+        this.mContext = context;
         this.data = data;
-        this.layoutInflater = LayoutInflater.from(context);
     }
 
     /**
@@ -33,7 +33,7 @@ public class EngImgAdapter extends BaseAdapter {
      *
      * @author Administrator
      */
-    public final class Zujian {
+    public class Zujian {
         public ImageView img;
     }
 
@@ -64,13 +64,13 @@ public class EngImgAdapter extends BaseAdapter {
         if (convertView == null) {
             zujian = new Zujian();
             // 获得组件，实例化组件
-//            convertView = layoutInflater.inflate(R.layout.image_bean, null);
-//            zujian.img = (ImageView) convertView.findViewById(R.id.img);
-//            convertView.setTag(zujian);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_xl_pic_show, null);
+            zujian.img = (ImageView) convertView.findViewById(R.id.img);
+            convertView.setTag(zujian);
         } else {
             zujian = (Zujian) convertView.getTag();
         }
-        Glide.with(context).load(data.get(position)).diskCacheStrategy(DiskCacheStrategy.ALL).into(zujian.img);
+        Glide.with(mContext).load(data.get(position).getPath()).diskCacheStrategy(DiskCacheStrategy.ALL).into(zujian.img);
 
         return convertView;
     }

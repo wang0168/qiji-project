@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="tts.project.qiji.engineer.RefuseReasonActivity">
+
+    <include layout="@layout/toolbar_item" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edit_refuse_reason"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y280"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_marginRight="@dimen/x20"
+            android:layout_marginTop="@dimen/y40"
+            android:background="@drawable/shape_kuang_corner5_color_gray"
+            android:gravity="top|left"
+            android:hint="您可以输入拒单的理由"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/action"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y100"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_button_corner5_coloraccent"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/y30" />
+    </RelativeLayout>
+</LinearLayout>

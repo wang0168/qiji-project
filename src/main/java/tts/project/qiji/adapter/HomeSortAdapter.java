@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import tts.moudle.api.TTSBaseAdapterRecyclerView;
+import tts.moudle.api.utils.TextUtils;
 import tts.project.qiji.R;
 import tts.project.qiji.bean.HomeSortBean;
 import tts.project.qiji.utils.ImageLoader;
@@ -37,7 +38,9 @@ public class HomeSortAdapter extends TTSBaseAdapterRecyclerView<HomeSortBean> {
         super.onBindViewHolder(holder, position);
         ViewHolder viewHolder = (ViewHolder) holder;
 //        viewHolder.sort_icon.setBackgroundResource(mData.get(position).getImgId());
-        viewHolder.sort_name.setText(mData.get(position).getName());
+        if (!TextUtils.isEmpty(mData.get(position).getName())) {
+            viewHolder.sort_name.setText(mData.get(position).getName());
+        }
         ImageLoader.load(mContext, mData.get(position).getImg(), viewHolder.sort_icon);
     }
 

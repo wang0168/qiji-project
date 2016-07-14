@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y200"
+        android:layout_marginTop="@dimen/y20"
+        android:background="@color/background_white"
+        android:paddingBottom="@dimen/y25"
+        android:paddingLeft="@dimen/x25"
+        android:paddingRight="@dimen/x25"
+        android:paddingTop="@dimen/y25">
+
+
+        <ImageView
+            android:id="@+id/face_img"
+            android:layout_width="@dimen/x140"
+            android:layout_height="@dimen/y140"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x30"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/face_img"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_toRightOf="@+id/face_img"
+            android:text="5月账单"
+            android:textColor="#575757"
+            android:textSize="@dimen/y30" />
+
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/face_img"
+            android:layout_marginBottom="@dimen/y20"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_toRightOf="@+id/face_img"
+            android:text="服务156次"
+            android:textColor="#575757"
+            android:textSize="@dimen/y30" />
+    </RelativeLayout>
+
+    <View
+        style="@style/view_width_style"
+        android:layout_marginLeft="@dimen/x20" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y140"
+        android:background="@color/white">
+
+        <TableRow
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="地址:" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_weight="6" />
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="电话:" />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_weight="6" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y30"
+        android:background="@color/activity_background" />
+
+    <include layout="@layout/layout_header_manager" />
+</LinearLayout>

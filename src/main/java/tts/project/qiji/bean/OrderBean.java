@@ -1,7 +1,5 @@
 package tts.project.qiji.bean;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 
 /**
@@ -60,8 +58,8 @@ public class OrderBean implements Serializable {
     private String img;
     private String dis;
     private Object coupon;
-    @SerializedName("return")
-    private Object returnX;
+    private String service_type;
+
     private String is_need_server;
     private String log;
     private String lag;
@@ -72,6 +70,34 @@ public class OrderBean implements Serializable {
     private Object cancel_time;
     private Object service_true_time;
     private EngineerBean engineer;
+    /**
+     * one_fuwu : 外接设备
+     * two_fuwu : 网络设备
+     * three_fuwu : 路由器
+     * result_return : null
+     */
+
+    private String one_fuwu;
+    private String two_fuwu;
+    private String three_fuwu;
+    private Object result_return;
+    /**
+     * engineer_dis : 预付角梳
+     * engineer_img : /public/upload/imgs/577f02d170556.jpg,/public/upload/imgs/577f02d175666.jpg,/public/upload/imgs/577f02d176242.jpg,/public/upload/imgs/577f02d176cc8.jpg,/public/upload/imgs/577f02d1772d6.jpg
+     * pingjia : null
+     */
+
+    private String engineer_dis;
+    private String engineer_img;
+    private Object pingjia;
+
+    public String getService_type() {
+        return service_type;
+    }
+
+    public void setService_type(String service_type) {
+        this.service_type = service_type;
+    }
 
     public EngineerBean getEngineer() {
         return engineer;
@@ -240,13 +266,6 @@ public class OrderBean implements Serializable {
         this.coupon = coupon;
     }
 
-    public Object getReturnX() {
-        return returnX;
-    }
-
-    public void setReturnX(Object returnX) {
-        this.returnX = returnX;
-    }
 
     public String getIs_need_server() {
         return is_need_server;
@@ -326,5 +345,61 @@ public class OrderBean implements Serializable {
 
     public void setEngineer_state(Object engineer_state) {
         this.engineer_state = engineer_state;
+    }
+
+    public String getOne_fuwu() {
+        return one_fuwu;
+    }
+
+    public void setOne_fuwu(String one_fuwu) {
+        this.one_fuwu = one_fuwu;
+    }
+
+    public String getTwo_fuwu() {
+        return two_fuwu;
+    }
+
+    public void setTwo_fuwu(String two_fuwu) {
+        this.two_fuwu = two_fuwu;
+    }
+
+    public String getThree_fuwu() {
+        return three_fuwu;
+    }
+
+    public void setThree_fuwu(String three_fuwu) {
+        this.three_fuwu = three_fuwu;
+    }
+
+    public Object getResult_return() {
+        return result_return;
+    }
+
+    public void setResult_return(Object result_return) {
+        this.result_return = result_return;
+    }
+
+    public String getEngineer_dis() {
+        return engineer_dis;
+    }
+
+    public void setEngineer_dis(String engineer_dis) {
+        this.engineer_dis = engineer_dis;
+    }
+
+    public String getEngineer_img() {
+        return engineer_img;
+    }
+
+    public void setEngineer_img(String engineer_img) {
+        this.engineer_img = engineer_img;
+    }
+
+    public Object getPingjia() {
+        return pingjia;
+    }
+
+    public void setPingjia(Object pingjia) {
+        this.pingjia = pingjia;
     }
 }

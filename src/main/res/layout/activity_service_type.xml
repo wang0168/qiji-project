@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/activity_background"
     android:orientation="vertical"
-    tools:context="tts.project.qiji.activity.ServiceTypeActivity">
+    tools:context="tts.project.qiji.user.ServiceTypeActivity">
 
     <include layout="@layout/toolbar_item" />
 

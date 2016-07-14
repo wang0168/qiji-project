@@ -101,7 +101,7 @@
             android:layout_centerInParent="true"
             android:layout_marginLeft="@dimen/x50"
             android:layout_marginRight="@dimen/x50"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:gravity="center"
             android:text="提交"
             android:textColor="@color/white"

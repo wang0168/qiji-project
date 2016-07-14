@@ -6,8 +6,10 @@ import android.util.Log;
 import com.baidu.mapapi.SDKInitializer;
 import com.google.gson.Gson;
 
+import cn.jpush.android.api.JPushInterface;
 import tts.moudle.api.TTSBaseApplication;
 import tts.moudle.api.moudle.SharedPreferencesMoudle;
+import tts.moudle.huanxinapi.HXBaseApplication;
 import tts.project.qiji.bean.UserInfoBean;
 import tts.project.qiji.common.MyAccountMoudle;
 
@@ -32,6 +34,7 @@ public class BaseApplication extends TTSBaseApplication {
         super.onCreate();
 //        ShareSDK.initSDK(this);
         initHost("http://qj.tstmobile.com/");
+        HXBaseApplication.getInstance().initHX(this,"tts.project.qiji");
         initUser();
         SDKInitializer.initialize(getApplicationContext());
 //        HXBaseApplication.getInstance().initHX(this,"tts.project.llg");
@@ -39,8 +42,7 @@ public class BaseApplication extends TTSBaseApplication {
 //        initWb("3112442065");
 //        initWx("wxbf654da821c08af5", "");
         initMyUser(getApplicationContext());
-//        JPushInterface.init(this);
-
+        JPushInterface.init(this);
     }
 
     /**
@@ -49,7 +51,7 @@ public class BaseApplication extends TTSBaseApplication {
     public void initMyUser(Context context) {
         Log.i("", "==========================2222222222222222222");
         String json = SharedPreferencesMoudle.getInstance().getJson(context, "user_login");
-        Log.i("", "ddd===============" + json);
+//        Log.i("", "ddd===============" + json);
         UserInfoBean userInfo = new Gson().fromJson(json, UserInfoBean.class);
         MyAccountMoudle.getInstance().setUserInfo(userInfo);
     }

@@ -6,6 +6,7 @@
 
     <ImageView
         android:id="@+id/img"
+        android:scaleType="centerCrop"
         android:layout_width="@dimen/x77"
         android:layout_height="@dimen/y77"
         android:layout_marginLeft="@dimen/x20" />

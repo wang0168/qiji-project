@@ -52,7 +52,7 @@
                 <tts.moudle.api.widget.TTSRadioButton
                     android:id="@+id/rb_home_bottombar_home"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/y90"
+                    android:layout_height="@dimen/y100"
                     android:layout_weight="1"
                     android:button="@null"
                     android:checked="true"
@@ -69,7 +69,7 @@
                 <tts.moudle.api.widget.TTSRadioButton
                     android:id="@+id/rb_home_bottombar_order"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/y90"
+                    android:layout_height="@dimen/y100"
                     android:layout_weight="1"
                     android:button="@null"
                     android:drawablePadding="@dimen/y1"
@@ -85,7 +85,7 @@
                 <tts.moudle.api.widget.TTSRadioButton
                     android:id="@+id/rb_home_bottombar_my"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/y90"
+                    android:layout_height="@dimen/y100"
                     android:layout_weight="1"
                     android:button="@null"
                     android:drawablePadding="@dimen/y1"

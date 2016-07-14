@@ -108,11 +108,11 @@
 
                     <TextView
                         android:id="@+id/txt_name"
-                        style="@style/style_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="联系人:" />
+                        android:text="联系人:"
+                        android:textSize="@dimen/y30" />
 
                     <TextView
                         android:id="@+id/tv_name"
@@ -130,13 +130,12 @@
 
                     <TextView
                         android:id="@+id/txt_phone"
-                        style="@style/style_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-
                         android:gravity="center"
-                        android:text="联系方式:" />
+                        android:text="联系方式:"
+                        android:textSize="@dimen/y30" />
 
                     <TextView
                         android:id="@+id/tv_phone"
@@ -170,7 +169,7 @@
                             android:layout_width="@dimen/x80"
                             android:layout_height="@dimen/y80"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/ic_launcher" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:id="@+id/eng_name"
@@ -178,20 +177,18 @@
                             android:layout_height="wrap_content"
                             android:layout_alignTop="@+id/eng_face"
                             android:layout_marginLeft="@dimen/x40"
-                            android:layout_marginTop="@dimen/y8"
+                            android:layout_marginTop="@dimen/y2"
                             android:layout_toRightOf="@+id/eng_face"
                             android:text="姚师傅" />
 
                         <RatingBar
-                            android:id="@+id/eng_phone"
-                            style="@android:style/Widget.Holo.RatingBar.Small"
+                            android:id="@+id/eng_rating"
+                            style="@style/ratingBarLastSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignBottom="@+id/eng_face"
-                            android:layout_marginBottom="@dimen/y8"
                             android:layout_marginLeft="@dimen/x40"
-                            android:layout_toRightOf="@+id/eng_face"
-                            android:text="姚师傅" />
+                            android:layout_toRightOf="@+id/eng_face" />
                     </RelativeLayout>
 
                     <View
@@ -205,6 +202,7 @@
                         android:layout_alignParentBottom="true">
 
                         <TextView
+                            android:id="@+id/call_engineer"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -218,6 +216,7 @@
                             android:layout_marginTop="@dimen/y15" />
 
                         <TextView
+                            android:id="@+id/preview_location"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -226,10 +225,11 @@
                             android:textColor="@color/colorAccent" />
                     </LinearLayout>
 
-                    <include layout="@layout/layout_service_context" />
-
-                    <include layout="@layout/layout_assess" />
                 </RelativeLayout>
+
+                <include layout="@layout/layout_service_context" />
+
+                <!--<include layout="@layout/layout_assess" />-->
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -247,42 +247,42 @@
             android:id="@+id/call_customer_service"
             android:layout_width="@dimen/x140"
             android:layout_height="@dimen/y60"
-            android:layout_marginLeft="@dimen/x25"
+            android:layout_marginLeft="@dimen/x20"
             android:background="@drawable/opinion_feedback_select"
             android:gravity="center"
             android:text="呼叫客服"
             android:textColor="@color/text_gray"
             android:textSize="@dimen/y30" />
 
-        <TextView
-            android:id="@+id/orders"
-            android:layout_width="@dimen/x140"
-            android:layout_height="@dimen/y60"
-            android:layout_marginLeft="@dimen/x25"
-            android:background="@drawable/opinion_feedback_select"
-            android:gravity="center"
-            android:text="接单"
-            android:textColor="@color/text_gray"
-            android:textSize="@dimen/y30"
-            android:visibility="gone" />
+        <!--<TextView-->
+        <!--android:id="@+id/orders"-->
+        <!--android:layout_width="@dimen/x140"-->
+        <!--android:layout_height="@dimen/y60"-->
+        <!--android:layout_marginLeft="@dimen/x20"-->
+        <!--android:background="@drawable/opinion_feedback_select"-->
+        <!--android:gravity="center"-->
+        <!--android:text="接单"-->
+        <!--android:textColor="@color/text_gray"-->
+        <!--android:textSize="@dimen/y30"-->
+        <!--android:visibility="gone" />-->
 
-        <TextView
-            android:id="@+id/navigation"
-            android:layout_width="@dimen/x140"
-            android:layout_height="@dimen/y60"
-            android:layout_marginLeft="@dimen/x25"
-            android:background="@drawable/opinion_feedback_select"
-            android:gravity="center"
-            android:text="导航"
-            android:textColor="@color/text_gray"
-            android:textSize="@dimen/y30"
-            android:visibility="gone" />
+        <!--<TextView-->
+        <!--android:id="@+id/navigation"-->
+        <!--android:layout_width="@dimen/x140"-->
+        <!--android:layout_height="@dimen/y60"-->
+        <!--android:layout_marginLeft="@dimen/x20"-->
+        <!--android:background="@drawable/opinion_feedback_select"-->
+        <!--android:gravity="center"-->
+        <!--android:text="导航"-->
+        <!--android:textColor="@color/text_gray"-->
+        <!--android:textSize="@dimen/y30"-->
+        <!--android:visibility="gone" />-->
 
         <TextView
             android:id="@+id/cancel_order_outer"
             android:layout_width="@dimen/x140"
             android:layout_height="@dimen/y60"
-            android:layout_marginLeft="@dimen/x25"
+            android:layout_marginLeft="@dimen/x20"
             android:background="@drawable/opinion_feedback_select"
             android:gravity="center"
             android:text="取消订单"
@@ -294,7 +294,7 @@
             android:id="@+id/modify_order_outer"
             android:layout_width="@dimen/x140"
             android:layout_height="@dimen/y60"
-            android:layout_marginLeft="@dimen/x25"
+            android:layout_marginLeft="@dimen/x20"
             android:background="@drawable/opinion_feedback_select"
             android:gravity="center"
             android:text="修改订单"
@@ -306,7 +306,7 @@
             android:id="@+id/hurry_order_outer"
             android:layout_width="@dimen/x140"
             android:layout_height="@dimen/y58"
-            android:layout_marginRight="@dimen/x25"
+            android:layout_marginLeft="@dimen/x20"
             android:background="@drawable/opinion_feedback_select_accent"
             android:gravity="center"
             android:paddingLeft="@dimen/x10"

@@ -9,7 +9,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.orhanobut.logger.Logger;
@@ -46,7 +45,7 @@ public class RegisterActivity extends BaseActivity {
     @Bind(R.id.nickname)
     EditText nickname;
     @Bind(R.id.sign_type)
-    TextView signType;
+    EditText signType;
     private String type = "";
     private String state = "";
     private int count = 60;
@@ -112,7 +111,7 @@ public class RegisterActivity extends BaseActivity {
                     @Override
                     public void onOptionsSelect(int options1, int option2, int options3) {
                         signType.setText(arrayList.get(options1));
-                        if ("企业".equals(signType)) {
+                        if ("企业".equals(arrayList.get(options1))) {
                             state = "2";
                         } else {
                             state = "1";

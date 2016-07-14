@@ -5,14 +5,13 @@
     android:orientation="vertical">
 
     <CheckBox
-        android:id="@+id/type_class"
-        android:layout_width="@dimen/x120"
+        android:id="@+id/type_class_two"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/y50"
         android:background="@drawable/selector_service_type"
         android:button="@null"
-        android:checked="true"
         android:gravity="center"
-        android:textColor="@drawable/textcolor_grey_white"
-        android:text="防火墙" />
+        android:text="防火墙"
+        android:textColor="@drawable/textcolor_grey_white" />
 
 </LinearLayout>

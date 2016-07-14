@@ -33,6 +33,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:scaleType="centerCrop"
                 android:id="@+id/head_img"
                 android:layout_width="@dimen/y180"
                 android:layout_height="@dimen/y120"
@@ -56,6 +57,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:scaleType="centerCrop"
                 android:id="@+id/id_zheng"
                 android:layout_width="@dimen/y180"
                 android:layout_height="@dimen/y120"
@@ -79,6 +81,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:scaleType="centerCrop"
                 android:id="@+id/id_fan"
                 android:layout_width="@dimen/y180"
                 android:layout_height="@dimen/y120"
@@ -108,6 +111,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:scaleType="centerCrop"
                 android:id="@+id/idcard_with_hand"
                 android:layout_width="@dimen/y180"
                 android:layout_height="@dimen/y120"
@@ -131,6 +135,8 @@
             android:orientation="vertical">
 
             <ImageView
+
+                android:scaleType="centerCrop"
                 android:id="@+id/certificate"
                 android:layout_width="@dimen/y180"
                 android:layout_height="@dimen/y120"

@@ -7,4 +7,22 @@
     tools:context="tts.project.qiji.user_manager.UserManagerPersonalActivity">
 
     <include layout="@layout/toolbar_item" />
+
+    <tts.moudle.api.widget.RecyclerViewAutoRefreshUpgraded
+        android:id="@+id/mlist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/action"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y80"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/y30" />
+
 </LinearLayout>

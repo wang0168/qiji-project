@@ -21,6 +21,7 @@
             android:text="订单金额" />
 
         <TextView
+            android:id="@+id/tv_total_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -34,6 +35,7 @@
         android:layout_height="@dimen/y20" />
 
     <RelativeLayout
+        android:id="@+id/layout_coupon"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y90"
         android:background="@color/white"
@@ -211,17 +213,17 @@
             android:text="发票抬头" />
 
         <CheckBox
-            android:id="@+id/pay_fapiao"
+            android:id="@+id/fapiao_header"
             android:layout_width="@dimen/x35"
             android:layout_height="@dimen/y36"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/x17"
             android:background="@drawable/btn_seclect_pay"
-            android:button="@null"
-            android:clickable="false"
-            android:focusable="false" />
-
+            android:button="@null" />
+        <!-- android:clickable="false"
+                    android:focusable="false"-->
         <EditText
+            android:id="@+id/edit_fapiao_header"
             android:layout_width="match_parent"
             android:layout_height="@dimen/y100"
             android:layout_alignParentBottom="true"
@@ -250,7 +252,7 @@
                 android:textSize="@dimen/y30" />
 
             <TextView
-                android:id="@+id/txt_pay_money"
+                android:id="@+id/tv_pay_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

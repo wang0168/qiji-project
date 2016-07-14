@@ -2,6 +2,7 @@ package tts.project.qiji.engineer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
@@ -9,8 +10,10 @@ import android.widget.TabHost;
 import tts.moudle.api.widget.TabManager;
 import tts.project.qiji.BaseActivity;
 import tts.project.qiji.R;
-import tts.project.qiji.engineer.fragment.OrderEngFragment;
 import tts.project.qiji.engineer.fragment.OrdersFragment;
+import tts.project.qiji.engineer.fragment.TakeOrderFragment;
+import tts.project.qiji.service.LocationService;
+import tts.project.qiji.utils.Util;
 
 
 /**
@@ -26,13 +29,17 @@ public class EngineerOrderActivity extends BaseActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.engineer_order_activity);
+        Intent serviceIntent = new Intent(this, LocationService.class);
+        startService(serviceIntent);
+//        ActivityManager activityManager = (ActivityManager)this.getSystemService(ACTIVITY_SERVICE);
+//        List<ActivityManager.RunningTaskInfo> runningTaskInfos = activityManager.getRunningTasks(100);
         engineer_personal = (ImageView) findViewById(R.id.engineer_personal);
         engineer_personal.setOnClickListener(this);
         mTabHost = (TabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup();
         mTabManager = new TabManager(this, mTabHost, R.id.containertabcontent);
         mTabManager.addTab(mTabHost.newTabSpec("tab0").setIndicator("tab0"), OrdersFragment.class, null);
-        mTabManager.addTab(mTabHost.newTabSpec("tab1").setIndicator("tab1"), OrderEngFragment.class, null);
+        mTabManager.addTab(mTabHost.newTabSpec("tab1").setIndicator("tab1"), TakeOrderFragment.class, null);
     }
 
     public void doClick(View v) {
@@ -53,5 +60,14 @@ public class EngineerOrderActivity extends BaseActivity implements View.OnClickL
                 startActivity(new Intent(this, EngPersonalActivity.class));
                 break;
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Util.exit(this);
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

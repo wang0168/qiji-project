@@ -14,25 +14,42 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y80"
-            android:gravity="bottom"
-            android:orientation="horizontal">
+            android:layout_height="@dimen/y80">
 
             <LinearLayout
                 android:id="@+id/layout_type"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="@dimen/x160"
-                android:layout_height="@dimen/y50"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/x20"
-                android:background="@drawable/shape_order_service_type"
-                android:gravity="center"
-                android:text="负载均衡"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/type_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/y60"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:background="@drawable/shape_order_service_type"
+                    android:gravity="center"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/type_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/y60"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:background="@drawable/shape_order_service_type"
+                    android:gravity="center"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/type_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/y60"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:background="@drawable/shape_order_service_type"
+                    android:gravity="center"
+                    android:visibility="gone" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/order_state_inner"
@@ -40,9 +57,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/fourteen_sp"
+                android:layout_marginRight="@dimen/x20"
                 android:textColor="@color/colorAccent"
-                android:textSize="@dimen/y27" />
+                android:textSize="@dimen/y30" />
         </RelativeLayout>
 
         <TextView
@@ -52,7 +69,8 @@
             android:paddingBottom="@dimen/y20"
             android:paddingLeft="@dimen/x20"
             android:paddingRight="@dimen/x20"
-            android:paddingTop="@dimen/y20" />
+            android:paddingTop="@dimen/y20"
+            android:textSize="@dimen/y30" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -104,7 +122,6 @@
                 android:layout_marginLeft="@dimen/x20"
                 android:gravity="center_vertical"
                 android:text="服务时间："
-                android:textColor="@color/black"
                 android:textSize="@dimen/y30" />
 
             <TextView
@@ -130,7 +147,6 @@
                 android:layout_marginLeft="@dimen/x20"
                 android:gravity="center_vertical"
                 android:text="服务地址："
-                android:textColor="@color/black"
                 android:textSize="@dimen/y30" />
 
             <TextView
@@ -165,7 +181,6 @@
                 android:id="@+id/server_cost"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/x20"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:textColor="@color/black"
@@ -175,7 +190,7 @@
                 android:id="@+id/order_cancel"
                 android:layout_width="@dimen/x140"
                 android:layout_height="@dimen/y58"
-                android:layout_marginRight="@dimen/x25"
+                android:layout_marginRight="@dimen/x15"
                 android:background="@drawable/opinion_feedback_select"
                 android:gravity="center"
                 android:paddingLeft="@dimen/x10"
@@ -201,7 +216,7 @@
                 android:id="@+id/serivce_gps"
                 android:layout_width="@dimen/x140"
                 android:layout_height="@dimen/y58"
-                android:layout_marginRight="@dimen/x25"
+                android:layout_marginRight="@dimen/x15"
                 android:background="@drawable/opinion_feedback_select_accent"
                 android:gravity="center"
                 android:paddingLeft="@dimen/x10"
@@ -215,7 +230,7 @@
                 android:id="@+id/serivce_confirm"
                 android:layout_width="@dimen/x140"
                 android:layout_height="@dimen/y58"
-                android:layout_marginRight="@dimen/x25"
+                android:layout_marginRight="@dimen/x15"
                 android:background="@drawable/opinion_feedback_select_accent"
                 android:gravity="center"
                 android:paddingLeft="@dimen/x10"
@@ -242,7 +257,7 @@
                 android:id="@+id/contact_engineer"
                 android:layout_width="@dimen/x140"
                 android:layout_height="@dimen/y58"
-                android:layout_marginRight="@dimen/x25"
+                android:layout_marginRight="@dimen/x15"
                 android:background="@drawable/opinion_feedback_select"
                 android:gravity="center"
                 android:paddingLeft="@dimen/x10"
@@ -255,7 +270,7 @@
                 android:id="@+id/modify_order"
                 android:layout_width="@dimen/x140"
                 android:layout_height="@dimen/y58"
-                android:layout_marginRight="@dimen/x25"
+                android:layout_marginRight="@dimen/x15"
                 android:background="@drawable/opinion_feedback_select"
                 android:gravity="center"
                 android:paddingLeft="@dimen/x10"
@@ -268,13 +283,13 @@
                 android:id="@+id/hurry_order"
                 android:layout_width="@dimen/x140"
                 android:layout_height="@dimen/y58"
-                android:layout_marginRight="@dimen/x25"
+                android:layout_marginRight="@dimen/x15"
                 android:background="@drawable/opinion_feedback_select_accent"
                 android:gravity="center"
                 android:paddingLeft="@dimen/x10"
                 android:paddingRight="@dimen/x10"
-                android:textColor="@color/colorAccent"
                 android:text="催单"
+                android:textColor="@color/colorAccent"
                 android:textSize="@dimen/y25"
                 android:visibility="gone" />
         </LinearLayout>

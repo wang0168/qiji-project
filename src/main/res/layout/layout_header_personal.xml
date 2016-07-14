@@ -12,6 +12,7 @@
 
 
         <ImageView
+            android:scaleType="centerInside"
             android:id="@+id/face_img"
             android:layout_width="@dimen/x109"
             android:layout_height="@dimen/y109"
@@ -36,7 +37,7 @@
 
             <RatingBar
                 android:id="@+id/evaluate"
-                style="@android:style/Widget.Holo.RatingBar.Small"
+                style="@style/ratingBarSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/x30"

@@ -13,7 +13,7 @@ import java.util.List;
 
 import tts.moudle.api.TTSBaseAdapterRecyclerView;
 import tts.project.qiji.R;
-import tts.project.qiji.activity.EditAddressActivity;
+import tts.project.qiji.user.EditAddressActivity;
 import tts.project.qiji.bean.AddressBean;
 
 /**

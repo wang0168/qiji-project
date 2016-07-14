@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import tts.moudle.api.widget.CircleImageView;
 import tts.project.qiji.R;
-import tts.project.qiji.bean.Evaluate;
+import tts.project.qiji.bean.EvaluateBean;
 
 /**
  * Created by chen on 2016/3/1.
@@ -21,7 +21,7 @@ import tts.project.qiji.bean.Evaluate;
  */
 public class EvaluateDetailAdapter extends RecyclerView.Adapter<EvaluateDetailAdapter.ViewHolder> {
     private Context mContext;
-    private ArrayList<Evaluate> mData;
+    private ArrayList<EvaluateBean> mData;
     private OnItemClickListener listener;
 
     public interface OnItemClickListener {
@@ -34,7 +34,7 @@ public class EvaluateDetailAdapter extends RecyclerView.Adapter<EvaluateDetailAd
         this.listener = listener;
     }
 
-    public EvaluateDetailAdapter(Context context, ArrayList<Evaluate> data) {
+    public EvaluateDetailAdapter(Context context, ArrayList<EvaluateBean> data) {
         mContext = context;
         mData = data;
     }

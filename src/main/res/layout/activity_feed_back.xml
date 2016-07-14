@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/y80"
             android:layout_marginTop="@dimen/y60"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:text="发送"
             android:textColor="@color/white"
             android:textSize="@dimen/y30" />

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="tts.project.qiji.activity.MapActivity">
+    tools:context="tts.project.qiji.user.MapActivity">
 
     <include layout="@layout/toolbar_item" />
 
@@ -25,9 +25,9 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/rb_home_bottombar_home"
+            android:id="@+id/tv_bottombar_home"
             android:layout_width="0dp"
-            android:layout_height="@dimen/y90"
+            android:layout_height="@dimen/y110"
             android:layout_weight="1"
             android:button="@null"
             android:drawablePadding="@dimen/y5"
@@ -35,12 +35,12 @@
             android:gravity="center"
             android:text="首页"
             android:textColor="@drawable/textcolor_grey_blue"
-            android:textSize="@dimen/y30" />
+            android:textSize="@dimen/y28" />
 
         <TextView
-            android:id="@+id/rb_home_bottombar_order"
+            android:id="@+id/tv_bottombar_order"
             android:layout_width="0dp"
-            android:layout_height="@dimen/y90"
+            android:layout_height="@dimen/y110"
             android:layout_weight="1"
             android:button="@null"
             android:drawablePadding="@dimen/y5"
@@ -48,12 +48,12 @@
             android:gravity="center"
             android:text="我的订单"
             android:textColor="@drawable/textcolor_grey_blue"
-            android:textSize="@dimen/y30" />
+            android:textSize="@dimen/y28" />
 
         <TextView
-            android:id="@+id/rb_home_bottombar_my"
+            android:id="@+id/tv_bottombar_my"
             android:layout_width="0dp"
-            android:layout_height="@dimen/y90"
+            android:layout_height="@dimen/y110"
             android:layout_weight="1"
             android:button="@null"
             android:drawablePadding="@dimen/y5"
@@ -61,7 +61,7 @@
             android:gravity="center"
             android:text="个人中心"
             android:textColor="@drawable/textcolor_grey_blue"
-            android:textSize="@dimen/y30" />
+            android:textSize="@dimen/y28" />
 
     </LinearLayout>
 </LinearLayout>
